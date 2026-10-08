@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Domanda di ammissione socio · Spettacolando Eventi</title>
+<meta name="description" content="ASD Spettacolando Eventi APS · Tocca qui per compilare la domanda di ammissione a socio">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spettacolando Eventi">
+<meta property="og:title" content="🔵 Associati · Richiedi di diventare socio">
+<meta property="og:description" content="ASD Spettacolando Eventi APS · Tocca qui per compilare la domanda">
+<meta property="og:url" content="https://spettacolando-digitale.github.io/spettacolando-siti/associati/">
+<meta property="og:image" content="https://spettacolando-digitale.github.io/spettacolando-siti/associati/anteprima.jpg">
+<meta property="og:image:secure_url" content="https://spettacolando-digitale.github.io/spettacolando-siti/associati/anteprima.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="logo.jpg">
+<style>
+  :root{--blu:#1e5aa8;--blu-scuro:#164581;--oro:#c8ab63;--testo:#1f2937;--grigio:#6b7280;--bordo:#d1d5db;--sfondo:#f4f6fa}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--sfondo);color:var(--testo);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.45}
+  header{background:var(--blu);color:#fff;text-align:center;padding:20px 16px 26px}
+  header img{width:120px;height:120px;border-radius:50%;background:#fff;object-fit:contain;border:3px solid var(--oro)}
+  header h1{margin:12px 0 4px;font-size:22px}
+  header p{margin:0;opacity:.9;font-size:14px}
+  main{max-width:560px;margin:0 auto;padding:16px}
+  .card{background:#fff;border-radius:12px;padding:18px 16px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.06);border-top:4px solid var(--blu)}
+  .card h2{margin:0 0 12px;font-size:17px;color:var(--blu-scuro)}
+  label{display:block;font-weight:600;font-size:14px;margin:12px 0 4px}
+  label .opz{font-weight:400;color:var(--grigio)}
+  input,select,textarea{width:100%;padding:12px;border:1px solid var(--bordo);border-radius:8px;font-size:16px;font-family:inherit;background:#fff}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--blu);border-color:var(--blu)}
+  .riga{display:flex;gap:10px}
+  .riga > div{flex:1}
+  .check{display:flex;gap:10px;align-items:flex-start;margin:12px 0;font-weight:400;font-size:14px}
+  .check input{width:22px;height:22px;flex:none;margin-top:1px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .chips label{margin:0;font-weight:400;border:1px solid var(--bordo);border-radius:20px;padding:8px 12px;display:flex;gap:6px;align-items:center;font-size:14px}
+  .chips input{width:auto}
+  .nota{font-size:13px;color:var(--grigio);margin:8px 0 0}
+  .errore{background:#fdecec;color:#9b1c1c;border-radius:8px;padding:10px 12px;font-size:14px;display:none;margin-bottom:12px}
+  button{width:100%;padding:16px;border:0;border-radius:10px;background:#25d366;color:#fff;font-size:18px;font-weight:700;cursor:pointer}
+  button:active{transform:scale(.99)}
+  footer{text-align:center;font-size:12px;color:var(--grigio);padding:10px 16px 30px}
+</style>
+</head>
+<body>
+<header>
+  <img src="logo.jpg" alt="Spettacolando Eventi">
+  <h1>Domanda di ammissione a socio</h1>
+  <p>ASD Spettacolando Eventi APS · Angri (SA)</p>
+</header>
+
+<main>
+<form id="f" novalidate>
+
+  <div class="card">
+    <h2>1. I tuoi dati</h2>
+    <div class="riga">
+      <div><label for="nome">Nome</label><input id="nome" required autocomplete="given-name"></div>
+      <div><label for="cognome">Cognome</label><input id="cognome" required autocomplete="family-name"></div>
+    </div>
+    <div class="riga">
+      <div><label for="nascita">Data di nascita</label><input id="nascita" type="date" required></div>
+      <div><label for="luogo">Luogo di nascita</label><input id="luogo" required></div>
+    </div>
+    <label for="cf">Codice fiscale</label>
+    <input id="cf" required maxlength="16" style="text-transform:uppercase" autocomplete="off">
+  </div>
+
+  <div class="card">
+    <h2>2. Residenza e contatti</h2>
+    <label for="indirizzo">Indirizzo</label>
+    <input id="indirizzo" required autocomplete="street-address">
+    <div class="riga">
+      <div style="flex:2"><label for="comune">Comune</label><input id="comune" required></div>
+      <div><label for="cap">CAP</label><input id="cap" required inputmode="numeric" maxlength="5"></div>
+      <div><label for="prov">Prov.</label><input id="prov" required maxlength="2" style="text-transform:uppercase"></div>
+    </div>
+    <label for="tel">Cellulare</label>
+    <input id="tel" type="tel" required autocomplete="tel">
+    <label for="email">Email <span class="opz">(facoltativa)</span></label>
+    <input id="email" type="email" autocomplete="email">
+  </div>
+
+  <div class="card">
+    <h2>3. Come vuoi dare una mano</h2>
+    <p class="nota" style="margin-top:0">Scegli una o più voci (facoltativo).</p>
+    <div class="chips" id="aree">
+      <label><input type="checkbox" value="Teatro e recitazione"> Teatro</label>
+      <label><input type="checkbox" value="Ballo"> Ballo</label>
+      <label><input type="checkbox" value="Animazione"> Animazione</label>
+      <label><input type="checkbox" value="Allestimenti"> Allestimenti</label>
+      <label><input type="checkbox" value="Laboratori per bambini"> Laboratori</label>
+      <label><input type="checkbox" value="Logistica"> Logistica</label>
+      <label><input type="checkbox" value="Social e grafica"> Social e grafica</label>
+    </div>
+    <label for="note">Altro / note <span class="opz">(facoltativo)</span></label>
+    <textarea id="note" rows="2"></textarea>
+  </div>
+
+  <div class="card">
+    <h2>4. Dichiarazioni</h2>
+    <label class="check"><input type="checkbox" id="d1"> <span>Chiedo di essere ammesso/a come socio/a di ASD Spettacolando Eventi APS e dichiaro di condividerne le finalità.</span></label>
+    <label class="check"><input type="checkbox" id="d2"> <span>Dichiaro di aver preso visione dello Statuto e mi impegno a rispettarlo, insieme ai regolamenti e alle delibere degli organi sociali.</span></label>
+    <label class="check"><input type="checkbox" id="d3"> <span>Mi impegno a versare la quota associativa annuale stabilita dall'associazione.</span></label>
+    <label class="check"><input type="checkbox" id="d4"> <span>Autorizzo il trattamento dei miei dati personali per le finalità associative, ai sensi del Regolamento UE 2016/679 (GDPR).</span></label>
+    <label class="check"><input type="checkbox" id="d5"> <span>Autorizzo l'uso di foto e video in cui compaio durante le attività, per la comunicazione dell'associazione. <span class="opz">(facoltativo)</span></span></label>
+    <p class="nota">L'ammissione è decisa dal Consiglio Direttivo, come previsto dallo Statuto.</p>
+  </div>
+
+  <div class="errore" id="err"></div>
+  <button type="submit">Invia la domanda su WhatsApp</button>
+  <p class="nota" style="text-align:center">Si aprirà WhatsApp con la domanda già scritta: devi solo premere invio.</p>
+</form>
+</main>
+
+<footer>
+  ASD Spettacolando Eventi APS · Via Risi 93, 84012 Angri (SA) · C.F. 94092670655 · Affiliata MSP Italia
+</footer>
+
+<script>
+const WA = "393343499808";
+const $ = id => document.getElementById(id);
+
+function dataIt(v){ if(!v) return ""; const [a,m,g]=v.split("-"); return `${g}/${m}/${a}`; }
+
+$("f").addEventListener("submit", e => {
+  e.preventDefault();
+  const err = [];
+  const obbl = {nome:"Nome",cognome:"Cognome",nascita:"Data di nascita",luogo:"Luogo di nascita",cf:"Codice fiscale",indirizzo:"Indirizzo",comune:"Comune",cap:"CAP",prov:"Provincia",tel:"Cellulare"};
+  for (const k in obbl) if (!$(k).value.trim()) err.push(obbl[k]);
+  const cf = $("cf").value.trim().toUpperCase();
+  if (cf && !/^[A-Z]{6}[0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{3}[A-Z]$/.test(cf)) err.push("Codice fiscale non valido");
+  if ($("cap").value && !/^\d{5}$/.test($("cap").value.trim())) err.push("CAP non valido");
+  if ($("nascita").value) {
+    const n = new Date($("nascita").value), oggi = new Date();
+    let eta = oggi.getFullYear()-n.getFullYear(); const mm = oggi.getMonth()-n.getMonth();
+    if (mm<0 || (mm===0 && oggi.getDate()<n.getDate())) eta--;
+    if (eta < 18) err.push("Per diventare socio occorre essere maggiorenni");
+  }
+  ["d1","d2","d3","d4"].forEach((d,i)=>{ if(!$(d).checked) err.push(`Dichiarazione n. ${i+1}`); });
+
+  const box = $("err");
+  if (err.length){ box.innerHTML = "<b>Controlla:</b> " + err.join(", "); box.style.display="block"; box.scrollIntoView({behavior:"smooth",block:"center"}); return; }
+  box.style.display="none";
+
+  const aree = [...document.querySelectorAll("#aree input:checked")].map(x=>x.value);
+  const t = [
+    "*DOMANDA DI AMMISSIONE A SOCIO*",
+    "ASD Spettacolando Eventi APS",
+    "",
+    `*Nome e cognome:* ${$("nome").value.trim()} ${$("cognome").value.trim()}`,
+    `*Nato/a a:* ${$("luogo").value.trim()} il ${dataIt($("nascita").value)}`,
+    `*Codice fiscale:* ${cf}`,
+    `*Residenza:* ${$("indirizzo").value.trim()}, ${$("cap").value.trim()} ${$("comune").value.trim()} (${$("prov").value.trim().toUpperCase()})`,
+    `*Cellulare:* ${$("tel").value.trim()}`,
+    $("email").value.trim() ? `*Email:* ${$("email").value.trim()}` : null,
+    aree.length ? `*Disponibilità:* ${aree.join(", ")}` : null,
+    $("note").value.trim() ? `*Note:* ${$("note").value.trim()}` : null,
+    "",
+    "✅ Chiede l'ammissione a socio e condivide le finalità",
+    "✅ Ha preso visione dello Statuto",
+    "✅ Si impegna a versare la quota associativa",
+    "✅ Consenso privacy (GDPR)",
+    $("d5").checked ? "✅ Consenso foto/video" : "❌ Nessun consenso foto/video",
+    "",
+    `Data domanda: ${new Date().toLocaleDateString("it-IT")}`
+  ].filter(x=>x!==null).join("\n");
+
+  location.href = `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+});
+</script>
+</body>
+</html>
