@@ -1,0 +1,4 @@
+# Configurazione usata solo dal progetto Netlify "raffaellapizzo"
+# (base directory: raffaellapizzo). Pubblica soltanto questa cartella.
+[build]
+  publish = "."

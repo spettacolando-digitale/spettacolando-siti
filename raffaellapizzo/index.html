@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<script>if(/\/raffaellapizzo$/.test(location.pathname))location.replace(location.pathname+"/"+location.search+location.hash)</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Raffaella Pizzo · Luxury Events">
+<meta property="og:description" content="Allestimenti, cerimonie e feste esclusive dal Vesuvio a Paestum.">
+<meta property="og:image" content="img/hero-1.webp">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#132744">
+<style>[hidden]{display:none!important}img{max-width:100%}</style>
+<title>Raffaella Pizzo Luxury Events</title>
+<meta name="description" content="Raffaella Pizzo Luxury Events: party planner ad Angri (SA). Progettazione, allestimenti e coordinamento di matrimoni, cerimonie e feste esclusive dal Vesuvio a Paestum.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* Layout: identità "Luxury Event's" — apertura blu notte con il logo oro, poi pagine ariose su griglia sottile, oro usato per filetti e dettagli */
+:root{
+  --bg:#fbfaf6;
+  --paper:#ffffff;
+  --blush:#f2ece0;
+  --rose:#d8c9a2;
+  --gold:#9c7c32;
+  --brand-gold:#c9af63;
+  --ink:#1c2b45;
+  --muted:#66708a;
+  --line:#e7e1d4;
+  --navy:#1f3a63;
+  --navy-deep:#132744;
+  --f-display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --f-body:"Jost","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --wrap:1180px;
+  --logo-dark:block;--logo-light:none;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1726;--paper:#142036;--blush:#1b2a44;--rose:#3e5175;--gold:#d6bb72;--brand-gold:#d6bb72;--ink:#f1ede4;--muted:#a9b3c6;--line:#263655;--navy:#0a1424;--navy-deep:#070f1c;
+    --logo-dark:none;--logo-light:block;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1726;--paper:#142036;--blush:#1b2a44;--rose:#3e5175;--gold:#d6bb72;--brand-gold:#d6bb72;--ink:#f1ede4;--muted:#a9b3c6;--line:#263655;--navy:#0a1424;--navy-deep:#070f1c;
+  --logo-dark:none;--logo-light:block;
+  color-scheme:dark;
+}
+.lg-d{display:var(--logo-dark)}.lg-l{display:var(--logo-light)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--ink);font:300 17px/1.75 var(--f-body);margin:0;letter-spacing:.01em}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:24px}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;text-wrap:balance;line-height:1.1}
+h2{font-size:clamp(2.1rem,4.6vw,3.4rem)}
+h2 em,h1 em{font-style:italic}
+h3{font-size:1.6rem}
+p{margin:0}
+.kicker{font:400 .74rem var(--f-body);letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.lead{font-size:1.12rem;color:var(--muted);max-width:56ch}
+section{padding-block:clamp(72px,11vw,140px)}
+.center{text-align:center}
+.center .lead{margin-inline:auto}
+.rule{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);margin:22px auto}
+.rule::before,.rule::after{content:"";height:1px;width:56px;background:var(--gold);opacity:.7}
+.rule span{width:6px;height:6px;border:1px solid var(--gold);transform:rotate(45deg)}
+.link{display:inline-flex;gap:10px;align-items:center;text-decoration:none;font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:6px;font-weight:400}
+.link:hover{color:var(--gold)}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);border:0;padding:16px 34px;font:400 .8rem var(--f-body);letter-spacing:.24em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .25s}
+.btn:hover{background:var(--gold)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-block:16px;gap:20px}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{color:var(--gold)}
+.nav ul.r{justify-content:flex-end}
+.logo{text-decoration:none;display:block;line-height:0}
+.logo img{height:62px;width:auto}
+footer .logo img{height:120px}
+@media (max-width:900px){.nav .wrap{grid-template-columns:1fr auto}.nav ul.l{display:none}.nav ul.r li:not(:last-child){display:none}.logo img{height:52px}}
+
+/* hero */
+.hero{position:relative;display:grid;place-items:center;overflow:hidden;background:var(--navy-deep);color:#f6f1e6;text-align:center;padding-block:clamp(56px,9vw,110px) clamp(64px,10vw,120px)}
+.photo{position:absolute;inset:0;background:
+  radial-gradient(ellipse 60% 55% at 50% 38%,rgba(201,175,99,.22),transparent 70%),
+  radial-gradient(ellipse at 15% 100%,rgba(42,82,140,.55),transparent 60%),
+  linear-gradient(180deg,#1a3358 0%,#132744 60%,#0d1d36 100%);background-size:cover;background-position:center}
+.photo::after{content:"";position:absolute;inset:18px;border:1px solid rgba(201,175,99,.35);pointer-events:none}
+.sparks{position:absolute;inset:0;pointer-events:none}
+.sparks i{position:absolute;width:3px;height:3px;border-radius:50%;background:#e3c97f;box-shadow:0 0 8px 2px rgba(227,201,127,.55);opacity:.0;animation:twinkle 5s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.08}50%{opacity:.85}}
+.hero .wrap{position:relative;z-index:2;display:grid;justify-items:center;gap:6px}
+.hero-logo{width:min(440px,78vw);height:auto;filter:drop-shadow(0 10px 30px rgba(0,0,0,.35));animation:rise 1.4s ease-out both}
+@keyframes rise{from{opacity:.0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+.hero h1{font-size:clamp(1.9rem,4.4vw,3.3rem);line-height:1.15;margin-top:26px;color:#f6f1e6}
+.hero h1 em{color:#e3c97f}
+.hero p{max-width:50ch;font-size:1.1rem;margin-top:14px;color:rgba(246,241,230,.82)}
+.hero .btn{margin-top:30px;background:#c9af63;color:#132744}
+.hero .btn:hover{background:#f6f1e6}
+.hero .kicker{color:#e3c97f}
+
+/* intro */
+.intro p.big{font:400 clamp(1.5rem,3vw,2.15rem)/1.45 var(--f-display);max-width:30ch;margin-inline:auto}
+.intro p.big em{color:var(--gold)}
+
+/* tre mondi */
+.worlds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px);margin-top:64px}
+.world{display:grid;gap:18px;align-content:start}
+.ph{position:relative;aspect-ratio:4/5;max-width:100%;overflow:hidden;background:var(--blush)}
+.ph::after{content:attr(data-label);position:absolute;left:14px;bottom:12px;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);background:color-mix(in srgb,var(--paper) 80%,transparent);padding:4px 10px}
+.ph.t1{background:linear-gradient(160deg,var(--blush),color-mix(in srgb,var(--rose) 60%,var(--blush)))}
+.ph.t2{background:linear-gradient(200deg,color-mix(in srgb,var(--paper) 70%,var(--blush)),color-mix(in srgb,var(--gold) 35%,var(--blush)))}
+.ph.t3{background:linear-gradient(140deg,color-mix(in srgb,var(--rose) 40%,var(--paper)),var(--blush))}
+.world .n{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.world p{color:var(--muted)}
+.world ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.world li{padding:10px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+@media (max-width:860px){.worlds{grid-template-columns:1fr;max-width:520px;margin-inline:auto}}
+
+/* dettagli */
+.details{background:var(--paper);border-block:1px solid var(--line)}
+.det-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:56px;border-top:1px solid var(--line)}
+.det{padding:34px 26px 10px;border-right:1px solid var(--line);display:grid;gap:10px;align-content:start}
+.det:last-child{border-right:0}
+.det h3{font-size:1.35rem}
+.det p{color:var(--muted);font-size:.96rem}
+@media (max-width:900px){.det-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.det:nth-child(2){border-right:0}.det{border-bottom:1px solid var(--line);padding-bottom:30px}}
+@media (max-width:520px){.det-grid{grid-template-columns:1fr}.det{border-right:0}}
+
+/* galleria */
+.gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:clamp(120px,16vw,200px);gap:12px;margin-top:56px}
+.gallery .ph{aspect-ratio:auto;height:100%}
+
+/* locali */
+.partner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,90px);align-items:center}
+.partner .ph{aspect-ratio:4/5}
+.partner ol{list-style:none;padding:0;margin:34px 0 0;display:grid;gap:0;border-top:1px solid var(--line)}
+.partner li{display:grid;grid-template-columns:48px 1fr;padding:16px 0;border-bottom:1px solid var(--line)}
+.partner li b{font:italic 400 1.3rem var(--f-display);color:var(--gold)}
+@media (max-width:860px){.partner{grid-template-columns:1fr}.partner .ph{aspect-ratio:16/10}}
+
+/* chi siamo */
+.about{background:var(--blush)}
+.about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,90px);align-items:center}
+.about .ph{aspect-ratio:3/4;background:linear-gradient(170deg,color-mix(in srgb,var(--paper) 50%,var(--blush)),color-mix(in srgb,var(--rose) 55%,var(--blush)))}
+.about p+p{margin-top:16px}
+.about .body{display:grid;gap:22px}
+.sign{font:italic 400 1.9rem var(--f-display);color:var(--gold)}
+.stats{display:flex;flex-wrap:wrap;gap:40px;margin-top:8px;padding-top:24px;border-top:1px solid color-mix(in srgb,var(--gold) 40%,transparent)}
+.stats div{display:grid}
+.stats b{font:400 2.4rem/1 var(--f-display);font-variant-numeric:lining-nums tabular-nums}
+.stats span{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (max-width:860px){.about .wrap{grid-template-columns:1fr}.about .ph{aspect-ratio:16/11}}
+
+/* contatti */
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,90px);align-items:start}
+.channels{display:grid;margin-top:34px;border-top:1px solid var(--line)}
+.ch{padding:18px 0;border-bottom:1px solid var(--line);display:grid;gap:2px;min-width:0}
+.ch small{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.ch span{overflow-wrap:anywhere;user-select:all;font-weight:400}
+.ch button{justify-self:start;margin-top:6px;background:none;border:0;padding:0;color:var(--muted);font:400 .72rem var(--f-body);letter-spacing:.2em;text-transform:uppercase;cursor:pointer;border-bottom:1px solid var(--line)}
+.ch button:hover{color:var(--gold)}
+form{display:grid;gap:22px;background:var(--paper);border:1px solid var(--line);padding:clamp(24px,5vw,52px)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media (max-width:560px){.g2{grid-template-columns:1fr}}
+label{display:grid;gap:4px;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+input,select,textarea{font:300 1.02rem var(--f-body);letter-spacing:.01em;text-transform:none;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:10px 0;width:100%;border-radius:0}
+select{appearance:none;background:linear-gradient(45deg,transparent 50%,var(--gold) 50%) right 6px center/6px 6px no-repeat,linear-gradient(-45deg,transparent 50%,var(--gold) 50%) right 0 center/6px 6px no-repeat}
+input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--gold)}
+textarea{min-height:96px;resize:vertical}
+.out{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:20px}
+.out pre{white-space:pre-wrap;font:300 .95rem/1.6 var(--f-body);background:var(--bg);padding:18px;margin:0;max-height:260px;overflow:auto}
+.out .row{display:flex;flex-wrap:wrap;gap:24px}
+.status{font-size:.88rem;color:var(--gold);min-height:1.3em}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding-block:56px}
+footer .wrap{display:grid;gap:16px;justify-items:center;text-align:center}
+footer p{color:var(--muted);font-size:.85rem}
+</style>
+<style>
+/* Raffaella Pizzo · marchio testuale e sezione partner Spettacolando */
+.wm{text-decoration:none;display:grid;justify-items:center;line-height:1;gap:6px}
+.wm b{font:italic 400 1.75rem var(--f-display);letter-spacing:.01em}
+.wm small{font-size:.58rem;letter-spacing:.46em;text-transform:uppercase;color:var(--gold);padding-left:.46em}
+@media (max-width:900px){.wm{justify-items:start}.wm b{font-size:1.45rem}}
+/* apertura: testo su blu notte + foto in dissolvenza */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);padding:0;text-align:left;place-items:stretch;min-height:min(88vh,860px)}
+.hero-text{position:relative;overflow:hidden;display:grid;align-content:center;justify-items:start;padding:clamp(48px,7vw,96px) clamp(24px,5vw,72px);background:linear-gradient(180deg,#1a3358 0%,#132744 60%,#0d1d36 100%)}
+.hero-text>*:not(.sparks){position:relative;z-index:1}
+.hero-text::after{content:"";position:absolute;inset:18px 0 18px 18px;border:1px solid rgba(201,175,99,.35);border-right:0;pointer-events:none}
+.hero-media{position:relative;overflow:hidden;background:#132744;min-height:420px}
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity 1.6s ease,transform 8s ease-out}
+.hero-media img.on{opacity:1;transform:scale(1)}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(19,39,68,.35),transparent 30%);pointer-events:none}
+.hero .name{font:italic 400 clamp(3rem,6.6vw,6.2rem)/.95 var(--f-display);color:#f6f1e6;margin:0;animation:rise 1.4s ease-out both}
+.hero .sub{display:flex;align-items:center;gap:16px;margin-top:18px;font-size:.76rem;letter-spacing:.5em;text-transform:uppercase;color:#e3c97f}
+.hero .sub::after{content:"";width:56px;height:1px;background:#c9af63;opacity:.7}
+.hero h1{font-size:clamp(1.5rem,2.6vw,2.2rem);margin-top:34px}
+.hero p{margin-top:16px;max-width:44ch}
+@media (max-width:860px){.hero{grid-template-columns:1fr;min-height:0}.hero-media{order:-1;min-height:0;aspect-ratio:4/4.2;max-width:100%}.hero-text::after{inset:14px;border-right:1px solid rgba(201,175,99,.35)}}
+/* foto reali nei riquadri */
+.world{margin:0}
+.intro .worlds{margin-top:56px}
+@media (max-width:860px){.intro .worlds{grid-template-columns:repeat(3,minmax(0,1fr));max-width:none;gap:10px}.intro .world .n{font-size:.6rem;letter-spacing:.2em}}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;max-width:none}
+.ph.has::after{display:none}
+/* galleria a mosaico */
+.mosaic{columns:3 280px;column-gap:14px;margin-top:56px}
+.mosaic figure{break-inside:avoid;margin:0 0 14px;position:relative;overflow:hidden;background:var(--blush)}
+.mosaic img{width:100%;height:auto;display:block;transition:transform .8s ease}
+.mosaic figure:hover img{transform:scale(1.03)}
+.mosaic figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 10px;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;background:linear-gradient(0deg,rgba(19,39,68,.7),transparent)}
+.spett-strip{grid-column:1/-1;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:12px;margin-top:clamp(40px,6vw,64px)}
+.spett-strip figure{margin:0;position:relative;overflow:hidden;aspect-ratio:4/5;max-width:100%}
+.spett-strip figure:first-child{aspect-ratio:auto}
+.spett-strip img{width:100%;height:100%;object-fit:cover;display:block}
+.spett-strip figcaption{position:absolute;left:12px;bottom:10px;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+@media (max-width:640px){.spett-strip{grid-template-columns:1fr 1fr}.spett-strip figure:first-child{grid-column:span 2;aspect-ratio:3/2}}
+.quote{font:italic 400 clamp(1.5rem,3vw,2.1rem)/1.45 var(--f-display);max-width:32ch;margin-inline:auto}
+.quote em{color:var(--gold)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:60px;border-top:1px solid var(--line)}
+.svc{padding:36px 30px 40px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:12px;align-content:start}
+.svc:nth-child(3n){border-right:0}
+.svc .n{font:italic 400 1.2rem var(--f-display);color:var(--gold)}
+.svc h3{font-size:1.5rem}
+.svc p{color:var(--muted);font-size:.98rem}
+@media (max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}.svc:nth-child(3n){border-right:1px solid var(--line)}.svc:nth-child(2n){border-right:0}}
+@media (max-width:560px){.svc-grid{grid-template-columns:1fr}.svc{border-right:0!important}}
+.steps{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,3vw,40px);counter-reset:s}
+.steps li{counter-increment:s;display:grid;gap:10px;align-content:start;border-top:1px solid var(--gold);padding-top:22px}
+.steps li::before{content:counter(s,upper-roman);font:italic 400 1.6rem/1 var(--f-display);color:var(--gold)}
+.steps h3{font-size:1.35rem}
+.steps p{color:var(--muted);font-size:.96rem}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+.spett{background:var(--navy);color:#f6f1e6}
+.spett .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,90px);align-items:center}
+.spett .kicker{color:#e3c97f}
+.spett .lead{color:rgba(246,241,230,.78)}
+.spett-logo{width:min(380px,80%);height:auto;justify-self:center}
+.spett ul{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 32px;border-top:1px solid rgba(201,175,99,.35)}
+.spett li{padding:13px 0;border-bottom:1px solid rgba(201,175,99,.25);font-size:.98rem}
+.spett .link{color:#f6f1e6;border-color:#c9af63;margin-top:30px}
+@media (max-width:860px){.spett .wrap{grid-template-columns:1fr}.spett ul{grid-template-columns:1fr}}
+/* caricamento foto e invio */
+.up{display:grid;gap:10px}
+.up-label{font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:12px}
+.up-label em{font-style:normal;color:var(--gold);letter-spacing:.1em;font-variant-numeric:tabular-nums}
+.drop{display:grid;gap:4px;justify-items:center;text-align:center;border:1px dashed color-mix(in srgb,var(--gold) 60%,var(--line));padding:26px 16px;cursor:pointer;text-transform:none;letter-spacing:.01em;font-size:1rem;color:var(--ink);background:color-mix(in srgb,var(--blush) 35%,transparent);transition:background .2s,border-color .2s}
+.drop:hover,.drop.over{background:color-mix(in srgb,var(--blush) 80%,transparent);border-color:var(--gold)}
+.drop input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.drop:focus-within{outline:1px solid var(--gold);outline-offset:3px}
+.drop-t u{text-decoration-color:var(--gold);text-underline-offset:4px}
+.drop-s{font-size:.85rem;color:var(--muted)}
+.thumbs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.thumbs:empty{display:none}
+.thumb{position:relative;aspect-ratio:1;max-width:100%;overflow:hidden;background:var(--blush)}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb button{position:absolute;top:4px;right:4px;width:26px;height:26px;border-radius:50%;border:0;background:rgba(19,39,68,.82);color:#f6f1e6;font:400 1rem/1 var(--f-body);cursor:pointer}
+.up-err{font-size:.85rem;color:var(--gold);min-height:0;margin:0}
+.up-err:empty{display:none}
+@media (max-width:480px){.thumbs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.photo-hint{font-size:.92rem;color:var(--ink);border-left:2px solid var(--gold);padding:4px 0 4px 14px}
+.send{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.send .btn{text-align:center;padding-inline:16px}
+.send-wa{background:#1f7a52;color:#fff}
+.send-wa:hover{background:#17603f}
+.send-mail{background:var(--navy);color:#f6f1e6}
+@media (max-width:480px){.send{grid-template-columns:1fr}}
+.pdf-card{display:flex;gap:14px;align-items:center;padding:14px 16px;background:var(--bg);border:1px solid var(--line);min-width:0}
+.pdf-card div{display:grid;min-width:0}
+.pdf-card b{font-weight:400;overflow-wrap:anywhere}
+.pdf-card small{color:var(--muted);font-size:.85rem}
+.pdf-ico{flex:none;width:42px;height:52px;display:grid;place-items:center;background:var(--navy);color:#e3c97f;font:500 .7rem var(--f-body);letter-spacing:.12em}
+.btn[disabled]{opacity:.55;cursor:progress}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+<nav class="nav" aria-label="Menu principale">
+  <div class="wrap">
+    <ul class="l">
+      <li><a href="#servizi">Servizi</a></li>
+      <li><a href="#metodo">Metodo</a></li>
+      <li><a href="#galleria">Galleria</a></li>
+    </ul>
+    <a class="wm" href="#top"><b>Raffaella Pizzo</b><small>Luxury Events</small></a>
+    <ul class="r">
+      <li><a href="#spettacolando">Spettacolando</a></li>
+      <li><a href="#chi-sono">Chi sono</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-text">
+    <div class="sparks" id="sparks" aria-hidden="true"></div>
+    <p class="name">Raffaella Pizzo</p>
+    <p class="sub">Luxury Events</p>
+    <h1>Il giorno più bello,<br><em>curato in ogni dettaglio.</em></h1>
+    <p>Progettazione e coordinamento di cerimonie, ricevimenti e feste esclusive. Dalle falde del Vesuvio a Paestum, un solo riferimento per ogni dettaglio del vostro evento.</p>
+    <a class="btn" href="#contatti">Prenota una consulenza</a>
+  </div>
+  <div class="hero-media" id="hero-media">
+    <img class="on" src="img/hero-1.webp" alt="Torta a tre piani tra colonne di rose bianche e rosa, con fiocco in tessuto" fetchpriority="high">
+    <img src="img/hero-2.webp" alt="Allestimento con fiori bianchi, pampas e iniziali dorate" loading="lazy">
+    <img src="img/hero-3.webp" alt="Scenografia a pasticceria in verde menta e rosa con fiori" loading="lazy">
+  </div>
+</header>
+
+<main>
+<section class="intro center">
+  <div class="wrap">
+    <p class="kicker">Party planner</p>
+    <div class="rule"><span></span></div>
+    <p class="quote">Ogni evento racconta chi lo vive. Il mio lavoro è ascoltare quella storia e trasformarla in <em>un'atmosfera</em> che gli ospiti ricorderanno a lungo.</p>
+    <div class="worlds">
+      <figure class="world"><div class="ph has"><img src="img/feste.webp" alt="Tavolo da tè rosa a tema Alice nel paese delle meraviglie" loading="lazy"></div><span class="n">Feste</span></figure>
+      <figure class="world"><div class="ph has"><img src="img/cerimonie.webp" alt="Torta nuziale tra colonne di fiori e candele" loading="lazy"></div><span class="n">Cerimonie</span></figure>
+      <figure class="world"><div class="ph has"><img src="img/locali.webp" alt="Sala ricevimenti con centrotavola di fiori arancio" loading="lazy"></div><span class="n">Ricevimenti</span></figure>
+    </div>
+  </div>
+</section>
+
+<section id="servizi" style="padding-top:0">
+  <div class="wrap">
+    <div class="center">
+      <p class="kicker">Servizi</p>
+      <h2>Dalla prima idea <em>all'ultimo brindisi</em></h2>
+    </div>
+    <div class="svc-grid">
+      <article class="svc"><span class="n">i</span><h3>Consulenza e progetto</h3><p>Studio dello stile, del tema e dei colori dell'evento, con un progetto su misura e un preventivo chiaro.</p></article>
+      <article class="svc"><span class="n">ii</span><h3>Coordinamento fornitori</h3><p>Fiorista, pasticceria, torte scenografiche, fotografo, scenografie in legno, palloncini: scelgo e coordino i professionisti giusti.</p></article>
+      <article class="svc"><span class="n">iii</span><h3>Allestimenti esclusivi</h3><p>Composizioni floreali, archi, tavoli confettata, sweet table e angoli foto, curati nella location che avete scelto.</p></article>
+      <article class="svc"><span class="n">iv</span><h3>Matrimoni e promesse</h3><p>Dal ricevimento alla confettata, con un'attenzione particolare all'accoglienza degli ospiti più piccoli.</p></article>
+      <article class="svc"><span class="n">v</span><h3>Comunioni, battesimi, nascite</h3><p>Ricorrenze di famiglia con un'eleganza sobria, pensate per grandi e bambini.</p></article>
+      <article class="svc"><span class="n">vi</span><h3>Feste private</h3><p>Compleanni, anniversari e ricorrenze speciali, in casa, in villa o in un locale.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="metodo" class="details">
+  <div class="wrap">
+    <div class="center">
+      <p class="kicker">Il metodo</p>
+      <h2>Come nasce <em>il vostro evento</em></h2>
+    </div>
+    <ol class="steps">
+      <li><h3>Incontro</h3><p>Ci conosciamo e mi raccontate data, luogo, ospiti e lo stile che immaginate.</p></li>
+      <li><h3>Progetto</h3><p>Preparo una proposta con idee, materiali, fornitori e un preventivo dettagliato.</p></li>
+      <li><h3>Regia</h3><p>Coordino fornitori, tempi e allestimento, così voi non dovete pensare a nulla.</p></li>
+      <li><h3>Il giorno</h3><p>Sono presente per seguire ogni momento, dall'arrivo degli ospiti alla fine della festa.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="galleria">
+  <div class="wrap">
+    <div class="center">
+      <p class="kicker">Galleria</p>
+      <h2>Alcuni dei miei <em>allestimenti</em></h2>
+    </div>
+    <div class="mosaic">
+      <figure><img src="img/g01.webp" alt="Pasticceria in pastello" loading="lazy"><figcaption>Pasticceria in pastello</figcaption></figure>
+      <figure><img src="img/g02.webp" alt="Torta scenografica" loading="lazy"><figcaption>Torta scenografica</figcaption></figure>
+      <figure><img src="img/g03.webp" alt="Il Piccolo Principe" loading="lazy"><figcaption>Il Piccolo Principe</figcaption></figure>
+      <figure><img src="img/g04.webp" alt="Dolci a tema" loading="lazy"><figcaption>Dolci a tema</figcaption></figure>
+      <figure><img src="img/g05.webp" alt="Il Piccolo Principe" loading="lazy"><figcaption>Il Piccolo Principe</figcaption></figure>
+      <figure><img src="img/g06.webp" alt="Festa in viola" loading="lazy"><figcaption>Festa in viola</figcaption></figure>
+      <figure><img src="img/g07.webp" alt="Alice nel paese delle meraviglie" loading="lazy"><figcaption>Alice nel paese delle meraviglie</figcaption></figure>
+      <figure><img src="img/g08.webp" alt="Alice · tavolo da tè" loading="lazy"><figcaption>Alice · tavolo da tè</figcaption></figure>
+      <figure><img src="img/g09.webp" alt="Minnie e Topolino" loading="lazy"><figcaption>Minnie e Topolino</figcaption></figure>
+      <figure><img src="img/g10.webp" alt="18 anni in arancio" loading="lazy"><figcaption>18 anni in arancio</figcaption></figure>
+      <figure><img src="img/g11.webp" alt="Centrotavola" loading="lazy"><figcaption>Centrotavola</figcaption></figure>
+      <figure><img src="img/g12.webp" alt="18 anni · ingresso" loading="lazy"><figcaption>18 anni · ingresso</figcaption></figure>
+      <figure><img src="img/g13.webp" alt="Orsetti e rose" loading="lazy"><figcaption>Orsetti e rose</figcaption></figure>
+      <figure><img src="img/g14.webp" alt="Arco floreale" loading="lazy"><figcaption>Arco floreale</figcaption></figure>
+      <figure><img src="img/g15.webp" alt="Mise en place" loading="lazy"><figcaption>Mise en place</figcaption></figure>
+      <figure><img src="img/g16.webp" alt="Benvenuto" loading="lazy"><figcaption>Benvenuto</figcaption></figure>
+      <figure><img src="img/g17.webp" alt="Pigiama party" loading="lazy"><figcaption>Pigiama party</figcaption></figure>
+      <figure><img src="img/g18.webp" alt="Pasticceria in pastello" loading="lazy"><figcaption>Pasticceria in pastello</figcaption></figure>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="locali" style="padding-top:0">
+  <div class="wrap partner">
+    <div class="ph has"><img src="img/sala.webp" alt="Tavolo apparecchiato in bianco in una sala ricevimenti" loading="lazy"></div>
+    <div>
+      <p class="kicker">Sale ricevimenti e hotel</p>
+      <h2 style="margin-top:14px">Un valore in più <em>per i vostri ospiti</em></h2>
+      <p class="lead" style="margin-top:20px">Collaboro con locali per cerimonie e hotel tra il Vesuvio e Paestum. Offrite ai vostri clienti allestimenti e intrattenimento curati, senza pensieri organizzativi.</p>
+      <ol>
+        <li><b>i</b><span>Allestimenti a tema per comunioni, battesimi, compleanni e nascite</span></li>
+        <li><b>ii</b><span>Animazione e spettacoli in collaborazione con Spettacolando Eventi</span></li>
+        <li><b>iii</b><span>Proposte pronte da presentare ai vostri clienti</span></li>
+        <li><b>iv</b><span>Un unico referente che coordina ogni servizio</span></li>
+      </ol>
+      <p style="margin-top:32px"><a class="link" href="#contatti">Proponi una collaborazione</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="spettacolando" class="spett">
+  <div class="wrap">
+    <img class="spett-logo" src="img/spettacolando-logo.webp" alt="Spettacolando Eventi">
+    <div>
+      <p class="kicker">In collaborazione con</p>
+      <h2 style="margin-top:14px">Spettacolando Eventi, <em>l'intrattenimento</em></h2>
+      <p class="lead" style="margin-top:20px">Per spettacoli, animazione e feste per bambini mi affianca Spettacolando Eventi, l'associazione di Angri con circa cinquanta soci tra attori, ballerini e artisti. In quasi ogni festa c'è uno spettacolo dal vivo.</p>
+      <ul>
+        <li>Magia e illusionismo</li>
+        <li>Bolle di sapone giganti</li>
+        <li>Acrobazia e fachiro</li>
+        <li>Mini musical</li>
+        <li>Animazione e trucca bimbi</li>
+        <li>Laboratori creativi per bambini</li>
+        <li>Torte in pasta di zucchero e in gomma EVA</li>
+        <li>Gonfiabili e feste in sede ad Angri</li>
+      </ul>
+      <a class="link" href="#contatti">Chiedi uno spettacolo</a>
+    </div>
+    <div class="spett-strip">
+      <figure><img src="img/spett-1.webp" alt="Villaggio di Natale sotto archi in pietra" loading="lazy"><figcaption>Villaggio di Natale</figcaption></figure>
+      <figure><img src="img/spett-2.webp" alt="Artista in costume natalizio rosso" loading="lazy"><figcaption>Personaggi in costume</figcaption></figure>
+      <figure><img src="img/spett-3.webp" alt="Colori e glitter per il trucca bimbi" loading="lazy"><figcaption>Trucca bimbi</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="chi-sono" class="about">
+  <div class="wrap">
+    <div class="ph has"><img src="img/chi-sono.webp" alt="Tavolino da tè in ferro battuto con fiori e dolci" loading="lazy"></div>
+    <div class="body">
+      <p class="kicker">Chi sono</p>
+      <h2>Oltre vent'anni <em>di feste ed emozioni</em></h2>
+      <div>
+        <p>Mi chiamo Raffaella Pizzo e da più di vent'anni creo feste, allestimenti e spettacoli tra Napoli e Salerno.</p>
+        <p>Sono presidente di Spettacolando Eventi, associazione di Angri. Con Raffaella Pizzo Luxury Events metto la stessa passione al servizio di cerimonie e ricevimenti esclusivi, con una rete di artigiani e fornitori del territorio scelti negli anni.</p>
+      </div>
+      <p class="sign">Raffaella Pizzo</p>
+      <div class="stats">
+        <div><b>20+</b><span>anni di esperienza</span></div>
+        <div><b>50</b><span>artisti in squadra</span></div>
+        <div><b>1</b><span>referente unico</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contatti">
+  <div class="wrap contact">
+    <div>
+      <p class="kicker">Contatti</p>
+      <h2 style="margin-top:14px">Raccontatemi <em>il vostro evento</em></h2>
+      <p class="lead" style="margin-top:18px">Compilate la richiesta e aggiungete le foto che vi ispirano: il sito raccoglie tutto in un unico PDF da inviarmi su WhatsApp o per email.</p>
+      <div class="channels">
+        <div class="ch"><small>Email</small><span id="mail">spettacolandoeventi@gmail.com</span><button type="button" id="copy-mail">Copia</button></div>
+        <div class="ch"><small>Telefono · WhatsApp</small><span>334 349 9808</span></div>
+        <div class="ch"><small>Facebook</small><span>Raffaella Pizzo</span></div>
+        <div class="ch"><small>Instagram · TikTok</small><span>Spettacolando Eventi</span></div>
+        <div class="ch"><small>Zona</small><span>Angri (SA) · dal Vesuvio a Paestum</span></div>
+      </div>
+    </div>
+    <form id="req" novalidate>
+      <div class="g2">
+        <label for="f-name">Nome e cognome<input id="f-name" name="name" placeholder="Maria Esposito"></label>
+        <label for="f-phone">Telefono<input id="f-phone" name="phone" type="tel" placeholder="333 1234567"></label>
+      </div>
+      <div class="g2">
+        <label for="f-type">Evento
+          <select id="f-type" name="type">
+            <option>Matrimonio</option><option>Promessa</option><option>Comunione</option><option>Battesimo</option><option>Nascita</option>
+            <option>Compleanno o festa privata</option><option>Spettacolo / animazione</option><option>Collaborazione per locale o hotel</option><option>Altro</option>
+          </select>
+        </label>
+        <label for="f-date">Data<input id="f-date" name="date" type="date"></label>
+      </div>
+      <div class="g2">
+        <label for="f-place">Location<input id="f-place" name="place" placeholder="Nome del locale e città"></label>
+        <label for="f-guests">Ospiti<input id="f-guests" name="guests" type="number" min="1" placeholder="80"></label>
+      </div>
+      <label for="f-msg">Il vostro desiderio<textarea id="f-msg" name="msg" placeholder="Stile, colori, servizi che vi interessano…"></textarea></label>
+      <div class="up">
+        <span class="up-label">Foto della location o dell'allestimento desiderato <em id="up-count">0 / 5</em></span>
+        <label class="drop" id="drop" for="f-photos">
+          <input id="f-photos" type="file" accept="image/*" multiple>
+          <span class="drop-t">Trascinate qui le foto oppure <u>sceglietele</u></span>
+          <span class="drop-s">Fino a 5 immagini: la sala, il giardino, un'idea di allestimento che vi piace</span>
+        </label>
+        <div class="thumbs" id="thumbs"></div>
+        <p class="up-err" id="up-err" role="status"></p>
+      </div>
+      <div><button class="btn" type="submit">Prepara la richiesta</button></div>
+      <div class="out" id="out" hidden>
+        <div class="pdf-card">
+          <span class="pdf-ico" aria-hidden="true">PDF</span>
+          <div><b id="pdf-name">Richiesta.pdf</b><small id="pdf-info"></small></div>
+        </div>
+        <p class="photo-hint">La richiesta completa, con i vostri dati e le foto, è raccolta in un unico PDF. Scegliete come inviarlo:</p>
+        <div class="send">
+          <button class="btn send-wa" id="send-wa" type="button">Invia su WhatsApp</button>
+          <button class="btn send-mail" id="send-mail" type="button">Invia per email</button>
+        </div>
+        <a class="link" id="dl-pdf" href="#" role="button">Scarica il PDF</a>
+        <p class="status" id="status" role="status"></p>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="wm" href="#top"><b>Raffaella Pizzo</b><small>Luxury Events</small></a>
+    <p>Raffaella Pizzo Luxury Events · Angri (SA) · in collaborazione con ASD Spettacolando Eventi APS</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const sp=document.getElementById('sparks');
+  let seed=11;const rnd=()=>{seed=(seed*9301+49297)%233280;return seed/233280};
+  for(let i=0;i<34;i++){const b=document.createElement('i');
+    b.style.cssText=`left:${4+rnd()*92}%;top:${4+rnd()*92}%;animation-delay:${-rnd()*5}s;animation-duration:${3+rnd()*4}s;transform:scale(${.6+rnd()*1.2})`;sp.appendChild(b);}
+  // dissolvenza delle foto di apertura
+  const slides=[...document.querySelectorAll('#hero-media img')];
+  if(slides.length>1&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    let cur=0;setInterval(()=>{slides[cur].classList.remove('on');cur=(cur+1)%slides.length;slides[cur].classList.add('on');},6000);
+  }
+  const status=document.getElementById('status');
+  function selectEl(el){const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);}
+  document.getElementById('copy-mail').addEventListener('click',e=>{const el=document.getElementById('mail');
+    navigator.clipboard.writeText(el.textContent).then(()=>{e.target.textContent='Copiato';setTimeout(()=>e.target.textContent='Copia',1800)}).catch(()=>selectEl(el));});
+  const WHATSAPP='393343499808';
+  const EMAIL='spettacolandoeventi@gmail.com';
+
+  // --- foto (max 5)
+  const MAX=5;let photos=[];
+  const inp=document.getElementById('f-photos'),drop=document.getElementById('drop'),thumbs=document.getElementById('thumbs'),
+        count=document.getElementById('up-count'),err=document.getElementById('up-err');
+  function render(){
+    thumbs.innerHTML='';
+    photos.forEach((p,i)=>{const d=document.createElement('div');d.className='thumb';
+      const im=document.createElement('img');im.src=p.url;im.alt=p.file.name;
+      const b=document.createElement('button');b.type='button';b.textContent='×';b.setAttribute('aria-label','Rimuovi '+p.file.name);
+      b.onclick=()=>{URL.revokeObjectURL(p.url);photos.splice(i,1);err.textContent='';render();};
+      d.append(im,b);thumbs.appendChild(d);});
+    count.textContent=photos.length+' / '+MAX;
+  }
+  function add(list){
+    const imgs=[...list].filter(f=>f.type.startsWith('image/'));
+    const free=MAX-photos.length;
+    if(imgs.length>free)err.textContent=free?`Potete aggiungere ancora ${free} foto: le altre non sono state caricate.`:'Avete già caricato 5 foto, il massimo consentito.';
+    else err.textContent='';
+    imgs.slice(0,Math.max(free,0)).forEach(f=>photos.push({file:f,url:URL.createObjectURL(f)}));
+    render();
+  }
+  inp.addEventListener('change',()=>{add(inp.files);inp.value='';});
+  ['dragenter','dragover'].forEach(t=>drop.addEventListener(t,e=>{e.preventDefault();drop.classList.add('over');}));
+  ['dragleave','drop'].forEach(t=>drop.addEventListener(t,e=>{e.preventDefault();drop.classList.remove('over');}));
+  drop.addEventListener('drop',e=>add(e.dataTransfer.files));
+
+  // --- richiesta in PDF
+  const form=document.getElementById('req'),out=document.getElementById('out');
+  const btnWa=document.getElementById('send-wa'),btnMail=document.getElementById('send-mail'),dl=document.getElementById('dl-pdf');
+  const NAVY=[19,39,68],GOLD=[201,175,99],INK=[28,43,69],MUTED=[102,112,138];
+  let current=null; // {file,text,type}
+
+  function loadImg(src){return new Promise((ok,ko)=>{const im=new Image();im.onload=()=>ok(im);im.onerror=ko;im.src=src;});}
+  async function toJpeg(src,max){
+    const im=await loadImg(src);const k=Math.min(1,max/Math.max(im.naturalWidth,im.naturalHeight));
+    const c=document.createElement('canvas');c.width=Math.round(im.naturalWidth*k);c.height=Math.round(im.naturalHeight*k);
+    const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0,c.width,c.height);
+    return {data:c.toDataURL('image/jpeg',.82),w:c.width,h:c.height};
+  }
+  async function toPng(src,max){
+    const im=await loadImg(src);const k=Math.min(1,max/Math.max(im.naturalWidth,im.naturalHeight));
+    const c=document.createElement('canvas');c.width=Math.round(im.naturalWidth*k);c.height=Math.round(im.naturalHeight*k);
+    c.getContext('2d').drawImage(im,0,0,c.width,c.height);return {data:c.toDataURL('image/png'),w:c.width,h:c.height};
+  }
+
+  async function buildPdf(fields,photosList){
+    const {jsPDF}=window.jspdf;const doc=new jsPDF({unit:'mm',format:'a4'});
+    const W=210,H=297,M=18;
+    const header=async()=>{
+      doc.setFillColor(...NAVY);doc.rect(0,0,W,46,'F');
+      doc.setDrawColor(...GOLD);doc.setLineWidth(.3);doc.rect(5,5,W-10,36);
+      doc.setTextColor(246,241,230);doc.setFont('times','italic');doc.setFontSize(30);doc.text('Raffaella Pizzo',W/2,24,{align:'center'});
+      doc.setDrawColor(...GOLD);doc.line(W/2-46,31.5,W/2-30,31.5);doc.line(W/2+30,31.5,W/2+46,31.5);
+      doc.setFont('helvetica','normal');doc.setFontSize(8);doc.setTextColor(...GOLD);doc.text('L U X U R Y   E V E N T S',W/2,32.5,{align:'center'});
+    };
+    const footer=(p,n)=>{doc.setDrawColor(...GOLD);doc.setLineWidth(.2);doc.line(M,H-16,W-M,H-16);
+      doc.setFont('helvetica','normal');doc.setFontSize(8);doc.setTextColor(...MUTED);
+      doc.text('Raffaella Pizzo Luxury Events  ·  Angri (SA)  ·  334 349 9808  ·  spettacolandoeventi@gmail.com',M,H-10);
+      doc.text(`${p} / ${n}`,W-M,H-10,{align:'right'});};
+
+    await header();
+    let y=60;
+    doc.setTextColor(...GOLD);doc.setFont('helvetica','normal');doc.setFontSize(8);doc.text('R I C H I E S T A   D I   P R O P O S T A',M,y);
+    y+=10;doc.setTextColor(...INK);doc.setFont('times','normal');doc.setFontSize(24);doc.text(fields.type,M,y);
+    y+=6;doc.setFont('helvetica','normal');doc.setFontSize(9);doc.setTextColor(...MUTED);
+    doc.text('Inviata il '+new Date().toLocaleDateString('it-IT',{day:'2-digit',month:'long',year:'numeric'}),M,y);
+    y+=10;
+    const rows=[['Nome e cognome',fields.name],['Telefono',fields.phone||'—'],['Evento',fields.type],['Data',fields.date||'Da definire'],
+      ['Location',fields.place||'Da definire'],['Ospiti',fields.guests?('circa '+fields.guests):'Da definire'],['Foto allegate',String(photosList.length)]];
+    doc.setLineWidth(.2);
+    rows.forEach(([k,v])=>{doc.setDrawColor(231,225,212);doc.line(M,y,W-M,y);y+=7;
+      doc.setFontSize(8);doc.setTextColor(...MUTED);doc.text(k.toUpperCase(),M,y);
+      doc.setFontSize(11);doc.setTextColor(...INK);const t=doc.splitTextToSize(v,W-M*2-55);doc.text(t,M+55,y);y+=Math.max(1,t.length)*5+2;});
+    doc.setDrawColor(231,225,212);doc.line(M,y,W-M,y);
+    if(fields.msg){y+=12;doc.setFontSize(8);doc.setTextColor(...GOLD);doc.text('I L   V O S T R O   D E S I D E R I O',M,y);y+=7;
+      doc.setFont('times','italic');doc.setFontSize(13);doc.setTextColor(...INK);
+      const t=doc.splitTextToSize(fields.msg,W-M*2);for(const line of t){if(y>H-26){doc.addPage();await header();y=60;}doc.text(line,M,y);y+=6;}
+      doc.setFont('helvetica','normal');}
+
+    // foto: una o due per pagina, grandi
+    for(let i=0;i<photosList.length;i++){
+      const img=await toJpeg(photosList[i].url,1600);
+      const boxW=W-M*2,boxH=(H-60-30-12)/2;
+      if(i%2===0){doc.addPage();await header();y=58;
+        doc.setFontSize(8);doc.setTextColor(...GOLD);doc.text('F O T O   D I   R I F E R I M E N T O',M,y);y+=6;}
+      const k=Math.min(boxW/img.w,boxH/img.h),w=img.w*k,h=img.h*k;
+      doc.addImage(img.data,'JPEG',M+(boxW-w)/2,y,w,h);
+      doc.setFontSize(8);doc.setTextColor(...MUTED);doc.text(`Foto ${i+1} di ${photosList.length}`,M,y+h+5);
+      y+=boxH+10;
+    }
+    const n=doc.getNumberOfPages();for(let p=1;p<=n;p++){doc.setPage(p);footer(p,n);}
+    return {blob:doc.output('blob'),pages:n};
+  }
+
+  form.addEventListener('submit',async e=>{e.preventDefault();
+    const f=new FormData(form);const name=(f.get('name')||'').trim();
+    if(!name){const n=document.getElementById('f-name');n.placeholder='Inserite il vostro nome';n.focus();return;}
+    if(!window.jspdf){status.textContent='Il generatore di PDF non si è caricato. Controllate la connessione e riprovate.';out.hidden=false;return;}
+    let d=f.get('date');if(d){const [y,m,g]=d.split('-');d=`${g}/${m}/${y}`;}
+    const fields={name,phone:(f.get('phone')||'').trim(),type:f.get('type'),date:d,place:(f.get('place')||'').trim(),guests:f.get('guests'),msg:(f.get('msg')||'').trim()};
+    const sb=form.querySelector('button[type=submit]');sb.disabled=true;sb.textContent='Preparo il PDF…';
+    try{
+      const {blob,pages}=await buildPdf(fields,photos);
+      const fname='Richiesta-'+fields.type.split(' ')[0]+'-'+name.replace(/[^\p{L}\p{N}]+/gu,'-')+'.pdf';
+      const file=new File([blob],fname,{type:'application/pdf'});
+      const text=`Buongiorno Raffaella, vi invio la mia richiesta di proposta per: ${fields.type}${d?' ('+d+')':''}. Trovate tutti i dettagli${photos.length?' e le foto':''} nel PDF allegato. ${name}`;
+      if(current&&current.url)URL.revokeObjectURL(current.url);
+      current={file,text,type:fields.type,url:URL.createObjectURL(blob)};
+      document.getElementById('pdf-name').textContent=fname;
+      document.getElementById('pdf-info').textContent=`${pages} ${pages===1?'pagina':'pagine'} · ${photos.length} foto · ${(blob.size/1048576).toFixed(1).replace('.',',')} MB`;
+      out.hidden=false;status.textContent='';out.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }catch(err){out.hidden=false;status.textContent='Non è stato possibile creare il PDF. Provate con foto più leggere o riprovate.';}
+    finally{sb.disabled=false;sb.textContent='Prepara la richiesta';}
+  });
+
+  function download(){const a=document.createElement('a');a.href=current.url;a.download=current.file.name;document.body.appendChild(a);a.click();a.remove();}
+  async function send(channel){
+    if(!current)return;
+    // su smartphone: condivisione diretta del PDF con WhatsApp o con l'app email
+    if(navigator.canShare&&navigator.canShare({files:[current.file]})){
+      try{await navigator.share({files:[current.file],title:'Richiesta di proposta',text:current.text});
+        status.textContent='Richiesta pronta: completate l\'invio nell\'app che avete scelto.';return;}
+      catch(e){if(e.name==='AbortError'){status.textContent='Invio annullato.';return;}}
+    }
+    // da computer: il PDF viene scaricato e si apre la chat o l'email da completare con l'allegato
+    download();
+    if(channel==='wa'){window.open('https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(current.text),'_blank');
+      status.textContent='Il PDF è stato scaricato: allegatelo nella chat WhatsApp che si è aperta.';}
+    else{location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('Richiesta proposta – '+current.type)+'&body='+encodeURIComponent(current.text);
+      status.textContent='Il PDF è stato scaricato: allegatelo all\'email che si è aperta.';}
+  }
+  btnWa.addEventListener('click',()=>send('wa'));
+  btnMail.addEventListener('click',()=>send('mail'));
+  dl.addEventListener('click',e=>{e.preventDefault();if(current){download();status.textContent='PDF scaricato.';}});
+})();
+</script>
+
+</body>
+</html>
