@@ -2,9 +2,9 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Richiedi il tesseramento · Spettacolando Eventi</title>
-<meta name="description" content="Tocca qui per compilare la domanda di tesseramento.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Domanda di tesseramento · Spettacolando Eventi</title>
+<meta name="description" content="ASD Spettacolando Eventi APS · Tocca qui per compilare la domanda di tesseramento">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Spettacolando Eventi">
 <meta property="og:title" content="🟢 Tesserati · Richiedi il tesseramento">
@@ -17,19 +17,333 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="logo.jpg">
-<meta http-equiv="refresh" content="1;url=https://spettacolando-tesseramento.netlify.app/">
 <style>
-  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f7f7f7;font-family:Arial,Helvetica,sans-serif;text-align:center}
-  img{width:220px;max-width:70vw}
-  a{display:inline-block;margin-top:24px;padding:16px 32px;background:#2e7d32;color:#fff;text-decoration:none;font-weight:bold;font-size:18px;border-radius:10px}
+/* Layout: una colonna da telefono; ogni sezione si apre dopo la precedente; note di legge dietro la «i». Colore: verde (tesserati) */
+:root{
+  --bg:#f3f8f3; --surface:#ffffff; --sunk:#e9f3ea; --line:#cfe3d2;
+  --fg:#1c2a1e; --muted:#5f7062; --accent:#2e7d32; --accent-fg:#ffffff; --accent-soft:#e1f1e3;
+  --ok:#1f7a46; --ok-soft:#e2f3e8; --err:#b3261e; --wa:#1f9d55; --oro:#c8ab63;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;background:var(--bg);color:var(--fg)}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.45;padding-bottom:60px}
+.top{background:var(--accent);color:#fff;text-align:center;padding:20px 16px 24px}
+.top img{width:116px;height:116px;border-radius:50%;background:#fff;object-fit:contain;border:3px solid var(--oro)}
+.top h1{margin:12px 0 4px;font-size:22px;line-height:1.15}
+.top .sub{opacity:.9;font-size:14px}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px}
+.intro{margin:14px 0 4px;color:var(--muted);font-size:15px}
+.step{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:14px;padding:16px;margin-top:14px}
+.step h2{font-weight:800;font-size:18px;margin:0 0 4px;display:flex;align-items:center;gap:8px;color:#1b5e20}
+.n{font:700 12px sans-serif;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:3px 9px}
+.hint{color:var(--muted);font-size:14px;margin:0 0 10px}
+label.f{display:block;font-weight:600;font-size:14px;margin:12px 0 5px}
+label.f small{font-weight:500;color:var(--muted)}
+input[type=text],input[type=date],input[type=email],input[type=tel],select{width:100%;font:500 16px inherit;font-family:inherit;color:var(--fg);background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;outline:none}
+input:focus,select:focus{border-color:var(--accent)}
+input.bad,select.bad{border-color:var(--err)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.row2>div{min-width:0}
+@media (max-width:420px){.row2{grid-template-columns:1fr}}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.opt{border:2px solid var(--line);background:var(--surface);color:var(--fg);border-radius:14px;padding:14px 10px;cursor:pointer;font:700 15px inherit;font-family:inherit;text-align:center;display:grid;gap:4px}
+.opt small{font-weight:500;color:var(--muted);font-size:12.5px}
+.opt[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.chk{display:flex;gap:10px;align-items:flex-start;margin-top:12px;font-size:15px}
+.chk input{width:22px;height:22px;margin:1px 0 0;accent-color:var(--accent);flex:0 0 auto}
+.chk span{min-width:0}
+.i{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);background:transparent;font:700 13px Georgia,serif;font-style:italic;cursor:pointer;vertical-align:middle;margin-left:4px;padding:0;flex:0 0 auto}
+.i[aria-expanded="true"]{background:var(--accent);color:var(--accent-fg)}
+.note{background:var(--sunk);border-radius:12px;padding:10px 12px;font-size:13.5px;margin-top:8px}
+.note p{margin:0 0 6px}.note p:last-child{margin:0}
+.note ol{margin:0;padding-left:18px}
+.yn{display:flex;gap:8px;margin-top:6px}
+.yn button{flex:1;border:2px solid var(--line);background:var(--surface);color:var(--fg);border-radius:12px;padding:10px;font:600 14px inherit;font-family:inherit;cursor:pointer}
+.yn button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.btn{display:block;width:100%;border:0;border-radius:12px;padding:15px;font:700 17px inherit;font-family:inherit;cursor:pointer;background:var(--accent);color:var(--accent-fg);margin-top:16px;text-align:center;text-decoration:none}
+.btn.wa{background:var(--wa);color:#fff}
+.btn.ghost{background:transparent;color:var(--accent);border:1.5px solid var(--line);font-weight:600}
+.err{color:var(--err);font-size:14px;font-weight:600;margin-top:10px}
+.recap{display:grid;margin-top:8px}
+.recap div{display:grid;grid-template-columns:42% 1fr;gap:10px;padding:7px 0;border-top:1px solid var(--line);font-size:14px}
+.recap div:first-child{border-top:0}
+.recap dt{color:var(--muted)}
+.recap dd{margin:0;font-weight:600;min-width:0;overflow-wrap:anywhere}
+.done-msg{background:var(--ok-soft);color:var(--ok);border-radius:12px;padding:12px 14px;font-weight:600;margin-top:12px}
+.code{white-space:pre-wrap;font:12px ui-monospace,Menlo,monospace;background:var(--sunk);border-radius:10px;padding:8px;word-break:break-all;max-height:90px;overflow:auto;margin-top:8px;color:var(--muted)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+footer{color:var(--muted);font-size:12.5px;text-align:center;margin-top:24px}
 </style>
 </head>
 <body>
-<div>
+<header class="top">
   <img src="logo.jpg" alt="Spettacolando Eventi">
-  <br>
-  <a href="https://spettacolando-tesseramento.netlify.app/">Richiedi il tesseramento</a>
+  <h1>Domanda di tesseramento</h1>
+  <div class="sub">ASD Spettacolando Eventi APS · Angri (SA)</div>
+</header>
+
+<div class="wrap">
+<p class="intro">Ci vogliono circa 5 minuti. Ogni sezione si apre quando hai completato la precedente. Tocca <span class="i" style="cursor:default">i</span> per leggere le note di legge e dello statuto.</p>
+
+<form id="f" novalidate autocomplete="on">
+
+<!-- 1 chi si tessera -->
+<section class="step" id="s1">
+  <h2><span class="n">1</span> Chi si tessera?</h2>
+  <div class="choice" role="group" aria-label="Adulto o minorenne">
+    <button type="button" class="opt" data-eta="A" aria-pressed="false">Un adulto<small>ho 18 anni o più</small></button>
+    <button type="button" class="opt" data-eta="M" aria-pressed="false">Un minorenne<small>compila un genitore</small></button>
+  </div>
+</section>
+
+<!-- 2 dati personali -->
+<section class="step" id="s2" hidden>
+  <h2><span class="n">2</span> <span id="s2t">I tuoi dati</span></h2>
+  <div class="row2">
+    <div><label class="f" for="cognome">Cognome</label><input type="text" id="cognome" autocomplete="family-name" required></div>
+    <div><label class="f" for="nome">Nome</label><input type="text" id="nome" autocomplete="given-name" required></div>
+  </div>
+  <div class="row2">
+    <div><label class="f" for="nascLuogo">Comune di nascita <small>o Stato estero</small></label><div style="display:grid;grid-template-columns:1fr 64px;gap:6px"><input type="text" id="nascLuogo" required><input type="text" id="nascProv" maxlength="2" placeholder="Prov." aria-label="Sigla della provincia" style="text-transform:uppercase;padding-inline:8px"></div></div>
+    <div><label class="f" for="nascData">Data di nascita</label><input type="date" id="nascData" required></div>
+  </div>
+  <div class="row2">
+    <div><label class="f" for="sesso">Sesso</label><select id="sesso" required><option value="">Scegli</option><option>F</option><option>M</option></select></div>
+    <div><label class="f" for="citt">Cittadinanza</label><input type="text" id="citt" value="Italiana" required></div>
+  </div>
+  <label class="f" for="cf">Codice fiscale <button type="button" class="i" data-i="i-cf" aria-expanded="false" aria-label="Perché serve">i</button></label>
+  <input type="text" id="cf" maxlength="16" style="text-transform:uppercase" required>
+  <div class="hint" id="cfCalc" style="margin:6px 0 0;font-size:13px">Si compila da solo con nome, cognome, data e comune di nascita e sesso. Controllalo con la tessera sanitaria.</div>
+  <div class="note" id="i-cf" hidden><p>Serve per il tesseramento all'ente di affiliazione (MSP Italia) e per l'iscrizione nel Registro nazionale delle attività sportive dilettantistiche (RASD).</p></div>
+  <label class="f" for="res">Residenza <small>via, numero, CAP, comune</small></label><input type="text" id="res" autocomplete="street-address" required>
+  <div id="contattiAdulto">
+    <div class="row2">
+      <div><label class="f" for="tel">Cellulare / WhatsApp</label><input type="tel" id="tel" autocomplete="tel" required></div>
+      <div><label class="f" for="email">E-mail <small>facoltativa</small></label><input type="email" id="email" autocomplete="email"></div>
+    </div>
+    <label class="f" for="docum">Documento d'identità <small>tipo e numero</small></label><input type="text" id="docum" required>
+  </div>
+  <div class="err" id="e2"></div>
+  <button type="button" class="btn" data-next="2">Continua</button>
+</section>
+
+<!-- 3 genitori (solo minori) -->
+<section class="step" id="s3" hidden>
+  <h2><span class="n">3</span> Dati del genitore <button type="button" class="i" data-i="i-gen" aria-expanded="false" aria-label="Note sul genitore">i</button></h2>
+  <div class="note" id="i-gen" hidden><p>Per un minorenne la domanda è presentata da chi esercita la responsabilità genitoriale. Se compila un solo genitore, dichiara che la scelta è condivisa con l'altro (artt. 316 e 337-ter del Codice civile).</p><p>Fino alla maggiore età comunicazioni e decisioni sul rapporto con l'Associazione passano dal genitore.</p></div>
+  <div class="row2">
+    <div><label class="f" for="g1nome">Cognome e nome</label><input type="text" id="g1nome" required></div>
+    <div><label class="f" for="g1cf">Codice fiscale</label><input type="text" id="g1cf" maxlength="16" style="text-transform:uppercase" required></div>
+  </div>
+  <div class="row2">
+    <div><label class="f" for="g1tel">Cellulare / WhatsApp</label><input type="tel" id="g1tel" required></div>
+    <div><label class="f" for="g1email">E-mail <small>facoltativa</small></label><input type="email" id="g1email"></div>
+  </div>
+  <label class="f" for="g1doc">Documento d'identità del genitore <small>tipo e numero</small></label><input type="text" id="g1doc" required>
+  <label class="chk"><input type="checkbox" id="g2ok"><span>L'altro genitore è informato e d'accordo con questa domanda.</span></label>
+  <div class="err" id="e3"></div>
+  <button type="button" class="btn" data-next="3">Continua</button>
+</section>
+
+<!-- 4 quote e vantaggi -->
+<section class="step" id="s4" hidden>
+  <h2><span class="n">4</span> Quote e vantaggi <button type="button" class="i" data-i="i-quote" aria-expanded="false" aria-label="Quote e vantaggi">i</button></h2>
+  <p class="hint">Tocca la «i» per leggere quote, vantaggi e quota solidale. Sono condizioni dell'iscrizione.</p>
+  <div class="note" id="i-quote" hidden>
+    <p><b>Tesseramento annuale: 10 €.</b> La quota è intrasmissibile, non rimborsabile e non rivalutabile (art. 7, comma 5, dello statuto).</p>
+    <p><b>Quota dei corsi: 70 € al mese</b>, obbligatoria per l'iscrizione. Si versa entro i primi giorni di ogni mese di frequenza e per ogni versamento l'Associazione rilascia ricevuta intestata al tesserato.</p>
+    <p><b>Acconti per le feste.</b> Se hai versato un acconto per una festa organizzata dall'Associazione, l'acconto comprende già la quota di tesseramento e la quota dei corsi del mese; la parte restante è destinata alle attività dell'Associazione.</p>
+    <p><b>Vantaggi riservati ai tesserati:</b> uso della sala dell'Associazione per le attività sociali, secondo il calendario fissato dall'Organo di amministrazione, ed eventi privati in sede (compleanni, ricorrenze, feste di famiglia) a prezzo di costo, cioè pagando solo le spese effettive senza ricarico.</p>
+    <p><b>Quota solidale sugli eventi privati.</b> Come deliberato dall'Assemblea degli associati sul programma di beneficenza, ogni volta che il tesserato usa la sede per una festa, o i servizi dell'Associazione per festeggiare altrove, una parte va al programma solidale per le famiglie del territorio con bambini fino a 10 anni:</p>
+    <ol><li>feste con rinfresco o altro cibo: la spesa alimentare viene raddoppiata; metà serve alla festa e metà va in buste da donare, a carico del tesserato;</li><li>feste senza cibo (solo animazione, spettacoli, balli o allestimento): un contributo libero, nella misura che il tesserato sceglie.</li></ol>
+  </div>
+  <p class="hint" style="margin-top:12px">Sarai iscritto/a anche nel registro dei volontari, così potrai dare una mano alle attività quando vuoi. <button type="button" class="i" data-i="i-vol" aria-expanded="false" aria-label="Il volontariato">i</button></p>
+  <div class="note" id="i-vol" hidden><p>Il volontariato è gratuito, con il solo rimborso delle spese documentate, ed è incompatibile con qualsiasi rapporto di lavoro retribuito con l'Associazione (art. 11 dello statuto). I volontari sono assicurati per infortuni e responsabilità civile. L'iscrizione nel registro è automatica per tutti e non obbliga a partecipare.</p></div>
+  <label class="f">Come pagherai</label>
+  <div class="choice" role="group" aria-label="Pagamento">
+    <button type="button" class="opt" data-pag="Contanti" aria-pressed="false">Contanti</button>
+    <button type="button" class="opt" data-pag="Bonifico" aria-pressed="false">Bonifico</button>
+  </div>
+  <div class="err" id="e4"></div>
+  <button type="button" class="btn" data-next="4">Continua</button>
+</section>
+
+<!-- 5 dichiarazioni -->
+<section class="step" id="s5" hidden>
+  <h2><span class="n">5</span> Dichiarazioni</h2>
+  <label class="chk"><input type="checkbox" id="dich"><span>Condivido le finalità dell'Associazione e accetto lo statuto, i regolamenti e quelli di MSP Italia <button type="button" class="i" data-i="i-dich" aria-expanded="false" aria-label="Cosa dichiaro">i</button></span></label>
+  <div class="note" id="i-dich" hidden><ol>
+    <li>Condivido le finalità dell'Associazione, che non ha scopo di lucro e persegue finalità civiche, solidaristiche e di utilità sociale.</li>
+    <li>Ho letto e accetto lo statuto e gli eventuali regolamenti interni, disponibili in sede.</li>
+    <li>Accetto statuto, regolamenti e giurisdizione sportiva e disciplinare di MSP Italia, ente di affiliazione.</li>
+    <li>Verso la quota nei termini stabiliti dall'Organo di amministrazione; la quota è intrasmissibile, non rimborsabile e non rivalutabile (art. 7, comma 5).</li>
+    <li>Il tesserato partecipa ad alcune attività tramite la tessera dell'ente di affiliazione, senza diventare associato e senza i relativi diritti e doveri (art. 10 dello statuto).</li>
+    <li>I dati forniti sono veri e comunicherò ogni variazione.</li></ol></div>
+  <label class="chk"><input type="checkbox" id="cert"><span>Prima di iniziare le attività sportive consegno il certificato medico di idoneità non agonistica <button type="button" class="i" data-i="i-cert" aria-expanded="false" aria-label="Il certificato">i</button></span></label>
+  <div class="note" id="i-cert" hidden><p>Per le attività sportive non agonistiche, come yoga e balli, serve il certificato di idoneità alla pratica sportiva non agonistica (D.M. 24 aprile 2013), da rinnovare alla scadenza. Senza certificato valido non si può partecipare. Non serve per feste, laboratori e attività ludico-motorie.</p></div>
+  <label class="chk"><input type="checkbox" id="ass"><span>So che con il tesseramento è attiva l'assicurazione contro gli infortuni <button type="button" class="i" data-i="i-ass" aria-expanded="false" aria-label="L'assicurazione">i</button></span></label>
+  <div class="note" id="i-ass" hidden><p>Il tesseramento a MSP Italia attiva la copertura assicurativa contro gli infortuni prevista per i tesserati sportivi (art. 51 del D.Lgs. 36/2021). Le condizioni della polizza sono consultabili in sede.</p></div>
+  <label class="chk"><input type="checkbox" id="tut"><span>Ho preso visione delle regole per la tutela dei minori e contro abusi e discriminazioni <button type="button" class="i" data-i="i-tut" aria-expanded="false" aria-label="La tutela">i</button></span></label>
+  <div class="note" id="i-tut" hidden><p>L'Associazione adotta un modello organizzativo e un codice di condotta contro abusi, violenze e discriminazioni (art. 16 del D.Lgs. 39/2021 e art. 33 del D.Lgs. 36/2021), affissi in sede. Le segnalazioni vanno fatte al responsabile, in sede o a spettacolandoeventi@gmail.com.</p></div>
+  <div class="err" id="e5"></div>
+  <button type="button" class="btn" data-next="5">Continua</button>
+</section>
+
+<!-- 6 privacy -->
+<section class="step" id="s6" hidden>
+  <h2><span class="n">6</span> Privacy <button type="button" class="i" data-i="i-priv" aria-expanded="false" aria-label="Informativa privacy">i</button></h2>
+  <p class="hint">I dati servono per gestire il tesseramento, l'assicurazione e i registri obbligatori. Tocca la «i» per l'informativa completa.</p>
+  <div class="note" id="i-priv" hidden>
+    <p><b>Titolare:</b> ASD Spettacolando Eventi APS, Via Risi n. 93, 84012 Angri (SA), C.F. 94092670655, spettacolandoeventi@gmail.com.</p>
+    <p><b>Finalità:</b> gestione del tesseramento; tesseramento e assicurazione tramite MSP Italia; iscrizione dei tesserati nel RASD; comunicazioni; adempimenti civilistici, fiscali e assicurativi.</p>
+    <p><b>Base giuridica:</b> esecuzione del rapporto e obblighi di legge (art. 6, par. 1, lett. b e c, del Regolamento UE 2016/679); per il certificato medico, attività dell'ente senza scopo di lucro verso i propri membri (art. 9, par. 2, lett. d).</p>
+    <p><b>Destinatari:</b> MSP Italia e la sua compagnia assicurativa, Dipartimento per lo Sport (RASD), consulente contabile, autorità quando richiesto. Nessun trasferimento fuori dall'Unione europea.</p>
+    <p><b>Conservazione:</b> per la durata del rapporto e poi per 10 anni, per gli obblighi di legge.</p>
+    <p><b>Diritti:</b> accesso, rettifica, cancellazione, limitazione, portabilità e opposizione (artt. 15–22), scrivendo al titolare; reclamo al Garante per la protezione dei dati personali. Il conferimento dei dati è necessario per il tesseramento.</p>
+  </div>
+  <label class="f">Foto e video durante le attività, per promuovere l'Associazione su sito e social <button type="button" class="i" data-i="i-foto" aria-expanded="false" aria-label="Foto e video">i</button></label>
+  <div class="note" id="i-foto" hidden><p>Uso gratuito di immagini in cui compari tu (o il minore) su sito, Facebook, Instagram e TikTok dell'Associazione (art. 10 del Codice civile e art. 96 della legge 633/1941). Puoi revocare il consenso in ogni momento; non incide sul tesseramento.</p></div>
+  <div class="yn" role="group" aria-label="Foto e video"><button type="button" data-foto="1" aria-pressed="false">Acconsento</button><button type="button" data-foto="0" aria-pressed="false">Non acconsento</button></div>
+  <label class="f">Informazioni su iniziative ed eventi via e-mail o WhatsApp</label>
+  <div class="yn" role="group" aria-label="Comunicazioni"><button type="button" data-com="1" aria-pressed="false">Acconsento</button><button type="button" data-com="0" aria-pressed="false">Non acconsento</button></div>
+  <div class="err" id="e6"></div>
+  <button type="button" class="btn" data-next="6">Vai al riepilogo</button>
+</section>
+
+<!-- 7 riepilogo e consenso -->
+<section class="step" id="s7" hidden>
+  <h2><span class="n">7</span> Riepilogo</h2>
+  <p class="hint">Controlla i dati. Se c'è un errore, torna alla sezione e correggi: il riepilogo si aggiorna da solo.</p>
+  <dl class="recap" id="recap"></dl>
+  <button type="button" class="btn" id="consenso">Do i miei consensi</button>
+  <div id="inviaBox" hidden>
+    <div class="done-msg" id="fatto"></div>
+    <a class="btn wa" id="waBtn" href="#" target="_blank" rel="noopener">Invia la domanda su WhatsApp</a>
+    <p class="hint" style="margin-top:10px">Se WhatsApp non si apre, copia il messaggio e incollalo nella chat con la presidente.</p>
+    <button type="button" class="btn ghost" id="copia">Copia il messaggio</button>
+    <div class="code" id="msgCode"></div>
+  </div>
+</section>
+
+</form>
+<footer>ASD Spettacolando Eventi APS · Via Risi n. 93, 84012 Angri (SA) · C.F. 94092670655 · affiliata a MSP Italia<br>Calcolo del codice fiscale: libreria codice-fiscale-js (CC BY-SA)</footer>
 </div>
-<script>location.replace("https://spettacolando-tesseramento.netlify.app/");</script>
+
+<script src="https://cdn.jsdelivr.net/npm/codice-fiscale-js@2.4.0/dist/codice.fiscale.umd.js"></script>
+<script>
+const PRES_TEL = "393343499808";
+const $ = id => document.getElementById(id);
+const S = {eta:"", pag:"", foto:null, com:null, step:1, inviato:false};
+const val = id => ($(id).value||"").trim();
+const LAST = 7;
+
+function show(n){ for(let k=2;k<=n;k++){ const s=$("s"+k); if(k===3 && S.eta!=="M"){ s.hidden=true; continue; } s.hidden=false; } }
+function scrollTo(n){ const s=$("s"+n); if(s) setTimeout(()=>s.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"}),60); }
+function nextOf(n){ let m=n+1; if(m===3 && S.eta!=="M") m=4; return m; }
+
+function bindPick(attr){
+  document.querySelectorAll("["+attr+"]").forEach(b=>b.addEventListener("click",()=>{
+    const key=attr.replace("data-",""), v=b.getAttribute(attr);
+    S[key]=v; document.querySelectorAll("["+attr+"]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
+    onPick(key);
+  }));
+}
+bindPick("data-eta"); bindPick("data-pag");
+document.querySelectorAll("[data-foto]").forEach(b=>b.addEventListener("click",()=>{ S.foto=b.dataset.foto==="1"; document.querySelectorAll("[data-foto]").forEach(x=>x.setAttribute("aria-pressed",String(x===b))); refresh(); }));
+document.querySelectorAll("[data-com]").forEach(b=>b.addEventListener("click",()=>{ S.com=b.dataset.com==="1"; document.querySelectorAll("[data-com]").forEach(x=>x.setAttribute("aria-pressed",String(x===b))); refresh(); }));
+
+function onPick(key){
+  if(key==="eta"){
+    const m=S.eta==="M";
+    $("s2t").textContent=m?"Dati del minorenne":"I tuoi dati";
+    $("contattiAdulto").hidden=m;
+    if(S.step<2){ S.step=2; }
+    show(Math.max(S.step,2)); if(S.step===2) scrollTo(2);
+  }
+  refresh();
+}
+
+document.querySelectorAll(".i[data-i]").forEach(b=>b.addEventListener("click",e=>{ e.preventDefault(); e.stopPropagation(); const n=$(b.dataset.i), open=n.hidden; n.hidden=!open; b.setAttribute("aria-expanded",String(open)); }));
+
+const CF=/^[A-Z]{6}[0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{3}[A-Z]$/;
+function need(ids){ const miss=[]; for(const id of ids){ const el=$(id); const ok=!!val(id); el.classList.toggle("bad",!ok); if(!ok) miss.push(id); } return miss; }
+function check(n){
+  const e=[];
+  if(n===2){
+    const ids=["cognome","nome","nascLuogo","nascData","sesso","citt","cf","res"].concat(S.eta==="A"?["tel","docum"]:[]);
+    if(need(ids).length) e.push("compila i campi evidenziati");
+    const cf=val("cf").toUpperCase(); if(cf && !CF.test(cf)){ $("cf").classList.add("bad"); e.push("controlla il codice fiscale (16 caratteri)"); }
+    const d=val("nascData"); if(d){ const age=(Date.now()-new Date(d+"T12:00:00"))/31557600000;
+      if(S.eta==="A" && age<18) e.push("dalla data di nascita risulti minorenne: torna su e scegli «Un minorenne»");
+      if(S.eta==="M" && age>=18) e.push("dalla data di nascita risulti maggiorenne: torna su e scegli «Un adulto»"); }
+  }
+  if(n===3){ if(need(["g1nome","g1cf","g1tel","g1doc"]).length) e.push("compila i campi evidenziati");
+    const cf=val("g1cf").toUpperCase(); if(cf && !CF.test(cf)){ $("g1cf").classList.add("bad"); e.push("controlla il codice fiscale del genitore"); } }
+  if(n===4){ if(!S.pag) e.push("scegli come pagherai"); }
+  if(n===5){ if(!["dich","cert","ass","tut"].every(id=>$(id).checked)) e.push("per continuare servono tutte e quattro le dichiarazioni"); }
+  if(n===6){ if(S.foto===null||S.com===null) e.push("rispondi alle due domande sui consensi"); }
+  const box=$("e"+n); if(box) box.textContent=e.length?"Per continuare: "+e.join("; ")+".":"";
+  return !e.length;
+}
+document.querySelectorAll("[data-next]").forEach(b=>b.addEventListener("click",()=>{
+  const n=+b.dataset.next; if(!check(n)) return;
+  const m=nextOf(n); S.step=Math.max(S.step,m); show(S.step); if(m===LAST) buildRecap(); scrollTo(m);
+}));
+$("f").addEventListener("submit",e=>e.preventDefault());
+
+let cfAuto="";
+function calcCF(){
+  const K=(window.CodiceFiscale&&window.CodiceFiscale.CodiceFiscale)||window.CodiceFiscale; if(typeof K!=="function") return;
+  const nome=val("nome"), cogn=val("cognome"), d=val("nascData"), sx=val("sesso"), luogo=val("nascLuogo"), prov=val("nascProv").toUpperCase();
+  const box=$("cfCalc");
+  if(!(nome&&cogn&&d&&sx&&luogo)) return;
+  const [y,m,g]=d.split("-").map(Number);
+  try{ const o={name:nome,surname:cogn,gender:sx,day:g,month:m,year:y,birthplace:luogo}; if(prov) o.birthplaceProvincia=prov;
+    const cf=new K(o).cf;
+    if(!val("cf")||val("cf").toUpperCase()===cfAuto){ $("cf").value=cf; $("cf").classList.remove("bad"); }
+    cfAuto=cf; box.textContent="Calcolato in automatico: "+cf+". Controllalo con la tessera sanitaria; in caso di omocodia correggilo a mano.";
+  }catch(e){ if(cfAuto&&val("cf").toUpperCase()===cfAuto){ $("cf").value=""; cfAuto=""; } box.textContent="Non trovo il comune «"+luogo+"»: controlla come è scritto o aggiungi la sigla della provincia. Puoi anche scrivere il codice fiscale a mano."; }
+}
+["nome","cognome","nascData","sesso","nascLuogo","nascProv"].forEach(id=>$(id).addEventListener("change",calcCF));
+["nascLuogo","nascProv"].forEach(id=>$(id).addEventListener("input",()=>{ clearTimeout(window.__cft); window.__cft=setTimeout(calcCF,500); }));
+$("f").addEventListener("input",()=>{ if(!$("s"+LAST).hidden) buildRecap(); });
+function refresh(){ if(!$("s"+LAST).hidden) buildRecap(); }
+
+function dati(){
+  const m=S.eta==="M";
+  return { v:1, eta:S.eta, pos:"tesserato",
+    p:{cognome:val("cognome"), nome:val("nome"), luogo:val("nascLuogo")+(val("nascProv")?" ("+val("nascProv").toUpperCase()+")":""), data:val("nascData"), sesso:val("sesso"), citt:val("citt"), cf:val("cf").toUpperCase(), res:val("res"),
+       tel:m?"":val("tel"), email:m?"":val("email"), doc:m?"":val("docum")},
+    g:m?{nome:val("g1nome"), cf:val("g1cf").toUpperCase(), tel:val("g1tel"), email:val("g1email"), doc:val("g1doc"), altro:$("g2ok").checked}:null,
+    disc:[], tempo:"", orari:"", vol:true, pag:S.pag, sol:true,
+    dich:$("dich").checked, cert:$("cert").checked, ass:$("ass").checked, tut:$("tut").checked, foto:S.foto, com:S.com };
+}
+const fmtD=s=>s?s.split("-").reverse().join("/"):"";
+function righe(d){
+  const r=[["Chi si tessera",d.eta==="M"?"Un minorenne":"Un adulto"],["Cognome e nome",d.p.cognome+" "+d.p.nome],["Nato/a a",d.p.luogo+" il "+fmtD(d.p.data)],["Codice fiscale",d.p.cf],["Residenza",d.p.res]];
+  if(d.eta==="A") r.push(["Cellulare",d.p.tel],["E-mail",d.p.email||"—"],["Documento",d.p.doc]);
+  if(d.g) r.push(["Genitore",d.g.nome+" · "+d.g.cf],["Contatti genitore",d.g.tel+(d.g.email?" · "+d.g.email:"")],["Documento genitore",d.g.doc],["Altro genitore d'accordo",d.g.altro?"Sì":"Non indicato"]);
+  r.push(["Posizione","Tesseramento"],["Registro dei volontari","Iscrizione automatica"],["Quote","10 € tesseramento + 70 € al mese di corso"],["Pagamento",d.pag],["Quota solidale","Prevista sugli eventi privati"],["Dichiarazioni","Statuto, certificato medico, assicurazione, tutela: accettate"],["Foto e video",d.foto?"Acconsento":"Non acconsento"],["Comunicazioni",d.com?"Acconsento":"Non acconsento"]);
+  return r;
+}
+function buildRecap(){ const d=dati(); $("recap").innerHTML=""; for(const [k,v] of righe(d)){ const w=document.createElement("div"), dt=document.createElement("dt"), dd=document.createElement("dd"); dt.textContent=k; dd.textContent=v||"—"; w.append(dt,dd); $("recap").append(w); }
+  if(S.inviato){ S.inviato=false; $("inviaBox").hidden=true; $("consenso").hidden=false; } }
+
+function b64url(str){ const bytes=new TextEncoder().encode(str); let bin=""; bytes.forEach(b=>bin+=String.fromCharCode(b)); return btoa(bin).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""); }
+$("consenso").addEventListener("click",()=>{
+  for(const n of [2,3,4,5,6]){ if(n===3&&S.eta!=="M") continue; if(!check(n)){ scrollTo(n); return; } }
+  const d=dati(); d.consenso=new Date().toISOString();
+  const nome=(d.p.nome+" "+d.p.cognome).trim();
+  const msg="Domanda di tesseramento – ASD Spettacolando Eventi APS\n"+nome+(d.eta==="M"?" (minorenne, genitore "+d.g.nome+")":"")+"\nTesseramento\nConsensi dati il "+new Date().toLocaleString("it-IT")+"\n\nCodice domanda, non modificare:\nSPT1:"+b64url(JSON.stringify(d));
+  $("waBtn").href="https://wa.me/"+PRES_TEL+"?text="+encodeURIComponent(msg);
+  $("msgCode").textContent=msg;
+  $("fatto").textContent="Consensi registrati. Ora invia la domanda alla presidente: dopo la decisione del Consiglio direttivo riceverai la risposta.";
+  $("consenso").hidden=true; $("inviaBox").hidden=false; S.inviato=true;
+});
+$("copia").addEventListener("click",async()=>{ const t=$("msgCode").textContent;
+  try{ await navigator.clipboard.writeText(t); $("copia").textContent="Messaggio copiato"; }
+  catch(e){ const r=document.createRange(); r.selectNodeContents($("msgCode")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); $("copia").textContent="Testo selezionato: copialo dal menu"; } });
+</script>
 </body>
 </html>
