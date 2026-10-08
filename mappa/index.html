@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Mappa dei ragazzi · Spettacolando</title>
+<link rel="icon" href="../app/logo.jpg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  :root{--viola:#7a2a8f;--oro:#c8ab63;--testo:#231b2b;--grigio:#6c6177;--bordo:#ddd3e6;--sfondo:#f7f4fa;--verde:#1f7a46;--rosso:#b3261e}
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:var(--sfondo);color:var(--testo);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:15px;display:flex;flex-direction:column}
+  header{background:var(--viola);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:10px}
+  header img{width:38px;height:38px;border-radius:50%;background:#fff;object-fit:contain;border:2px solid var(--oro)}
+  header b{font-size:18px;flex:1}
+  header button{border:1.5px solid rgba(255,255,255,.6);background:transparent;color:#fff;border-radius:9px;padding:7px 11px;font:600 13px inherit;font-family:inherit;cursor:pointer}
+  .barra{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 16px;background:#fff;border-bottom:1px solid var(--bordo)}
+  select{width:100%;padding:10px;border:1.5px solid var(--bordo);border-radius:10px;font-size:15px;font-family:inherit;background:#fff;color:var(--testo)}
+  #mappa{flex:1;min-height:320px}
+  #elenco{max-height:38vh;overflow:auto;background:#fff;border-top:1px solid var(--bordo)}
+  .riga{display:flex;justify-content:space-between;gap:10px;padding:10px 16px;border-top:1px solid var(--bordo);cursor:pointer}
+  .riga:first-child{border-top:0}
+  .riga b{display:block}
+  .riga small{color:var(--grigio)}
+  .riga .ora{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--grigio);font-size:13px;text-align:right}
+  .vuoto{padding:18px 16px;color:var(--grigio);text-align:center}
+  .accesso{max-width:360px;margin:40px auto;padding:0 16px;display:grid;gap:12px;text-align:center}
+  .accesso input{padding:14px;border:1.5px solid var(--bordo);border-radius:12px;font-size:22px;text-align:center;letter-spacing:.3em}
+  .accesso button,.scarica{border:0;border-radius:12px;padding:14px;background:var(--viola);color:#fff;font:700 16px inherit;font-family:inherit;cursor:pointer}
+  .err{color:var(--rosso);font-weight:600}
+  .piede{display:flex;gap:8px;padding:10px 16px;background:#fff;border-top:1px solid var(--bordo);align-items:center;justify-content:space-between}
+  .piede small{color:var(--grigio)}
+  .scarica{padding:9px 13px;font-size:14px}
+  .pin{width:30px;height:30px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:grid;place-items:center;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35)}
+  .pin span{transform:rotate(45deg);color:#fff;font:800 12px sans-serif}
+</style>
+</head>
+<body>
+<div id="login" class="accesso" hidden>
+  <img src="../app/logo.jpg" alt="" style="width:110px;height:110px;margin:0 auto;border-radius:50%;background:#fff;object-fit:contain;border:3px solid var(--oro)">
+  <h1 style="margin:0;font-size:22px">Mappa dei ragazzi</h1>
+  <label for="pin">Inserisci il PIN</label>
+  <input id="pin" inputmode="numeric" maxlength="8" autocomplete="off">
+  <button type="button" id="entra">Entra</button>
+  <p class="err" id="loginErr"></p>
+</div>
+
+<div id="app" hidden style="display:none">
+  <header><img src="../app/logo.jpg" alt=""><b>Mappa dei ragazzi</b><button type="button" id="aggiorna">Aggiorna</button></header>
+  <div class="barra">
+    <select id="chi" aria-label="Chi vedere"><option value="">👥 Tutti</option></select>
+    <select id="periodo" aria-label="Periodo">
+      <option value="1">Oggi</option>
+      <option value="7" selected>Ultimi 7 giorni</option>
+      <option value="30">Ultimi 30 giorni</option>
+      <option value="3650">Tutto lo storico</option>
+    </select>
+  </div>
+  <div id="mappa"></div>
+  <div id="elenco"></div>
+  <div class="piede"><small id="info"></small><button type="button" class="scarica" id="scarica">Scarica elenco</button></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+let PIN=""; try{ PIN=localStorage.getItem("spt_pin")||""; }catch(e){}
+let TUTTE=[], mappa=null, livello=null;
+const COLORI=["#7a2a8f","#1f9d55","#1a5fd0","#e2480f","#c2185b","#00838f","#8d6e63","#5e35b1","#d84315","#2e7d32"];
+const colore=n=>{ let h=0; for(const c of n) h=(h*31+c.charCodeAt(0))>>>0; return COLORI[h%COLORI.length]; };
+const iniziali=n=>n.split(/\s+/).filter(Boolean).slice(0,2).map(p=>p[0].toUpperCase()).join("");
+const quando=iso=>{ const d=new Date(iso), oggi=new Date(); const stesso=d.toDateString()===oggi.toDateString();
+  return (stesso?"oggi":d.toLocaleDateString("it-IT",{day:"2-digit",month:"2-digit"}))+" alle "+d.toLocaleTimeString("it-IT",{hour:"2-digit",minute:"2-digit"}); };
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function mostraLogin(msg){ $("login").hidden=false; $("app").hidden=true; $("app").style.display="none"; $("loginErr").textContent=msg||""; $("pin").focus(); }
+function mostraApp(){ $("login").hidden=true; $("app").hidden=false; $("app").style.display="contents";
+  if(!mappa){ mappa=L.map("mappa",{zoomControl:true}).setView([40.737,14.57],12);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"© OpenStreetMap"}).addTo(mappa);
+    livello=L.layerGroup().addTo(mappa); }
+  setTimeout(()=>mappa.invalidateSize(),50); }
+
+async function carica(){
+  $("info").textContent="Carico…";
+  try{
+    const r=await fetch("/api/posizioni?pin="+encodeURIComponent(PIN)+"&giorni="+$("periodo").value,{cache:"no-store"});
+    if(r.status===401){ PIN=""; try{ localStorage.removeItem("spt_pin"); }catch(e){} mostraLogin("PIN errato."); return; }
+    if(!r.ok) throw new Error();
+    TUTTE=(await r.json()).posizioni||[];
+    mostraApp(); aggiornaElenco(); disegna();
+  }catch(e){ $("info").textContent="Non riesco a caricare le posizioni. Riprova con «Aggiorna»."; }
+}
+function aggiornaElenco(){
+  const sel=$("chi").value, nomi=[...new Set(TUTTE.map(p=>p.nome))].sort((a,b)=>a.localeCompare(b,"it"));
+  $("chi").innerHTML='<option value="">👥 Tutti ('+nomi.length+')</option>'+nomi.map(n=>`<option value="${esc(n)}">${esc(n)}</option>`).join("");
+  if(nomi.includes(sel)) $("chi").value=sel;
+}
+function pin(n){ return L.divIcon({className:"",html:`<div class="pin" style="background:${colore(n)}"><span>${esc(iniziali(n))}</span></div>`,iconSize:[30,30],iconAnchor:[15,30],popupAnchor:[0,-28]}); }
+function disegna(){
+  livello.clearLayers();
+  const chi=$("chi").value;
+  let punti;
+  if(!chi){ const ult={}; for(const p of TUTTE) if(!ult[p.nome]||p.at>ult[p.nome].at) ult[p.nome]=p; punti=Object.values(ult).sort((a,b)=>b.at.localeCompare(a.at)); }
+  else punti=TUTTE.filter(p=>p.nome===chi).sort((a,b)=>b.at.localeCompare(a.at));
+  const ll=[];
+  punti.forEach((p,i)=>{ const m=L.marker([p.lat,p.lng],{icon:pin(p.nome),opacity:chi&&i>0?0.55:1}).addTo(livello);
+    m.bindPopup(`<b>${esc(p.nome)}</b><br>${esc(quando(p.at))}${p.acc?"<br><small>precisione circa "+p.acc+" m</small>":""}<br><a href="https://www.google.com/maps?q=${p.lat},${p.lng}" target="_blank" rel="noopener">Apri in Google Maps</a>`);
+    p._m=m; ll.push([p.lat,p.lng]); });
+  if(chi&&ll.length>1) L.polyline(ll.slice().reverse(),{color:colore(chi),weight:3,opacity:.6,dashArray:"6 6"}).addTo(livello);
+  if(ll.length===1) mappa.setView(ll[0],15); else if(ll.length) mappa.fitBounds(ll,{padding:[40,40],maxZoom:16});
+  $("elenco").innerHTML=punti.length?punti.map((p,i)=>`<div class="riga" data-i="${i}"><div><b>${esc(p.nome)}</b><small>${chi?(i===0?"ultima posizione":"posizione precedente"):"ultima posizione"}</small></div><div class="ora">${esc(quando(p.at))}</div></div>`).join("")
+    :'<div class="vuoto">Nessuna posizione in questo periodo. Le posizioni arrivano quando i ragazzi aprono l\'app dal link e toccano "Segna la mia presenza".</div>';
+  $("elenco").onclick=e=>{ const r=e.target.closest("[data-i]"); if(!r) return; const p=punti[+r.dataset.i]; mappa.setView([p.lat,p.lng],16); p._m.openPopup(); };
+  $("info").textContent=TUTTE.length+" posizioni salvate nel periodo · aggiornato alle "+new Date().toLocaleTimeString("it-IT",{hour:"2-digit",minute:"2-digit"});
+}
+$("entra").onclick=()=>{ PIN=$("pin").value.trim(); if(!PIN) return; try{ localStorage.setItem("spt_pin",PIN); }catch(e){} carica(); };
+$("pin").addEventListener("keydown",e=>{ if(e.key==="Enter") $("entra").click(); });
+$("chi").onchange=disegna; $("periodo").onchange=carica; $("aggiorna").onclick=carica;
+$("scarica").onclick=()=>{
+  const chi=$("chi").value, righe=TUTTE.filter(p=>!chi||p.nome===chi).sort((a,b)=>a.at.localeCompare(b.at));
+  const q=v=>'"'+String(v).replace(/"/g,'""')+'"';
+  const csv="﻿"+[["Nome","Data","Ora","Latitudine","Longitudine","Precisione (m)","Google Maps"].map(q).join(";")].concat(righe.map(p=>{ const d=new Date(p.at);
+    return [p.nome,d.toLocaleDateString("it-IT"),d.toLocaleTimeString("it-IT",{hour:"2-digit",minute:"2-digit"}),String(p.lat).replace(".",","),String(p.lng).replace(".",","),p.acc||"","https://www.google.com/maps?q="+p.lat+","+p.lng].map(q).join(";"); })).join("\r\n");
+  const a=document.createElement("a"); a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv"})); a.download="posizioni_ragazzi_"+new Date().toISOString().slice(0,10)+".csv"; a.click();
+};
+setInterval(()=>{ if(PIN&&!document.hidden) carica(); },120000);
+if(PIN) carica(); else mostraLogin();
+</script>
+</body>
+</html>

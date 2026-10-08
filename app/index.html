@@ -17,22 +17,69 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="logo.jpg">
-<meta http-equiv="refresh" content="1;url=https://claude.ai/artifact/SZwxAJSfm4btNnBbM7hbdf#semplice">
 <style>
-  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#7a2a8f,#46145a);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;text-align:center;color:#fff;padding:16px}
-  img{width:150px;height:150px;border-radius:50%;background:#fff;object-fit:contain;border:3px solid #c8ab63}
-  h1{font-size:24px;margin:16px 0 4px}
-  p{margin:0;opacity:.9}
-  a{display:inline-block;margin-top:22px;padding:16px 30px;background:#fff;color:#7a2a8f;text-decoration:none;font-weight:800;font-size:18px;border-radius:12px}
+  :root{--viola:#7a2a8f;--viola-scuro:#46145a;--oro:#c8ab63;--testo:#231b2b;--grigio:#6c6177;--bordo:#ddd3e6;--sfondo:#f7f4fa}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;background:var(--sfondo);color:var(--testo);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.45}
+  header{background:var(--viola);color:#fff;text-align:center;padding:22px 16px 24px}
+  header img{width:110px;height:110px;border-radius:50%;background:#fff;object-fit:contain;border:3px solid var(--oro)}
+  header h1{margin:10px 0 0;font-size:24px}
+  main{max-width:460px;margin:0 auto;padding:18px 16px 40px;display:grid;gap:14px}
+  .card{background:#fff;border:1px solid var(--bordo);border-radius:14px;padding:16px}
+  label{display:block;font-weight:600;font-size:14px;margin-bottom:6px}
+  input{width:100%;padding:12px;border:1.5px solid var(--bordo);border-radius:10px;font-size:16px;font-family:inherit}
+  input:focus{outline:2px solid var(--viola);border-color:var(--viola)}
+  .btn{display:block;width:100%;border:0;border-radius:12px;padding:16px;font:700 17px inherit;font-family:inherit;cursor:pointer;background:var(--viola);color:#fff;text-align:center;text-decoration:none}
+  .btn.chiaro{background:transparent;color:var(--viola);border:1.5px solid var(--bordo);font-weight:600}
+  .nota{font-size:13px;color:var(--grigio);margin:8px 0 0}
+  .stato{font-weight:600;font-size:15px}
+  .ok{color:#1f7a46}.err{color:#b3261e}
+  .chi{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .chi button{border:0;background:none;color:var(--viola);font:600 14px inherit;font-family:inherit;text-decoration:underline;cursor:pointer}
 </style>
 </head>
 <body>
-<div>
+<header>
   <img src="logo.jpg" alt="Spettacolando Eventi">
   <h1>SpettacolApp</h1>
-  <p>Sto aprendo l'app…</p>
-  <a href="https://claude.ai/artifact/SZwxAJSfm4btNnBbM7hbdf#semplice">Apri SpettacolApp</a>
-</div>
-<script>location.replace("https://claude.ai/artifact/SZwxAJSfm4btNnBbM7hbdf#semplice");</script>
+</header>
+<main>
+  <div class="card" id="boxNome" hidden>
+    <label for="nome">Come ti chiami?</label>
+    <input id="nome" autocomplete="name" placeholder="es. Filippo Scutiero">
+    <p class="nota">Lo chiediamo solo la prima volta.</p>
+  </div>
+  <div class="card chi" id="boxChi" hidden><span>Ciao <b id="chiNome"></b>!</span><button type="button" id="cambia">Non sei tu?</button></div>
+
+  <button type="button" class="btn" id="vai">📍 Segna la mia presenza e apri l'app</button>
+  <p class="stato" id="stato" aria-live="polite"></p>
+  <a class="btn chiaro" id="apri" href="https://claude.ai/artifact/SZwxAJSfm4btNnBbM7hbdf#semplice">Apri solo l'app</a>
+
+  <p class="nota">Toccando "Segna la mia presenza" invii all'associazione la tua posizione di questo momento, con giorno e ora. Serve a coordinare le attività e a dire ai clienti quando arrivate. La posizione è inviata solo quando tocchi il pulsante, non di nascosto, e la vede solo la presidente.</p>
+</main>
+<script>
+const APP="https://claude.ai/artifact/SZwxAJSfm4btNnBbM7hbdf#semplice";
+const $=id=>document.getElementById(id);
+let nome=""; try{ nome=localStorage.getItem("spt_nome")||""; }catch(e){}
+function mostra(){ $("boxNome").hidden=!!nome; $("boxChi").hidden=!nome; $("chiNome").textContent=nome; }
+mostra();
+$("cambia").onclick=()=>{ nome=""; try{ localStorage.removeItem("spt_nome"); }catch(e){} mostra(); $("nome").focus(); };
+function stato(t,cls){ const s=$("stato"); s.textContent=t; s.className="stato "+(cls||""); }
+$("vai").onclick=()=>{
+  if(!nome){ const n=$("nome").value.trim(); if(n.length<2){ stato("Scrivi il tuo nome e cognome.","err"); $("nome").focus(); return; } nome=n; try{ localStorage.setItem("spt_nome",nome); }catch(e){} mostra(); }
+  if(!navigator.geolocation){ stato("Questo telefono non permette di inviare la posizione. Apri l'app con il pulsante qui sotto.","err"); return; }
+  $("vai").disabled=true; stato("Cerco la tua posizione…");
+  navigator.geolocation.getCurrentPosition(async p=>{
+    try{
+      const r=await fetch("/api/posizioni",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({nome,lat:p.coords.latitude,lng:p.coords.longitude,acc:p.coords.accuracy})});
+      if(!r.ok) throw new Error();
+      stato("✅ Presenza segnata. Apro l'app…","ok"); setTimeout(()=>location.href=APP,900);
+    }catch(e){ $("vai").disabled=false; stato("Non sono riuscito a inviare la posizione. Riprova tra poco.","err"); }
+  },err=>{
+    $("vai").disabled=false;
+    stato(err.code===1?"Hai negato la posizione: per segnare la presenza consentila nelle impostazioni del browser.":"Non trovo la posizione. Controlla che il GPS sia acceso e riprova.","err");
+  },{enableHighAccuracy:true,timeout:20000,maximumAge:30000});
+};
+</script>
 </body>
 </html>
