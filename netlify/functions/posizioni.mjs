@@ -21,13 +21,19 @@ export default async (req) => {
     const at = new Date().toISOString();
     const key = "p/" + at.slice(0, 10) + "/" + at + "-" + Math.random().toString(36).slice(2, 8);
     await store.setJSON(key, { nome, lat, lng, acc, at });
+    // consenso alla posizione: dato una sola volta, al primo accesso, e conservato
+    if (b.consenso === true) {
+      const ck = "c/" + nome.toLowerCase();
+      const gia = await store.get(ck, { type: "json" });
+      if (!gia) await store.setJSON(ck, { nome, consenso: at });
+    }
     return json({ ok: true, at });
   }
 
   if (req.method === "GET") {
-    const pin = process.env.MAPPA_PIN || "";
+    const pin = String((globalThis.Netlify && Netlify.env.get("MAPPA_PIN")) || process.env.MAPPA_PIN || "").trim();
     const url = new URL(req.url);
-    if (!pin || url.searchParams.get("pin") !== pin) return json({ error: "PIN errato" }, 401);
+    if (!pin || String(url.searchParams.get("pin") || "").trim() !== pin) return json({ error: "PIN errato" }, 401);
     const giorni = Math.min(Math.max(parseInt(url.searchParams.get("giorni") || "30", 10) || 30, 1), 3650);
     const da = new Date(Date.now() - giorni * 86400000).toISOString().slice(0, 10);
     const { blobs } = await store.list({ prefix: "p/" });

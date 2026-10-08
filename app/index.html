@@ -44,42 +44,57 @@
   <h1>SpettacolApp</h1>
 </header>
 <main>
-  <div class="card" id="boxNome" hidden>
-    <label for="nome">Come ti chiami?</label>
-    <input id="nome" autocomplete="name" placeholder="es. Filippo Scutiero">
-    <p class="nota">Lo chiediamo solo la prima volta.</p>
+  <!-- primo accesso: nome + consenso (una volta sola) -->
+  <div id="primo" hidden style="display:grid;gap:14px">
+    <div class="card">
+      <label for="nome">Nome e cognome</label>
+      <input id="nome" autocomplete="name" placeholder="es. Filippo Scutiero">
+    </div>
+    <div class="card">
+      <label class="chk" style="display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;margin:0"><input type="checkbox" id="ok" style="width:22px;height:22px;flex:none;margin:1px 0 0;accent-color:var(--viola)"><span>Acconsento a condividere con l'ASD Spettacolando Eventi APS la mia posizione ogni volta che apro SpettacolApp. Serve a coordinare le attività istituzionali, a indicarmi il luogo dove recarmi e a dire ai clienti quando arriviamo. Il consenso vale per tutti gli accessi successivi e posso revocarlo chiedendo alla presidente.</span></label>
+    </div>
+    <button type="button" class="btn" id="accetta">Accetto e apro l'app</button>
   </div>
+
+  <!-- accessi successivi -->
   <div class="card chi" id="boxChi" hidden><span>Ciao <b id="chiNome"></b>!</span><button type="button" id="cambia">Non sei tu?</button></div>
-
-  <button type="button" class="btn" id="vai">📍 Segna la mia presenza e apri l'app</button>
   <p class="stato" id="stato" aria-live="polite"></p>
-  <a class="btn chiaro" id="apri" href="https://claude.ai/artifact/SZwxAJSfm4btNnBbM7hbdf#semplice">Apri solo l'app</a>
-
-  <p class="nota">Toccando "Segna la mia presenza" invii all'associazione la tua posizione di questo momento, con giorno e ora. Serve a coordinare le attività e a dire ai clienti quando arrivate. La posizione è inviata solo quando tocchi il pulsante, non di nascosto, e la vede solo la presidente.</p>
+  <button type="button" class="btn" id="riprova" hidden>Riprova</button>
+  <p class="nota" id="aiuto" hidden>Per usare SpettacolApp serve la posizione. Se l'hai negata: tocca il lucchetto (o "Aa") accanto all'indirizzo in alto → Posizione → Consenti, poi tocca Riprova. Controlla anche che il GPS del telefono sia acceso.</p>
 </main>
 <script>
 const APP="https://claude.ai/artifact/SZwxAJSfm4btNnBbM7hbdf#semplice";
 const $=id=>document.getElementById(id);
-let nome=""; try{ nome=localStorage.getItem("spt_nome")||""; }catch(e){}
-function mostra(){ $("boxNome").hidden=!!nome; $("boxChi").hidden=!nome; $("chiNome").textContent=nome; }
-mostra();
-$("cambia").onclick=()=>{ nome=""; try{ localStorage.removeItem("spt_nome"); }catch(e){} mostra(); $("nome").focus(); };
+const leggi=k=>{ try{ return localStorage.getItem(k)||""; }catch(e){ return ""; } };
+const scrivi=(k,v)=>{ try{ v===null?localStorage.removeItem(k):localStorage.setItem(k,v); }catch(e){} };
+let nome=leggi("spt_nome"), consenso=leggi("spt_consenso");
 function stato(t,cls){ const s=$("stato"); s.textContent=t; s.className="stato "+(cls||""); }
-$("vai").onclick=()=>{
-  if(!nome){ const n=$("nome").value.trim(); if(n.length<2){ stato("Scrivi il tuo nome e cognome.","err"); $("nome").focus(); return; } nome=n; try{ localStorage.setItem("spt_nome",nome); }catch(e){} mostra(); }
-  if(!navigator.geolocation){ stato("Questo telefono non permette di inviare la posizione. Apri l'app con il pulsante qui sotto.","err"); return; }
-  $("vai").disabled=true; stato("Cerco la tua posizione…");
+function mostra(){ const primo=!(nome&&consenso); $("primo").hidden=!primo; $("primo").style.display=primo?"grid":"none"; $("boxChi").hidden=primo; $("chiNome").textContent=nome; }
+$("cambia").onclick=()=>{ nome=""; consenso=""; scrivi("spt_nome",null); scrivi("spt_consenso",null); $("riprova").hidden=true; $("aiuto").hidden=true; stato(""); mostra(); $("nome").focus(); };
+function invia(primaVolta){
+  if(!navigator.geolocation){ stato("Questo telefono non permette di inviare la posizione: apri il link con Chrome o Safari.","err"); return; }
+  $("riprova").hidden=true; $("aiuto").hidden=true; stato("Cerco la tua posizione…");
   navigator.geolocation.getCurrentPosition(async p=>{
     try{
-      const r=await fetch("/api/posizioni",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({nome,lat:p.coords.latitude,lng:p.coords.longitude,acc:p.coords.accuracy})});
+      const r=await fetch("/api/posizioni",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({nome,lat:p.coords.latitude,lng:p.coords.longitude,acc:p.coords.accuracy,consenso:!!primaVolta})});
       if(!r.ok) throw new Error();
-      stato("✅ Presenza segnata. Apro l'app…","ok"); setTimeout(()=>location.href=APP,900);
-    }catch(e){ $("vai").disabled=false; stato("Non sono riuscito a inviare la posizione. Riprova tra poco.","err"); }
+      if(primaVolta){ consenso=new Date().toISOString(); scrivi("spt_consenso",consenso); mostra(); }
+      stato("✅ Posizione inviata. Apro l'app…","ok"); setTimeout(()=>location.href=APP,700);
+    }catch(e){ stato("Non riesco a inviare la posizione. Controlla la connessione e riprova.","err"); $("riprova").hidden=false; }
   },err=>{
-    $("vai").disabled=false;
-    stato(err.code===1?"Hai negato la posizione: per segnare la presenza consentila nelle impostazioni del browser.":"Non trovo la posizione. Controlla che il GPS sia acceso e riprova.","err");
+    stato(err.code===1?"La posizione è bloccata: per usare l'app devi consentirla.":"Non trovo la posizione.","err");
+    $("riprova").hidden=false; $("aiuto").hidden=false;
   },{enableHighAccuracy:true,timeout:20000,maximumAge:30000});
+}
+$("accetta").onclick=()=>{
+  const n=$("nome").value.trim();
+  if(n.length<3||!/\s/.test(n)){ stato("Scrivi nome e cognome.","err"); $("nome").focus(); return; }
+  if(!$("ok").checked){ stato("Per usare l'app serve il consenso alla posizione.","err"); return; }
+  nome=n; scrivi("spt_nome",nome); invia(true);
 };
+$("riprova").onclick=()=>invia(!consenso);
+mostra();
+if(nome&&consenso) invia(false);
 </script>
 </body>
 </html>
