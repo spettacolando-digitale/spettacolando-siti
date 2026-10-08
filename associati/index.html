@@ -66,8 +66,14 @@
       <div><label for="nascita">Data di nascita</label><input id="nascita" type="date" required></div>
       <div><label for="luogo">Luogo di nascita</label><input id="luogo" required></div>
     </div>
+    <div class="riga">
+      <div><label for="sesso">Sesso</label><select id="sesso" required><option value="">—</option><option>F</option><option>M</option></select></div>
+      <div><label for="citt">Cittadinanza</label><input id="citt" required value="Italiana"></div>
+    </div>
     <label for="cf">Codice fiscale</label>
     <input id="cf" required maxlength="16" style="text-transform:uppercase" autocomplete="off">
+    <label for="doc">Documento d'identità <span class="opz">(tipo e numero)</span></label>
+    <input id="doc" required placeholder="es. Carta d'identità CA1234567" autocomplete="off">
   </div>
 
   <div class="card">
@@ -130,7 +136,7 @@ function dataIt(v){ if(!v) return ""; const [a,m,g]=v.split("-"); return `${g}/$
 $("f").addEventListener("submit", e => {
   e.preventDefault();
   const err = [];
-  const obbl = {nome:"Nome",cognome:"Cognome",nascita:"Data di nascita",luogo:"Luogo di nascita",cf:"Codice fiscale",indirizzo:"Indirizzo",comune:"Comune",cap:"CAP",prov:"Provincia",tel:"Cellulare"};
+  const obbl = {nome:"Nome",cognome:"Cognome",nascita:"Data di nascita",luogo:"Luogo di nascita",sesso:"Sesso",citt:"Cittadinanza",cf:"Codice fiscale",doc:"Documento",indirizzo:"Indirizzo",comune:"Comune",cap:"CAP",prov:"Provincia",tel:"Cellulare"};
   for (const k in obbl) if (!$(k).value.trim()) err.push(obbl[k]);
   const cf = $("cf").value.trim().toUpperCase();
   if (cf && !/^[A-Z]{6}[0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{3}[A-Z]$/.test(cf)) err.push("Codice fiscale non valido");
@@ -148,6 +154,22 @@ $("f").addEventListener("submit", e => {
   box.style.display="none";
 
   const aree = [...document.querySelectorAll("#aree input:checked")].map(x=>x.value);
+  const res = `${$("indirizzo").value.trim()}, ${$("cap").value.trim()} ${$("comune").value.trim()} (${$("prov").value.trim().toUpperCase()})`;
+
+  // Codice leggibile da SpettacolApp (sezione Tesseramenti → incolla il messaggio)
+  const dati = {
+    v:1, eta:"A", pos:"associato",
+    p:{ nome:$("nome").value.trim(), cognome:$("cognome").value.trim(), luogo:$("luogo").value.trim(), data:$("nascita").value,
+        sesso:$("sesso").value, citt:$("citt").value.trim(), cf, res, tel:$("tel").value.trim(), email:$("email").value.trim(), doc:$("doc").value.trim() },
+    disc:[], tempo:aree.join(", "), orari:$("note").value.trim(),
+    pag:"Contanti o bonifico",
+    ass:$("d1").checked, dich:$("d2").checked, cert:true, tut:$("d4").checked,
+    foto:$("d5").checked, com:false, consenso:new Date().toISOString()
+  };
+  const bytes = new TextEncoder().encode(JSON.stringify(dati));
+  let bin = ""; bytes.forEach(b => bin += String.fromCharCode(b));
+  const codice = "SPT1:" + btoa(bin).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
+
   const t = [
     "*DOMANDA DI AMMISSIONE A SOCIO*",
     "ASD Spettacolando Eventi APS",
@@ -155,7 +177,8 @@ $("f").addEventListener("submit", e => {
     `*Nome e cognome:* ${$("nome").value.trim()} ${$("cognome").value.trim()}`,
     `*Nato/a a:* ${$("luogo").value.trim()} il ${dataIt($("nascita").value)}`,
     `*Codice fiscale:* ${cf}`,
-    `*Residenza:* ${$("indirizzo").value.trim()}, ${$("cap").value.trim()} ${$("comune").value.trim()} (${$("prov").value.trim().toUpperCase()})`,
+    `*Residenza:* ${res}`,
+    `*Documento:* ${$("doc").value.trim()}`,
     `*Cellulare:* ${$("tel").value.trim()}`,
     $("email").value.trim() ? `*Email:* ${$("email").value.trim()}` : null,
     aree.length ? `*Disponibilità:* ${aree.join(", ")}` : null,
@@ -167,7 +190,10 @@ $("f").addEventListener("submit", e => {
     "✅ Consenso privacy (GDPR)",
     $("d5").checked ? "✅ Consenso foto/video" : "❌ Nessun consenso foto/video",
     "",
-    `Data domanda: ${new Date().toLocaleDateString("it-IT")}`
+    `Data domanda: ${new Date().toLocaleDateString("it-IT")}`,
+    "",
+    "Codice domanda (per SpettacolApp):",
+    codice
   ].filter(x=>x!==null).join("\n");
 
   location.href = `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
