@@ -72,6 +72,7 @@
     </div>
     <label for="cf">Codice fiscale</label>
     <input id="cf" required maxlength="16" style="text-transform:uppercase" autocomplete="off">
+    <p class="nota" id="cfCalc">Si compila da solo con nome, cognome, data e luogo di nascita e sesso. Controllalo con la tessera sanitaria.</p>
     <label for="doc">Documento d'identità <span class="opz">(tipo e numero)</span></label>
     <input id="doc" required placeholder="es. Carta d'identità CA1234567" autocomplete="off">
   </div>
@@ -129,12 +130,28 @@
 </main>
 
 <footer>
-  ASD Spettacolando Eventi APS · Via Risi 93, 84012 Angri (SA) · C.F. 94092670655 · Affiliata MSP Italia
+  ASD Spettacolando Eventi APS · Via Risi 93, 84012 Angri (SA) · C.F. 94092670655 · Affiliata MSP Italia<br>Calcolo del codice fiscale: libreria codice-fiscale-js (CC BY-SA)
 </footer>
 
+<script src="../lib/codice.fiscale.umd.js"></script>
 <script>
 const WA = "393343499808";
 const $ = id => document.getElementById(id);
+
+// calcolo automatico del codice fiscale (libreria codice-fiscale-js, licenza CC BY-SA)
+let cfAuto="";
+function calcCF(){
+  const K=(window.CodiceFiscale&&window.CodiceFiscale.CodiceFiscale)||window.CodiceFiscale; if(typeof K!=="function") return;
+  const nome=$("nome").value.trim(), cogn=$("cognome").value.trim(), d=$("nascita").value, sx=$("sesso").value, luogo=$("luogo").value.trim();
+  if(!(nome&&cogn&&d&&sx&&luogo)) return;
+  const [y,m,g]=d.split("-").map(Number);
+  try{ const cf=new K({name:nome,surname:cogn,gender:sx,day:g,month:m,year:y,birthplace:luogo}).cf;
+    if(!$("cf").value.trim()||$("cf").value.trim().toUpperCase()===cfAuto) $("cf").value=cf;
+    cfAuto=cf; $("cfCalc").textContent="Calcolato in automatico: "+cf+". Controllalo con la tessera sanitaria.";
+  }catch(e){ $("cfCalc").textContent="Non trovo il comune «"+luogo+"»: controlla come è scritto, oppure scrivi il codice fiscale a mano."; }
+}
+["nome","cognome","nascita","sesso","luogo"].forEach(id=>$(id).addEventListener("change",calcCF));
+$("luogo").addEventListener("input",()=>{ clearTimeout(window.__cft); window.__cft=setTimeout(calcCF,500); });
 
 function dataIt(v){ if(!v) return ""; const [a,m,g]=v.split("-"); return `${g}/${m}/${a}`; }
 
