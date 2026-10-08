@@ -198,7 +198,7 @@ footer{color:var(--muted);font-size:12.5px;text-align:center;margin-top:24px}
     <p><b>Titolare:</b> ASD Spettacolando Eventi APS, Via Risi n. 93, 84012 Angri (SA), C.F. 94092670655, spettacolandoeventi@gmail.com.</p>
     <p><b>Finalità:</b> gestione del tesseramento; tesseramento e assicurazione tramite MSP Italia; iscrizione dei tesserati nel RASD; comunicazioni; adempimenti civilistici, fiscali e assicurativi.</p>
     <p><b>Base giuridica:</b> esecuzione del rapporto e obblighi di legge (art. 6, par. 1, lett. b e c, del Regolamento UE 2016/679); per il certificato medico, attività dell'ente senza scopo di lucro verso i propri membri (art. 9, par. 2, lett. d).</p>
-    <p><b>Destinatari:</b> MSP Italia e la sua compagnia assicurativa, Dipartimento per lo Sport (RASD), consulente contabile, autorità quando richiesto. Nessun trasferimento fuori dall'Unione europea.</p>
+    <p><b>Destinatari:</b> MSP Italia e la sua compagnia assicurativa, Dipartimento per lo Sport (RASD), consulente contabile, autorità quando richiesto. La domanda online è ricevuta tramite il servizio web Netlify (USA), con le garanzie previste dal GDPR per i trasferimenti extra UE (EU-US Data Privacy Framework e clausole contrattuali standard).</p>
     <p><b>Conservazione:</b> per la durata del rapporto e poi per 10 anni, per gli obblighi di legge.</p>
     <p><b>Diritti:</b> accesso, rettifica, cancellazione, limitazione, portabilità e opposizione (artt. 15–22), scrivendo al titolare; reclamo al Garante per la protezione dei dati personali. Il conferimento dei dati è necessario per il tesseramento.</p>
   </div>
@@ -227,6 +227,8 @@ footer{color:var(--muted);font-size:12.5px;text-align:center;margin-top:24px}
 </section>
 
 </form>
+<!-- modulo nascosto: serve a Netlify per riconoscere l'archivio delle domande -->
+<form name="domande" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="tipo"><input name="nome"><input name="cf"><input name="telefono"><textarea name="codice"></textarea></form>
 <footer>ASD Spettacolando Eventi APS · Via Risi n. 93, 84012 Angri (SA) · C.F. 94092670655 · affiliata a MSP Italia<br>Calcolo del codice fiscale: libreria codice-fiscale-js (CC BY-SA)</footer>
 </div>
 
@@ -338,9 +340,26 @@ $("consenso").addEventListener("click",()=>{
   const msg="Domanda di tesseramento – ASD Spettacolando Eventi APS\n"+nome+(d.eta==="M"?" (minorenne, genitore "+d.g.nome+")":"")+"\nTesseramento\nConsensi dati il "+new Date().toLocaleString("it-IT")+"\n\nCodice domanda, non modificare:\nSPT1:"+b64url(JSON.stringify(d));
   $("waBtn").href="https://wa.me/"+PRES_TEL+"?text="+encodeURIComponent(msg);
   $("msgCode").textContent=msg;
-  $("fatto").textContent="Consensi registrati. Ora invia la domanda alla presidente: dopo la decisione del Consiglio direttivo riceverai la risposta.";
-  $("consenso").hidden=true; $("inviaBox").hidden=false; S.inviato=true;
+  $("consenso").disabled=true; $("consenso").textContent="Invio in corso…";
+  inviaOnline(d, msg).then(ok=>{
+    $("consenso").disabled=false; $("consenso").textContent="Do i miei consensi";
+    if(ok){
+      $("fatto").textContent="✅ Domanda inviata! La presidente l'ha già ricevuta: dopo la decisione del Consiglio direttivo riceverai la risposta su WhatsApp.";
+      $("waBtn").hidden=true; $("copia").hidden=true; $("msgCode").hidden=true; document.querySelector("#inviaBox .hint").hidden=true;
+    } else {
+      $("fatto").textContent="Consensi registrati. Ora invia la domanda alla presidente: dopo la decisione del Consiglio direttivo riceverai la risposta.";
+    }
+    $("consenso").hidden=true; $("inviaBox").hidden=false; S.inviato=true;
+  });
 });
+// invio diretto all'archivio online (Netlify Forms); se non disponibile si usa WhatsApp
+async function inviaOnline(d, msg){
+  try{
+    const body=new URLSearchParams({"form-name":"domande","tipo":"tesserato","nome":(d.p.cognome+" "+d.p.nome).trim(),"cf":d.p.cf,"telefono":d.p.tel||(d.g?d.g.tel:""),"codice":msg}).toString();
+    const r=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body});
+    return r.ok;
+  }catch(e){ return false; }
+}
 $("copia").addEventListener("click",async()=>{ const t=$("msgCode").textContent;
   try{ await navigator.clipboard.writeText(t); $("copia").textContent="Messaggio copiato"; }
   catch(e){ const r=document.createRange(); r.selectNodeContents($("msgCode")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); $("copia").textContent="Testo selezionato: copialo dal menu"; } });

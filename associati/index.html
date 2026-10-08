@@ -112,15 +112,20 @@
     <label class="check"><input type="checkbox" id="d1"> <span>Chiedo di essere ammesso/a come socio/a di ASD Spettacolando Eventi APS e dichiaro di condividerne le finalità.</span></label>
     <label class="check"><input type="checkbox" id="d2"> <span>Dichiaro di aver preso visione dello Statuto e mi impegno a rispettarlo, insieme ai regolamenti e alle delibere degli organi sociali.</span></label>
     <label class="check"><input type="checkbox" id="d3"> <span>Mi impegno a versare la quota associativa annuale stabilita dall'associazione.</span></label>
-    <label class="check"><input type="checkbox" id="d4"> <span>Autorizzo il trattamento dei miei dati personali per le finalità associative, ai sensi del Regolamento UE 2016/679 (GDPR).</span></label>
+    <label class="check"><input type="checkbox" id="d4"> <span>Autorizzo il trattamento dei miei dati personali per le finalità associative, ai sensi del Regolamento UE 2016/679 (GDPR). La domanda è ricevuta tramite il servizio web Netlify (USA), con le garanzie GDPR per i trasferimenti extra UE.</span></label>
     <label class="check"><input type="checkbox" id="d5"> <span>Autorizzo l'uso di foto e video in cui compaio durante le attività, per la comunicazione dell'associazione. <span class="opz">(facoltativo)</span></span></label>
     <p class="nota">L'ammissione è decisa dal Consiglio Direttivo, come previsto dallo Statuto.</p>
   </div>
 
   <div class="errore" id="err"></div>
-  <button type="submit">Invia la domanda su WhatsApp</button>
-  <p class="nota" style="text-align:center">Si aprirà WhatsApp con la domanda già scritta: devi solo premere invio.</p>
+  <button type="submit">Invia la domanda</button>
 </form>
+<div class="card" id="grazie" hidden>
+  <h2>✅ Domanda inviata!</h2>
+  <p style="margin:0">La presidente l'ha già ricevuta. Dopo la decisione del Consiglio Direttivo riceverai la risposta su WhatsApp.</p>
+</div>
+<!-- modulo nascosto: serve a Netlify per riconoscere l'archivio delle domande -->
+<form name="domande" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="tipo"><input name="nome"><input name="cf"><input name="telefono"><textarea name="codice"></textarea></form>
 </main>
 
 <footer>
@@ -133,7 +138,7 @@ const $ = id => document.getElementById(id);
 
 function dataIt(v){ if(!v) return ""; const [a,m,g]=v.split("-"); return `${g}/${m}/${a}`; }
 
-$("f").addEventListener("submit", e => {
+$("f").addEventListener("submit", async e => {
   e.preventDefault();
   const err = [];
   const obbl = {nome:"Nome",cognome:"Cognome",nascita:"Data di nascita",luogo:"Luogo di nascita",sesso:"Sesso",citt:"Cittadinanza",cf:"Codice fiscale",doc:"Documento",indirizzo:"Indirizzo",comune:"Comune",cap:"CAP",prov:"Provincia",tel:"Cellulare"};
@@ -196,7 +201,20 @@ $("f").addEventListener("submit", e => {
     codice
   ].filter(x=>x!==null).join("\n");
 
-  location.href = `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+  const btn = document.querySelector("#f button[type=submit]");
+  btn.disabled = true; btn.textContent = "Invio in corso…";
+  let ok = false;
+  try{
+    const body = new URLSearchParams({"form-name":"domande","tipo":"associato","nome":`${$("cognome").value.trim()} ${$("nome").value.trim()}`,"cf":cf,"telefono":$("tel").value.trim(),"codice":t}).toString();
+    const r = await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body});
+    ok = r.ok;
+  }catch(e){ ok = false; }
+  if (ok){
+    $("f").hidden = true; $("grazie").hidden = false; window.scrollTo(0,0);
+  } else {
+    btn.disabled = false; btn.textContent = "Invia la domanda";
+    location.href = `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+  }
 });
 </script>
 </body>
