@@ -1,2 +1,5 @@
+# Sul progetto Netlify "raffaellapizzo" mostra solo il sito di Raffaella Pizzo
+https://raffaellapizzo.netlify.app/*  /raffaellapizzo/:splat  200!
+
 /tesserati   /tesseramento/   301
 /soci        /associati/      301
