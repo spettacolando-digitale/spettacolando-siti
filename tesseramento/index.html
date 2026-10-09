@@ -152,8 +152,8 @@ footer{color:var(--muted);font-size:12.5px;text-align:center;margin-top:24px}
   <p class="hint">Tocca la «i» per leggere quote, vantaggi e quota solidale. Sono condizioni dell'iscrizione.</p>
   <div class="note" id="i-quote" hidden>
     <p><b>Tesseramento annuale: 10 €.</b> La quota è intrasmissibile, non rimborsabile e non rivalutabile (art. 7, comma 5, dello statuto).</p>
-    <p><b>Quota dei corsi: 70 € al mese</b>, obbligatoria per l'iscrizione. Si versa entro i primi giorni di ogni mese di frequenza e per ogni versamento l'Associazione rilascia ricevuta intestata al tesserato.</p>
-    <p><b>Acconti per le feste.</b> Se hai versato un acconto per una festa organizzata dall'Associazione, l'acconto comprende già la quota di tesseramento e la quota dei corsi del mese; la parte restante è destinata alle attività dell'Associazione.</p>
+    <p><b>Corsi.</b> Il tesseramento non obbliga a seguire corsi. Chi sceglie di frequentare un corso a pagamento concorda la quota direttamente con l'Associazione, che rilascia ricevuta per ogni versamento.</p>
+    <p><b>Acconti per le feste.</b> Se hai versato un acconto per una festa organizzata dall'Associazione, l'acconto comprende già la quota di tesseramento; la parte restante è destinata alle attività dell'Associazione.</p>
     <p><b>Vantaggi riservati ai tesserati:</b> uso della sala dell'Associazione per le attività sociali, secondo il calendario fissato dall'Organo di amministrazione, ed eventi privati in sede (compleanni, ricorrenze, feste di famiglia) a prezzo di costo, cioè pagando solo le spese effettive senza ricarico.</p>
     <p><b>Quota solidale sugli eventi privati.</b> Come deliberato dall'Assemblea degli associati sul programma di beneficenza, ogni volta che il tesserato usa la sede per una festa, o i servizi dell'Associazione per festeggiare altrove, una parte va al programma solidale per le famiglie del territorio con bambini fino a 10 anni:</p>
     <ol><li>feste con rinfresco o altro cibo: la spesa alimentare viene raddoppiata; metà serve alla festa e metà va in buste da donare, a carico del tesserato;</li><li>feste senza cibo (solo animazione, spettacoli, balli o allestimento): un contributo libero, nella misura che il tesserato sceglie.</li></ol>
@@ -326,7 +326,7 @@ function righe(d){
   const r=[["Chi si tessera",d.eta==="M"?"Un minorenne":"Un adulto"],["Cognome e nome",d.p.cognome+" "+d.p.nome],["Nato/a a",d.p.luogo+" il "+fmtD(d.p.data)],["Codice fiscale",d.p.cf],["Residenza",d.p.res]];
   if(d.eta==="A") r.push(["Cellulare",d.p.tel],["E-mail",d.p.email||"—"],["Documento",d.p.doc]);
   if(d.g) r.push(["Genitore",d.g.nome+" · "+d.g.cf],["Contatti genitore",d.g.tel+(d.g.email?" · "+d.g.email:"")],["Documento genitore",d.g.doc],["Altro genitore d'accordo",d.g.altro?"Sì":"Non indicato"]);
-  r.push(["Posizione","Tesseramento"],["Registro dei volontari","Iscrizione automatica"],["Quote","10 € tesseramento + 70 € al mese di corso"],["Pagamento",d.pag],["Quota solidale","Prevista sugli eventi privati"],["Dichiarazioni","Statuto, certificato medico, assicurazione, tutela: accettate"],["Foto e video",d.foto?"Acconsento":"Non acconsento"],["Comunicazioni",d.com?"Acconsento":"Non acconsento"]);
+  r.push(["Posizione","Tesseramento"],["Registro dei volontari","Iscrizione automatica"],["Quota","10 € tesseramento annuale"],["Pagamento",d.pag],["Quota solidale","Prevista sugli eventi privati"],["Dichiarazioni","Statuto, certificato medico, assicurazione, tutela: accettate"],["Foto e video",d.foto?"Acconsento":"Non acconsento"],["Comunicazioni",d.com?"Acconsento":"Non acconsento"]);
   return r;
 }
 function buildRecap(){ const d=dati(); $("recap").innerHTML=""; for(const [k,v] of righe(d)){ const w=document.createElement("div"), dt=document.createElement("dt"), dd=document.createElement("dd"); dt.textContent=k; dd.textContent=v||"—"; w.append(dt,dd); $("recap").append(w); }
