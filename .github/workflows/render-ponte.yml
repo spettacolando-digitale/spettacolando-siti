@@ -1,0 +1,29 @@
+# Ponte per i render: scarica le immagini elencate in render/da-scaricare.txt
+# (una per riga: nome-file URL) e le salva in render/fatti/ sullo stesso branch.
+name: render-ponte
+on:
+  push:
+    branches: [render-ponte]
+    paths: [render/da-scaricare.txt]
+permissions:
+  contents: write
+jobs:
+  scarica:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scarica le immagini
+        run: |
+          mkdir -p render/fatti
+          while read -r nome url; do
+            [ -z "$nome" ] && continue
+            case "$url" in https://res.cloudinary.com/*) ;; *) echo "URL non ammesso: $url"; continue;; esac
+            curl -sSfL -o "render/fatti/$nome" "$url" && echo "ok $nome"
+          done < render/da-scaricare.txt
+      - name: Salva nel repository
+        run: |
+          git config user.name "render-ponte"
+          git config user.email "render-ponte@users.noreply.github.com"
+          git add render/fatti
+          git diff --cached --quiet || git commit -m "Render scaricati da Cloudinary"
+          git push
