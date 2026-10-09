@@ -14,11 +14,15 @@
       "foto/006-pasticceria-pastello.jpg",
       "foto/012-pasticceria-pastello.jpg"
     ],
-    "stato": "programmato",
+    "stato": "pubblicato",
     "id_metricool": {
       "instagram": 391938347,
       "tiktok": 391938381
     },
-    "nota": "prima prova reale approvata in chat"
+    "nota": "prima prova reale approvata in chat",
+    "link": {
+      "instagram": "https://www.instagram.com/p/DeRW6b2iHRC/",
+      "tiktok": "https://www.tiktok.com/@spettacolandoeventi/video/7694622030989167894"
+    }
   }
 ]
