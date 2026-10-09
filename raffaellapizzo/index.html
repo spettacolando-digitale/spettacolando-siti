@@ -279,6 +279,10 @@ footer p{color:var(--muted);font-size:.85rem}
 .pdf-card small{color:var(--muted);font-size:.85rem}
 .pdf-ico{flex:none;width:42px;height:52px;display:grid;place-items:center;background:var(--navy);color:#e3c97f;font:500 .7rem var(--f-body);letter-spacing:.12em}
 .btn[disabled]{opacity:.55;cursor:progress}
+.send-direct{width:100%;background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--gold)}
+.send-direct:hover{background:var(--blush);color:var(--ink)}
+.sent-ok{padding:14px 16px;border:1px solid #1f7a52;background:color-mix(in srgb,#1f7a52 10%,transparent);font-size:.95rem}
+.sent-ok b{font-weight:500;color:#1f7a52}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
@@ -506,18 +510,24 @@ footer p{color:var(--muted);font-size:.85rem}
           <span class="pdf-ico" aria-hidden="true">PDF</span>
           <div><b id="pdf-name">Richiesta.pdf</b><small id="pdf-info"></small></div>
         </div>
-        <p class="photo-hint">La richiesta completa, con i vostri dati e le foto, è raccolta in un unico PDF. Scegliete come inviarlo:</p>
+        <p class="photo-hint">La richiesta completa, con i vostri dati e le foto, è raccolta in un unico PDF. Scegliete come inviarla: in ogni caso Raffaella riceve subito il PDF.</p>
         <div class="send">
           <button class="btn send-wa" id="send-wa" type="button">Invia su WhatsApp</button>
           <button class="btn send-mail" id="send-mail" type="button">Invia per email</button>
         </div>
-        <a class="link" id="dl-pdf" href="#" role="button">Scarica il PDF</a>
+        <button class="btn send-direct" id="send-direct" type="button">Invia direttamente dal sito</button>
+        <div class="sent-ok" id="sent-ok" hidden><b>Richiesta inviata.</b> Raffaella ha ricevuto il PDF con tutti i dettagli e vi ricontatterà al più presto.</div>
+        <a class="link" id="dl-pdf" href="#" role="button">Scarica una copia del PDF</a>
         <p class="status" id="status" role="status"></p>
       </div>
     </form>
   </div>
 </section>
 </main>
+
+<form name="richiesta-consulenza" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input name="bot-field"><input name="nome"><input name="telefono"><input name="evento"><input name="data"><input name="location"><input name="ospiti"><textarea name="messaggio"></textarea><input name="foto"><input name="pdf">
+</form>
 
 <footer>
   <div class="wrap">
@@ -589,7 +599,7 @@ footer p{color:var(--muted);font-size:.85rem}
     c.getContext('2d').drawImage(im,0,0,c.width,c.height);return {data:c.toDataURL('image/png'),w:c.width,h:c.height};
   }
 
-  async function buildPdf(fields,photosList){
+  async function buildPdf(fields,photosList,side=1400){
     const {jsPDF}=window.jspdf;const doc=new jsPDF({unit:'mm',format:'a4'});
     const W=210,H=297,M=18;
     const header=async()=>{
@@ -625,7 +635,7 @@ footer p{color:var(--muted);font-size:.85rem}
 
     // foto: una o due per pagina, grandi
     for(let i=0;i<photosList.length;i++){
-      const img=await toJpeg(photosList[i].url,1600);
+      const img=await toJpeg(photosList[i].url,side);
       const boxW=W-M*2,boxH=(H-60-30-12)/2;
       if(i%2===0){doc.addPage();await header();y=58;
         doc.setFontSize(8);doc.setTextColor(...GOLD);doc.text('F O T O   D I   R I F E R I M E N T O',M,y);y+=6;}
@@ -646,12 +656,13 @@ footer p{color:var(--muted);font-size:.85rem}
     const fields={name,phone:(f.get('phone')||'').trim(),type:f.get('type'),date:d,place:(f.get('place')||'').trim(),guests:f.get('guests'),msg:(f.get('msg')||'').trim()};
     const sb=form.querySelector('button[type=submit]');sb.disabled=true;sb.textContent='Preparo il PDF…';
     try{
-      const {blob,pages}=await buildPdf(fields,photos);
+      let {blob,pages}=await buildPdf(fields,photos);
+      if(blob.size>5.5*1048576)({blob,pages}=await buildPdf(fields,photos,900));
       const fname='Richiesta-'+fields.type.split(' ')[0]+'-'+name.replace(/[^\p{L}\p{N}]+/gu,'-')+'.pdf';
       const file=new File([blob],fname,{type:'application/pdf'});
-      const text=`Buongiorno Raffaella, vi invio la mia richiesta di proposta per: ${fields.type}${d?' ('+d+')':''}. Trovate tutti i dettagli${photos.length?' e le foto':''} nel PDF allegato. ${name}`;
+      const text=`Buongiorno Raffaella, vi invio la mia richiesta di proposta per: ${fields.type}${d?' ('+d+')':''}. ${name}${fields.phone?' – tel. '+fields.phone:''}`;
       if(current&&current.url)URL.revokeObjectURL(current.url);
-      current={file,text,type:fields.type,url:URL.createObjectURL(blob)};
+      current={file,text,type:fields.type,fields,nphoto:photos.length,link:null,url:URL.createObjectURL(blob)};document.getElementById('sent-ok').hidden=true;
       document.getElementById('pdf-name').textContent=fname;
       document.getElementById('pdf-info').textContent=`${pages} ${pages===1?'pagina':'pagine'} · ${photos.length} foto · ${(blob.size/1048576).toFixed(1).replace('.',',')} MB`;
       out.hidden=false;status.textContent='';out.scrollIntoView({behavior:'smooth',block:'nearest'});
@@ -660,23 +671,57 @@ footer p{color:var(--muted);font-size:.85rem}
   });
 
   function download(){const a=document.createElement('a');a.href=current.url;a.download=current.file.name;document.body.appendChild(a);a.click();a.remove();}
+
+  // invio: il PDF viene caricato sul sito e Raffaella riceve una notifica con il link
+  let sending=null;
+  function upload(){
+    if(current.link)return Promise.resolve(current.link);
+    if(sending)return sending;
+    const c=current;
+    sending=(async()=>{
+      const r=await fetch('/.netlify/functions/richiesta?nome='+encodeURIComponent(c.fields.name),{method:'POST',headers:{'content-type':'application/pdf'},body:c.file});
+      if(!r.ok)throw new Error('upload '+r.status);
+      const {id,k}=await r.json();
+      const link=location.origin+'/.netlify/functions/richiesta?id='+encodeURIComponent(id)+'&k='+encodeURIComponent(k);
+      const f=c.fields;
+      try{await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body:new URLSearchParams({'form-name':'richiesta-consulenza',nome:f.name,telefono:f.phone,evento:f.type,data:f.date||'',location:f.place,ospiti:f.guests||'',messaggio:f.msg,foto:String(c.nphoto),pdf:link}).toString()});}catch(e){}
+      c.link=link;return link;
+    })();
+    sending.finally(()=>{sending=null;});
+    return sending;
+  }
+  function busy(on){[btnWa,btnMail,btnDirect].forEach(b=>b.disabled=on);if(on)status.textContent='Invio della richiesta in corso…';}
+  function msgWith(link){return current.text+'\n\nPDF con tutti i dettagli e le foto: '+link;}
   async function send(channel){
     if(!current)return;
-    // su smartphone: condivisione diretta del PDF con WhatsApp o con l'app email
-    if(navigator.canShare&&navigator.canShare({files:[current.file]})){
-      try{await navigator.share({files:[current.file],title:'Richiesta di proposta',text:current.text});
-        status.textContent='Richiesta pronta: completate l\'invio nell\'app che avete scelto.';return;}
-      catch(e){if(e.name==='AbortError'){status.textContent='Invio annullato.';return;}}
-    }
-    // da computer: il PDF viene scaricato e si apre la chat o l'email da completare con l'allegato
-    download();
-    if(channel==='wa'){window.open('https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(current.text),'_blank');
-      status.textContent='Il PDF è stato scaricato: allegatelo nella chat WhatsApp che si è aperta.';}
-    else{location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('Richiesta proposta – '+current.type)+'&body='+encodeURIComponent(current.text);
-      status.textContent='Il PDF è stato scaricato: allegatelo all\'email che si è aperta.';}
+    // la finestra di WhatsApp si apre subito (altrimenti il browser la blocca), poi riceve il messaggio
+    const w=channel==='wa'?window.open('','_blank'):null;
+    busy(true);
+    try{
+      const link=await upload();
+      document.getElementById('sent-ok').hidden=false;
+      if(channel==='wa'){const u='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msgWith(link));
+        if(w)w.location.href=u;else location.href=u;
+        status.textContent='Richiesta inviata. Se volete, completate anche il messaggio su WhatsApp.';}
+      else if(channel==='mail'){location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('Richiesta proposta – '+current.type)+'&body='+encodeURIComponent(msgWith(link));
+        status.textContent='Richiesta inviata. Se volete, completate anche l\'email che si è aperta.';}
+      else status.textContent='';
+    }catch(e){
+      if(w)w.close();
+      // senza connessione al sito: si torna al metodo con allegato manuale
+      download();
+      if(channel==='wa'){window.open('https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(current.text),'_blank');
+        status.textContent='Invio automatico non riuscito: il PDF è stato scaricato, allegatelo nella chat WhatsApp.';}
+      else if(channel==='mail'){location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('Richiesta proposta – '+current.type)+'&body='+encodeURIComponent(current.text);
+        status.textContent='Invio automatico non riuscito: il PDF è stato scaricato, allegatelo all\'email.';}
+      else status.textContent='Invio non riuscito. Controllate la connessione e riprovate, oppure usate WhatsApp o email.';
+    }finally{busy(false);}
   }
+  const btnDirect=document.getElementById('send-direct');
   btnWa.addEventListener('click',()=>send('wa'));
   btnMail.addEventListener('click',()=>send('mail'));
+  btnDirect.addEventListener('click',()=>send('direct'));
   dl.addEventListener('click',e=>{e.preventDefault();if(current){download();status.textContent='PDF scaricato.';}});
 })();
 </script>
