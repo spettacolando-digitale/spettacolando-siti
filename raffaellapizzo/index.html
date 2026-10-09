@@ -147,6 +147,9 @@ footer .logo img{height:120px}
 /* chi siamo */
 .about{background:var(--blush)}
 .about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,90px);align-items:center}
+.about-foto{margin:0;position:relative}
+.about-foto img{object-position:50% 40%}
+.about-foto figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 16px 12px;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;background:linear-gradient(0deg,rgba(19,39,68,.75),transparent)}
 .about .ph{aspect-ratio:3/4;background:linear-gradient(170deg,color-mix(in srgb,var(--paper) 50%,var(--blush)),color-mix(in srgb,var(--rose) 55%,var(--blush)))}
 .about p+p{margin-top:16px}
 .about .body{display:grid;gap:22px}
@@ -156,6 +159,7 @@ footer .logo img{height:120px}
 .stats b{font:400 2.4rem/1 var(--f-display);font-variant-numeric:lining-nums tabular-nums}
 .stats span{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:8px}
 @media (max-width:860px){.about .wrap{grid-template-columns:1fr}.about .ph{aspect-ratio:16/11}}
+@media (max-width:860px){.about .about-foto{aspect-ratio:4/5}}
 
 /* contatti */
 .contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,90px);align-items:start}
@@ -443,7 +447,7 @@ footer p{color:var(--muted);font-size:.85rem}
 
 <section id="chi-sono" class="about">
   <div class="wrap">
-    <div class="ph has"><img src="img/chi-sono.webp" alt="Tavolino da tè in ferro battuto con fiori e dolci" loading="lazy"></div>
+    <figure class="ph has about-foto"><img src="img/chi-sono-amalfi.webp" alt="Raffaella Pizzo con la compagnia del musical a tema fabbrica di cioccolato, ad Amalfi" loading="lazy"><figcaption>Con la compagnia del musical, Amalfi</figcaption></figure>
     <div class="body">
       <p class="kicker">Chi sono</p>
       <h2>Oltre vent'anni <em>di feste ed emozioni</em></h2>
