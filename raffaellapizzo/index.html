@@ -679,13 +679,16 @@ footer p{color:var(--muted);font-size:.85rem}
     if(sending)return sending;
     const c=current;
     sending=(async()=>{
-      const r=await fetch('/.netlify/functions/richiesta?nome='+encodeURIComponent(c.fields.name),{method:'POST',headers:{'content-type':'application/pdf'},body:c.file});
+      const f=c.fields;
+      const campi={nome:f.name,telefono:f.phone,evento:f.type,data:f.date||'',location:f.place,ospiti:f.guests||'',messaggio:f.msg,foto:String(c.nphoto)};
+      const fd=new FormData();Object.entries(campi).forEach(([k,v])=>fd.append(k,v));fd.append('pdf',c.file,c.file.name);
+      const r=await fetch('/.netlify/functions/richiesta',{method:'POST',body:fd});
       if(!r.ok)throw new Error('upload '+r.status);
       const {id,k}=await r.json();
       const link=location.origin+'/.netlify/functions/richiesta?id='+encodeURIComponent(id)+'&k='+encodeURIComponent(k);
-      const f=c.fields;
+      // copia di sicurezza nei moduli Netlify
       try{await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
-        body:new URLSearchParams({'form-name':'richiesta-consulenza',nome:f.name,telefono:f.phone,evento:f.type,data:f.date||'',location:f.place,ospiti:f.guests||'',messaggio:f.msg,foto:String(c.nphoto),pdf:link}).toString()});}catch(e){}
+        body:new URLSearchParams(Object.assign({'form-name':'richiesta-consulenza',pdf:link},campi)).toString()});}catch(e){}
       c.link=link;return link;
     })();
     sending.finally(()=>{sending=null;});
