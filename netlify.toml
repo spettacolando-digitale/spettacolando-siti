@@ -1,5 +1,7 @@
 [build]
   publish = "."
+  # salta le ripubblicazioni inutili (ogni pubblicazione costa crediti Netlify)
+  ignore = "bash netlify-ignora.sh"
 
 [functions]
   directory = "netlify/functions"

@@ -673,29 +673,36 @@ footer p{color:var(--muted);font-size:.85rem}
   function download(){const a=document.createElement('a');a.href=current.url;a.download=current.file.name;document.body.appendChild(a);a.click();a.remove();}
 
   // invio: il PDF viene caricato sul sito e Raffaella riceve una notifica con il link
+  const SU_NETLIFY=/netlify\.app$/.test(location.hostname), FN_BASE='https://raffaellapizzo.netlify.app';
   let sending=null;
   function upload(){
-    if(current.link)return Promise.resolve(current.link);
+    if(current.sent)return Promise.resolve(current.link);
     if(sending)return sending;
     const c=current;
     sending=(async()=>{
       const f=c.fields;
       const campi={nome:f.name,telefono:f.phone,evento:f.type,data:f.date||'',location:f.place,ospiti:f.guests||'',messaggio:f.msg,foto:String(c.nphoto)};
       const fd=new FormData();Object.entries(campi).forEach(([k,v])=>fd.append(k,v));fd.append('pdf',c.file,c.file.name);
-      const r=await fetch('/.netlify/functions/richiesta',{method:'POST',body:fd});
-      if(!r.ok)throw new Error('upload '+r.status);
-      const {id,k}=await r.json();
-      const link=location.origin+'/.netlify/functions/richiesta?id='+encodeURIComponent(id)+'&k='+encodeURIComponent(k);
+      let link='';
+      if(SU_NETLIFY){
+        const r=await fetch('/.netlify/functions/richiesta',{method:'POST',body:fd});
+        if(!r.ok)throw new Error('upload '+r.status);
+        const {id,k}=await r.json();
+        link=location.origin+'/.netlify/functions/richiesta?id='+encodeURIComponent(id)+'&k='+encodeURIComponent(k);
+      }else{
+        // sito pubblicato su GitHub Pages: la richiesta va alla funzione su Netlify (salva il PDF e manda l'email con allegato)
+        await fetch(FN_BASE+'/.netlify/functions/richiesta',{method:'POST',body:fd,mode:'no-cors'});
+      }
       // copia di sicurezza nei moduli Netlify
-      try{await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
-        body:new URLSearchParams(Object.assign({'form-name':'richiesta-consulenza',pdf:link},campi)).toString()});}catch(e){}
-      c.link=link;return link;
+      try{await fetch(SU_NETLIFY?'/':FN_BASE+'/',{method:'POST',mode:SU_NETLIFY?'same-origin':'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body:new URLSearchParams(Object.assign({'form-name':'richiesta-consulenza',pdf:link||'(inviato per email)'},campi)).toString()});}catch(e){}
+      c.sent=true;c.link=link;return link;
     })();
     sending.finally(()=>{sending=null;});
     return sending;
   }
   function busy(on){[btnWa,btnMail,btnDirect].forEach(b=>b.disabled=on);if(on)status.textContent='Invio della richiesta in corso…';}
-  function msgWith(link){return current.text+'\n\nPDF con tutti i dettagli e le foto: '+link;}
+  function msgWith(link){return current.text+(link?'\n\nPDF con tutti i dettagli e le foto: '+link:'\n\nHo inviato dal sito la richiesta completa, con il PDF dei dettagli e delle foto.');}
   async function send(channel){
     if(!current)return;
     // la finestra di WhatsApp si apre subito (altrimenti il browser la blocca), poi riceve il messaggio
