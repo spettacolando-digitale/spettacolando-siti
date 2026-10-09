@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "data": "2026-10-09",
+    "ora": "13:00",
+    "marchio": "spettacolando",
+    "reti": [
+      "instagram",
+      "tiktok"
+    ],
+    "tipo": "carosello",
+    "media": [
+      "foto/007-pasticceria-pastello.jpg",
+      "foto/004-pasticceria-pastello.jpg",
+      "foto/006-pasticceria-pastello.jpg",
+      "foto/012-pasticceria-pastello.jpg"
+    ],
+    "stato": "programmato",
+    "id_metricool": {
+      "instagram": 391938347,
+      "tiktok": 391938381
+    },
+    "nota": "prima prova reale approvata in chat"
+  }
+]
