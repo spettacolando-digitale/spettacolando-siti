@@ -1,0 +1,35 @@
+{
+  "data": "2026-10-11",
+  "giorno": "domenica",
+  "marchio": "spettacolando",
+  "reti": ["tiktok"],
+  "orario": "18:30",
+  "fuso": "Europe/Rome",
+  "tipo": "carosello",
+  "tema": "piccolo-principe",
+  "media": [
+    "social/media/2026-10-11/01.jpg",
+    "social/media/2026-10-11/02.jpg",
+    "social/media/2026-10-11/03.jpg",
+    "social/media/2026-10-11/04.jpg",
+    "social/media/2026-10-11/05.jpg"
+  ],
+  "media_origine": [
+    "foto/033-piccolo-principe.jpg",
+    "foto/018-piccolo-principe.jpg",
+    "foto/016-piccolo-principe.jpg",
+    "foto/017-piccolo-principe.jpg",
+    "foto/015-piccolo-principe.jpg"
+  ],
+  "anteprima": "social/proposte/2026-10-11-anteprima.jpg",
+  "testo": "Una festa tra nuvole, stelle e palloncini color cielo ☁️⭐\nLa frase scritta a mano sullo sfondo, l'aeroplanino, la torta verde salvia e i dolcetti abbinati: ogni dettaglio racconta una storia dolce e poetica.\n\nVuoi una festa così per il tuo bambino? Scrivici su WhatsApp al 334 349 9808 e la progettiamo insieme ✨\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #festeabambini #allestimentifeste #compleannobambini #festaatema #palloncini #partyplanner #angri #agronocerinosarnese #salerno",
+  "testo_tiktok": "Nuvole, stelle e palloncini color cielo ☁️⭐ Una festa poetica, curata in ogni dettaglio. Scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #festaatema #allestimentifeste #palloncini #angri",
+  "titolo_tiktok": "Una festa tra le nuvole",
+  "storie": [
+    {"file": "social/media/2026-10-11/storia-1.jpg", "origine": "foto/028-festa-viola.jpg", "scritta": "Ogni festa ha il suo palcoscenico"},
+    {"file": "social/media/2026-10-11/storia-2.jpg", "origine": "foto/021-villaggio-natale.jpg", "scritta": "Il Natale si prepara adesso"}
+  ],
+  "conteggio_mese": {"instagram": "1/20", "tiktok": "1/20 (2/20 con questo post)"},
+  "programmabile": true,
+  "stato": "in attesa"
+}
