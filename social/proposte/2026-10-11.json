@@ -2,7 +2,9 @@
   "data": "2026-10-11",
   "giorno": "domenica",
   "marchio": "spettacolando",
-  "reti": ["tiktok"],
+  "reti": [
+    "tiktok"
+  ],
   "orario": "18:30",
   "fuso": "Europe/Rome",
   "tipo": "carosello",
@@ -26,10 +28,22 @@
   "testo_tiktok": "Nuvole, stelle e palloncini color cielo ☁️⭐ Una festa poetica, curata in ogni dettaglio. Scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #festaatema #allestimentifeste #palloncini #angri",
   "titolo_tiktok": "Una festa tra le nuvole",
   "storie": [
-    {"file": "social/media/2026-10-11/storia-1.jpg", "origine": "foto/028-festa-viola.jpg", "scritta": "Ogni festa ha il suo palcoscenico"},
-    {"file": "social/media/2026-10-11/storia-2.jpg", "origine": "foto/021-villaggio-natale.jpg", "scritta": "Il Natale si prepara adesso"}
+    {
+      "file": "social/media/2026-10-11/storia-1.jpg",
+      "origine": "foto/028-festa-viola.jpg",
+      "scritta": "Ogni festa ha il suo palcoscenico"
+    },
+    {
+      "file": "social/media/2026-10-11/storia-2.jpg",
+      "origine": "foto/021-villaggio-natale.jpg",
+      "scritta": "Il Natale si prepara adesso"
+    }
   ],
-  "conteggio_mese": {"instagram": "1/20", "tiktok": "1/20 (2/20 con questo post)"},
+  "conteggio_mese": {
+    "instagram": "1/20",
+    "tiktok": "1/20 (2/20 con questo post)"
+  },
   "programmabile": true,
-  "stato": "in attesa"
+  "stato": "in attesa",
+  "gmail_thread_id": "1a12725347ae711e"
 }
