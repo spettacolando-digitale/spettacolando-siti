@@ -41,9 +41,13 @@
   ],
   "conteggio_mese": {
     "instagram": "1/20",
-    "tiktok": "1/20 (2/20 con questo post)"
+    "tiktok": "2/20"
   },
   "programmabile": true,
-  "stato": "in attesa",
-  "gmail_thread_id": "1a12725347ae711e"
+  "stato": "programmato",
+  "gmail_thread_id": "1a12725347ae711e",
+  "approvazione": "OK via email 2026-10-10 20:54",
+  "id_metricool": {
+    "tiktok": 393108872
+  }
 }

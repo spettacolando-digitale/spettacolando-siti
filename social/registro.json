@@ -24,5 +24,26 @@
       "instagram": "https://www.instagram.com/p/DeRW6b2iHRC/",
       "tiktok": "https://www.tiktok.com/@spettacolandoeventi/video/7694622030989167894"
     }
+  },
+  {
+    "data": "2026-10-11",
+    "ora": "18:30",
+    "marchio": "spettacolando",
+    "reti": [
+      "tiktok"
+    ],
+    "tipo": "carosello",
+    "media": [
+      "foto/033-piccolo-principe.jpg",
+      "foto/018-piccolo-principe.jpg",
+      "foto/016-piccolo-principe.jpg",
+      "foto/017-piccolo-principe.jpg",
+      "foto/015-piccolo-principe.jpg"
+    ],
+    "stato": "programmato",
+    "id_metricool": {
+      "tiktok": 393108872
+    },
+    "nota": "approvato via email (OK); TikTok autoPublish; storie facoltative a mano"
   }
 ]
