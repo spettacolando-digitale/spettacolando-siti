@@ -1,0 +1,48 @@
+{
+  "data": "2026-10-12",
+  "giorno": "lunedì",
+  "marchio": "spettacolando",
+  "reti": [
+    "instagram"
+  ],
+  "orario": "12:30",
+  "fuso": "Europe/Rome",
+  "tipo": "carosello",
+  "tema": "diciottesimo-bianco-rosa",
+  "media": [
+    "social/media/2026-10-12/01.jpg",
+    "social/media/2026-10-12/02.jpg",
+    "social/media/2026-10-12/03.jpg",
+    "social/media/2026-10-12/04.jpg"
+  ],
+  "media_origine": [
+    "foto/073-diciottesimo-bianco-rosa.jpg",
+    "foto/065-diciottesimo-bianco-rosa.jpg",
+    "foto/063-diciottesimo-bianco-rosa.jpg",
+    "foto/066-diciottesimo-bianco-rosa.jpg"
+  ],
+  "anteprima": "social/proposte/2026-10-12-anteprima.jpg",
+  "testo": "Diciotto anni in bianco e rosa 🤍🌸\nColonne di rose ai lati della torta, il grande fiocco cipria, il numero luminoso tra gli orsetti, il bar dei profumi e la tavola apparecchiata nei toni della festa: un allestimento elegante, curato in ogni dettaglio.\n\nStai pensando a un compleanno speciale? Scrivici su WhatsApp al 334 349 9808 e lo progettiamo insieme ✨\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #diciottesimo #18anni #festadiciottesimo #allestimentifeste #eventieleganti #partyplanner #angri #agronocerinosarnese #salerno",
+  "testo_facebook": "Si condivide automaticamente dal post Instagram (stesso testo, firma Spettacolando Eventi).",
+  "testo_tiktok": "Diciotto anni in bianco e rosa 🤍🌸 Rose, luci e dettagli eleganti. Scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #diciottesimo #18anni #allestimentifeste #angri",
+  "titolo_tiktok": "18 anni in bianco e rosa",
+  "nota_tiktok": "testo TikTok pronto ma lunedì solo Instagram da calendario",
+  "storie": [
+    {
+      "file": "social/media/2026-10-12/storia-1.jpg",
+      "origine": "foto/027-arco-floreale.jpg",
+      "scritta": "Fiori, luce e dettagli"
+    },
+    {
+      "file": "social/media/2026-10-12/storia-2.jpg",
+      "origine": "foto/044-cerimonia-verde-bianco.jpg",
+      "scritta": "Ogni cerimonia, su misura"
+    }
+  ],
+  "conteggio_mese": {
+    "instagram": "2/20",
+    "tiktok": "2/20"
+  },
+  "programmabile": true,
+  "stato": "in attesa"
+}

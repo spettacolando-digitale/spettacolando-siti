@@ -40,10 +40,13 @@
       "foto/017-piccolo-principe.jpg",
       "foto/015-piccolo-principe.jpg"
     ],
-    "stato": "programmato",
+    "stato": "pubblicato",
     "id_metricool": {
       "tiktok": 393108872
     },
-    "nota": "approvato via email (OK); TikTok autoPublish; storie facoltative a mano"
+    "nota": "approvato via email (OK); TikTok autoPublish; storie facoltative a mano",
+    "link": {
+      "tiktok": "https://www.tiktok.com/@spettacolandoeventi/video/7695448641296747798"
+    }
   }
 ]
