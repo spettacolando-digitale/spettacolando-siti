@@ -1,0 +1,43 @@
+{
+  "data": "2026-10-16",
+  "giorno": "venerdì",
+  "marchio": "spettacolando",
+  "reti": [
+    "instagram",
+    "facebook (condivisione automatica)"
+  ],
+  "orario": "12:30",
+  "fuso": "Europe/Rome",
+  "tipo": "post",
+  "tema": "festa-viola",
+  "media": [
+    "social/media/2026-10-16/01.jpg"
+  ],
+  "media_origine": [
+    "foto/028-festa-viola.jpg"
+  ],
+  "anteprima": "social/proposte/2026-10-16-anteprima.jpg",
+  "testo": "Una festa in viola che si accende come un palcoscenico 💜✨\nColonne di rose e ortensie, luci verticali, la torta bianca al centro e il nome della festeggiata in neon: un allestimento scenografico pensato per lasciare tutti a bocca aperta.\n\nHai una festa importante in arrivo? Scrivici su WhatsApp al 334 349 9808 e la progettiamo insieme 🌸\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #allestimentifeste #festaatema #allestimentifloreali #compleanno #eventieleganti #partyplanner #angri #agronocerinosarnese #salerno",
+  "testo_facebook": "Si condivide automaticamente dal post Instagram (stesso testo, firma Spettacolando Eventi).",
+  "testo_tiktok": "Una festa in viola che si accende come un palcoscenico 💜✨ Fiori, luci e neon. Scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #festaatema #allestimentifeste #allestimentifloreali #angri",
+  "titolo_tiktok": "Una festa in viola",
+  "nota_tiktok": "testo TikTok pronto ma venerdì solo Instagram da calendario",
+  "storie": [
+    {
+      "file": "social/media/2026-10-16/storia-1.jpg",
+      "origine": "foto/046-cerimonia-verde-bianco.jpg",
+      "scritta": "Eleganza in bianco e verde"
+    },
+    {
+      "file": "social/media/2026-10-16/storia-2.jpg",
+      "origine": "foto/022-villaggio-natale.jpg",
+      "scritta": "Il Natale ha bisogno di magia"
+    }
+  ],
+  "conteggio_mese": {
+    "instagram": "3/20 con questo post (1 pubblicato + 1 bozza di prova del 20/10 su Metricool + questo)",
+    "tiktok": "2/20"
+  },
+  "programmabile": true,
+  "stato": "in attesa"
+}
