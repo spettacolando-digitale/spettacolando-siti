@@ -39,6 +39,13 @@
     "tiktok": "2/20"
   },
   "programmabile": true,
-  "stato": "in attesa",
-  "gmail_thread_id": "1a140e4a30780765"
+  "stato": "programmato",
+  "gmail_thread_id": "1a140e4a30780765",
+  "approvazione": "OK via email 15/10 20:53",
+  "id_metricool": {
+    "instagram": 397437140
+  },
+  "metricool_uuid": {
+    "instagram": "4669345774417429011"
+  }
 }
