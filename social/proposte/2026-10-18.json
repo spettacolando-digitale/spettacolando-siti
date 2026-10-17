@@ -1,0 +1,49 @@
+{
+  "data": "2026-10-18",
+  "giorno": "domenica",
+  "marchio": "spettacolando",
+  "reti": [
+    "tiktok"
+  ],
+  "orario": "18:30",
+  "fuso": "Europe/Rome",
+  "tipo": "carosello",
+  "tema": "diciottesimo-arancio",
+  "media": [
+    "social/media/2026-10-18/01.jpg",
+    "social/media/2026-10-18/02.jpg",
+    "social/media/2026-10-18/03.jpg",
+    "social/media/2026-10-18/04.jpg",
+    "social/media/2026-10-18/05.jpg"
+  ],
+  "media_origine": [
+    "foto/058-diciottesimo-arancio.jpg",
+    "foto/056-diciottesimo-arancio.jpg",
+    "foto/045-diciottesimo-arancio.jpg",
+    "foto/034-diciottesimo-arancio.jpg",
+    "foto/057-diciottesimo-arancio.jpg"
+  ],
+  "anteprima": "social/proposte/2026-10-18-anteprima.jpg",
+  "testo": "Diciotto anni in arancio intenso 🧡✨\nLa torre di pacchi regalo con il 18, gli orsetti in divisa arancio sulle mensole, il salottino vellutato e i centrotavola con rose e sterlizie: un allestimento elegante e pieno di carattere, firmato in ogni dettaglio.\n\nStai pensando a un diciottesimo indimenticabile? Scrivici su WhatsApp al 334 349 9808 e lo progettiamo insieme 🎉\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #diciottesimo #18anni #festa18anni #allestimentifeste #festaatema #partyplanner #angri #agronocerinosarnese #salerno",
+  "testo_facebook": "Domenica solo TikTok da calendario: il testo Instagram/Facebook resta pronto per un eventuale uso futuro (firma Spettacolando Eventi).",
+  "testo_tiktok": "18 anni in arancio intenso 🧡 Orsetti, fiori e una torre di regali. Scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #diciottesimo #18anni #allestimentifeste #angri",
+  "titolo_tiktok": "Un diciottesimo in arancio",
+  "storie": [
+    {
+      "file": "social/media/2026-10-18/storia-1.jpg",
+      "origine": "foto/077-diciottesimo-bianco-rosa.jpg",
+      "scritta": "Fiori, luce e un sogno a tre piani"
+    },
+    {
+      "file": "social/media/2026-10-18/storia-2.jpg",
+      "origine": "foto/065-diciottesimo-bianco-rosa.jpg",
+      "scritta": "Diciotto anni da ricordare"
+    }
+  ],
+  "conteggio_mese": {
+    "instagram": "3/20 (invariato)",
+    "tiktok": "3/20 con questo post"
+  },
+  "programmabile": true,
+  "stato": "in attesa"
+}
