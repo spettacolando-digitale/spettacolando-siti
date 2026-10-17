@@ -60,10 +60,10 @@
     "media": [
       "foto/028-festa-viola.jpg"
     ],
-    "stato": "programmato",
+    "stato": "pubblicato",
     "id_metricool": {
       "instagram": 397437140
     },
-    "nota": "approvato via email (OK); IG autoPublish false → notifica app Metricool alle 12:30, condivisione FB automatica; storie facoltative a mano"
+    "nota": "approvato via email (OK); IG autoPublish false → notifica app Metricool alle 12:30, condivisione FB automatica; storie facoltative a mano; pubblicato da notifica app (stato Metricool PUBLISHED, verificato 17/10); link non restituito da Metricool"
   }
 ]
