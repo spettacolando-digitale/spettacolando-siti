@@ -45,5 +45,6 @@
     "tiktok": "3/20 con questo post"
   },
   "programmabile": true,
-  "stato": "in attesa"
+  "stato": "in attesa",
+  "nota": "Email di conferma NON inviata il 17/10: connettore Gmail da ricollegare. Avviso inviato via notifica."
 }
