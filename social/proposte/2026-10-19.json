@@ -1,0 +1,50 @@
+{
+  "data": "2026-10-19",
+  "giorno": "lunedì",
+  "marchio": "spettacolando",
+  "reti": [
+    "instagram",
+    "facebook (condivisione automatica)"
+  ],
+  "orario": "12:30",
+  "fuso": "Europe/Rome",
+  "tipo": "carosello",
+  "tema": "cerimonia-verde-bianco",
+  "media": [
+    "social/media/2026-10-19/01.jpg",
+    "social/media/2026-10-19/02.jpg",
+    "social/media/2026-10-19/03.jpg",
+    "social/media/2026-10-19/04.jpg"
+  ],
+  "media_origine": [
+    "foto/044-cerimonia-verde-bianco.jpg",
+    "foto/046-cerimonia-verde-bianco.jpg (dettaglio)",
+    "foto/047-cerimonia-verde-bianco.jpg",
+    "foto/026-mise-en-place.jpg"
+  ],
+  "anteprima": "social/proposte/2026-10-19-anteprima.jpg",
+  "testo": "Bianco, verde e un tocco d'oro 🤍🌿\nComposizioni di rose bianche, pampas e verde selvatico, lanterne dorate, le iniziali in oro e una tavola lunga con runner menta e fiori freschi: un'eleganza naturale, pensata in ogni dettaglio.\n\nHai una cerimonia o una festa importante in arrivo? Scrivici su WhatsApp al 334 349 9808 e la progettiamo insieme ✨\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #allestimentifloreali #allestimentieventi #miseenplace #cerimonia #eventieleganti #partyplanner #angri #agronocerinosarnese #salerno",
+  "testo_facebook": "Si condivide automaticamente dal post Instagram (stesso testo, firma Spettacolando Eventi).",
+  "testo_tiktok": "Bianco, verde e un tocco d'oro 🤍🌿 Fiori, lanterne e una tavola da sogno. Scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #allestimentifloreali #cerimonia #eventieleganti #angri",
+  "titolo_tiktok": "Bianco, verde e oro",
+  "nota_tiktok": "testo TikTok pronto ma lunedì solo Instagram da calendario",
+  "storie": [
+    {
+      "file": "social/media/2026-10-19/storia-1.jpg",
+      "origine": "foto/023-villaggio-natale.jpg",
+      "scritta": "Il Natale si avvicina"
+    },
+    {
+      "file": "social/media/2026-10-19/storia-2.jpg",
+      "origine": "foto/035-pigiama-party.jpg",
+      "scritta": "Un pigiama party in rosa"
+    }
+  ],
+  "conteggio_mese": {
+    "instagram": "4/20 con questo post (2 pubblicati + 1 bozza di prova del 20/10 + questo)",
+    "tiktok": "2/20 (invariato)"
+  },
+  "programmabile": true,
+  "stato": "in attesa",
+  "nota": "Email di conferma NON inviata il 18/10: connettore Gmail da ricollegare. Avviso inviato via notifica."
+}
