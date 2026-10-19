@@ -45,6 +45,6 @@
     "tiktok": "2/20 (invariato)"
   },
   "programmabile": true,
-  "stato": "in attesa",
-  "nota": "Email di conferma NON inviata il 18/10: connettore Gmail da ricollegare. Avviso inviato via notifica."
+  "stato": "non programmato",
+  "nota": "Email di conferma NON inviata il 18/10: connettore Gmail da ricollegare. Avviso inviato via notifica. 19/10 mattina: nessuna approvazione ricevibile (Gmail da ricollegare), post non programmato; resta pronto per il prossimo slot."
 }
