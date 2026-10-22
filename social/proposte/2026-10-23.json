@@ -1,0 +1,44 @@
+{
+  "data": "2026-10-23",
+  "giorno": "venerdì",
+  "marchio": "spettacolando",
+  "reti": [
+    "instagram",
+    "facebook (condivisione automatica)"
+  ],
+  "orario": "12:30",
+  "fuso": "Europe/Rome",
+  "tipo": "post",
+  "tema": "diciottesimo-bianco-rosa",
+  "media": [
+    "social/media/2026-10-23/01.jpg"
+  ],
+  "media_origine": [
+    "foto/064-diciottesimo-bianco-rosa.jpg"
+  ],
+  "anteprima": "social/proposte/2026-10-23-anteprima.jpg",
+  "testo": "Diciotto anni tra rose e un fiocco di raso 🤍🌸\nDue colonne di fiori in bianco e cipria, la torta a tre piani al centro e una pioggia di candele ai piedi: un allestimento romantico ed elegante, curato in ogni dettaglio.\n\nStai pensando a un diciottesimo da ricordare? Scrivici su WhatsApp al 334 349 9808 e lo progettiamo insieme ✨\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #diciottesimo #18anni #festa18anni #allestimentifloreali #allestimentifeste #eventieleganti #partyplanner #angri #salerno",
+  "testo_facebook": "Si condivide automaticamente dal post Instagram (stesso testo, firma Spettacolando Eventi).",
+  "testo_tiktok": "18 anni tra rose e un fiocco di raso 🤍🌸 Fiori, candele e una torta da sogno. Scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #diciottesimo #18anni #allestimentifloreali #angri",
+  "titolo_tiktok": "Un diciottesimo tra le rose",
+  "nota_tiktok": "testo TikTok pronto ma venerdì solo Instagram da calendario",
+  "storie": [
+    {
+      "file": "social/media/2026-10-23/storia-1.jpg",
+      "origine": "foto/021-villaggio-natale.jpg",
+      "scritta": "Il Natale si avvicina"
+    },
+    {
+      "file": "social/media/2026-10-23/storia-2.jpg",
+      "origine": "foto/066-diciottesimo-bianco-rosa.jpg",
+      "scritta": "Ogni dettaglio, a tavola"
+    }
+  ],
+  "conteggio_mese": {
+    "instagram": "4/20 con questo post (3 già in Metricool: 2 pubblicati + 1 bozza di prova del 20/10)",
+    "tiktok": "2/20 (invariato)"
+  },
+  "programmabile": true,
+  "stato": "in attesa",
+  "nota": "Email di conferma NON inviata il 22/10: connettore Gmail da ricollegare. Avviso inviato via notifica."
+}
