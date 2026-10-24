@@ -1,0 +1,48 @@
+{
+  "data": "2026-10-25",
+  "giorno": "domenica",
+  "marchio": "spettacolando",
+  "reti": [
+    "tiktok"
+  ],
+  "orario": "18:30",
+  "fuso": "Europe/Rome",
+  "tipo": "carosello",
+  "tema": "alice (paese delle meraviglie)",
+  "media": [
+    "social/media/2026-10-25/01.jpg",
+    "social/media/2026-10-25/02.jpg",
+    "social/media/2026-10-25/03.jpg",
+    "social/media/2026-10-25/04.jpg"
+  ],
+  "media_origine": [
+    "foto/036-alice.jpg",
+    "foto/041-alice.jpg",
+    "foto/043-alice.jpg",
+    "foto/039-alice.jpg"
+  ],
+  "anteprima": "social/proposte/2026-10-25-anteprima.jpg",
+  "testo": "Un tè nel paese delle meraviglie 🫖🍄\nPavimento a scacchi, il trono rosso, funghi giganti, tazzine vintage e piatti a forma di orologio: una festa da fiaba, costruita pezzo per pezzo.\n\nSogni una festa a tema così? Scrivici su WhatsApp al 334 349 9808 e la progettiamo insieme ✨\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #festaatema #paesedellemeraviglie #teadellemeraviglie #allestimentifeste #compleanno #partyplanner #angri #agronocerinosarnese #salerno",
+  "testo_facebook": "Domenica solo TikTok da calendario: il testo Instagram/Facebook resta pronto per un eventuale uso futuro (firma Spettacolando Eventi).",
+  "testo_tiktok": "Un tè nel paese delle meraviglie 🫖🍄 Scacchi, funghi giganti e tazzine da fiaba. Scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #festaatema #allestimentifeste #paesedellemeraviglie #angri",
+  "titolo_tiktok": "Un tè nel paese delle meraviglie",
+  "storie": [
+    {
+      "file": "social/media/2026-10-25/storia-1.jpg",
+      "origine": "foto/032-trucca-bimbi.jpg",
+      "scritta": "Colori e glitter"
+    },
+    {
+      "file": "social/media/2026-10-25/storia-2.jpg",
+      "origine": "foto/059-pigiama-party.jpg",
+      "scritta": "Un pigiama party in rosa"
+    }
+  ],
+  "conteggio_mese": {
+    "instagram": "3/20 (invariato)",
+    "tiktok": "3/20 con questo post"
+  },
+  "programmabile": true,
+  "stato": "in attesa",
+  "nota": "Email di conferma NON inviata il 24/10: connettore Gmail non disponibile (da ricollegare). Avviso inviato via notifica."
+}
