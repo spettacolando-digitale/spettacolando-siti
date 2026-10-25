@@ -1,0 +1,52 @@
+{
+  "data": "2026-10-26",
+  "giorno": "lunedì",
+  "marchio": "spettacolando",
+  "reti": [
+    "instagram",
+    "facebook (condivisione automatica)"
+  ],
+  "orario": "12:30",
+  "fuso": "Europe/Rome",
+  "tipo": "carosello",
+  "tema": "diciottesimo-arancio",
+  "media": [
+    "social/media/2026-10-26/01.jpg",
+    "social/media/2026-10-26/02.jpg",
+    "social/media/2026-10-26/03.jpg",
+    "social/media/2026-10-26/04.jpg",
+    "social/media/2026-10-26/05.jpg"
+  ],
+  "media_origine": [
+    "foto/058-diciottesimo-arancio.jpg",
+    "foto/057-diciottesimo-arancio.jpg",
+    "foto/056-diciottesimo-arancio.jpg",
+    "foto/055-diciottesimo-arancio.jpg",
+    "foto/045-diciottesimo-arancio.jpg"
+  ],
+  "anteprima": "social/proposte/2026-10-26-anteprima.jpg",
+  "testo": "Diciotto anni in arancio e nero 🧡🖤\nLa torta a pacchi regalo, gli orsetti sugli scaffali, i centrotavola con rose pesca e strelitzie e il menù su ogni piatto: un diciottesimo elegante e pieno di carattere, curato in ogni dettaglio.\n\nStai organizzando un diciottesimo o una festa importante? Scrivici su WhatsApp al 334 349 9808 e la progettiamo insieme ✨\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #diciottesimo #18anni #festa18anni #allestimentifeste #allestimentifloreali #eventieleganti #partyplanner #angri #salerno",
+  "testo_facebook": "Si condivide automaticamente dal post Instagram (stesso testo, firma Spettacolando Eventi).",
+  "testo_tiktok": "18 anni in arancio e nero 🧡🖤 Orsetti, fiori e una torta a pacchi regalo. Scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #diciottesimo #18anni #allestimentifeste #angri",
+  "titolo_tiktok": "Un diciottesimo in arancio",
+  "nota_tiktok": "testo TikTok pronto ma lunedì solo Instagram da calendario",
+  "storie": [
+    {
+      "file": "social/media/2026-10-26/storia-1.jpg",
+      "origine": "foto/027-arco-floreale.jpg",
+      "scritta": "Fiori e palloncini"
+    },
+    {
+      "file": "social/media/2026-10-26/storia-2.jpg",
+      "origine": "foto/030-festa-viola.jpg",
+      "scritta": "Una festa in viola"
+    }
+  ],
+  "conteggio_mese": {
+    "instagram": "4/20 con questo post (2 pubblicati + 1 bozza di prova del 20/10 + questo)",
+    "tiktok": "2/20 (invariato)"
+  },
+  "programmabile": true,
+  "stato": "in attesa",
+  "nota": "Email di conferma NON inviata il 25/10: connettore Gmail da ricollegare. Proposta inviata via notifica."
+}
