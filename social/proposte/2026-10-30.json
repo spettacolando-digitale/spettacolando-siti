@@ -1,0 +1,44 @@
+{
+  "data": "2026-10-30",
+  "giorno": "venerdì",
+  "marchio": "spettacolando",
+  "reti": [
+    "instagram",
+    "facebook (condivisione automatica)"
+  ],
+  "orario": "12:30",
+  "fuso": "Europe/Rome",
+  "tipo": "post",
+  "tema": "villaggio-natale",
+  "media": [
+    "social/media/2026-10-30/01.jpg"
+  ],
+  "media_origine": [
+    "foto/023-villaggio-natale.jpg"
+  ],
+  "anteprima": "social/proposte/2026-10-30-anteprima.jpg",
+  "testo": "Il Natale sta arrivando e noi lo stiamo già preparando 🎄✨\nArchi in pietra illuminati, omini di pan di zenzero, slitte e casette rosse: un villaggio di Natale da attraversare a occhi aperti, curato in ogni dettaglio.\n\nVuoi portare la magia del Natale nel tuo evento, nella tua scuola o nella tua piazza? Scrivici su WhatsApp al 334 349 9808 e lo progettiamo insieme 🎁\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #villaggiodinatale #natale2026 #eventinatalizi #allestimentinatalizi #magiadelnatale #animazione #angri #agronocerinosarnese #salerno",
+  "testo_facebook": "Si condivide automaticamente dal post Instagram (stesso testo, firma Spettacolando Eventi).",
+  "testo_tiktok": "Un villaggio di Natale tra archi in pietra e luci calde 🎄✨ Porta la magia nel tuo evento: scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #villaggiodinatale #natale #eventinatalizi #angri",
+  "titolo_tiktok": "Il villaggio di Natale",
+  "nota_tiktok": "testo TikTok pronto ma venerdì solo Instagram da calendario",
+  "storie": [
+    {
+      "file": "social/media/2026-10-30/storia-1.jpg",
+      "origine": "foto/022-villaggio-natale.jpg",
+      "scritta": "Il Natale ci aspetta"
+    },
+    {
+      "file": "social/media/2026-10-30/storia-2.jpg",
+      "origine": "foto/025-mise-en-place.jpg",
+      "scritta": "Ogni dettaglio conta"
+    }
+  ],
+  "conteggio_mese": {
+    "instagram": "4/20 con questo post (2 pubblicati + 1 bozza di prova del 20/10 + questo)",
+    "tiktok": "2/20 (invariato)"
+  },
+  "programmabile": true,
+  "stato": "in attesa",
+  "nota": "Email di conferma NON inviata il 29/10: connettore Gmail da ricollegare. Proposta inviata via notifica."
+}
