@@ -1,0 +1,40 @@
+{
+  "data": "2026-11-01",
+  "giorno": "domenica",
+  "marchio": "spettacolando",
+  "reti": ["tiktok"],
+  "orario": "18:30",
+  "fuso": "Europe/Rome",
+  "tipo": "carosello",
+  "tema": "pasticceria-pastello",
+  "media": [
+    "social/media/2026-11-01/01.jpg",
+    "social/media/2026-11-01/02.jpg",
+    "social/media/2026-11-01/03.jpg",
+    "social/media/2026-11-01/04.jpg",
+    "social/media/2026-11-01/05.jpg"
+  ],
+  "media_origine": [
+    "foto/005-pasticceria-pastello.jpg",
+    "foto/002-pasticceria-pastello.jpg",
+    "foto/008-pasticceria-pastello.jpg",
+    "foto/000-pasticceria-pastello.jpg",
+    "foto/013-pasticceria-pastello.jpg"
+  ],
+  "anteprima": "social/proposte/2026-11-01-anteprima.jpg",
+  "testo": "Una pasticceria in menta e rosa, tutta da festeggiare 🧁🌸\nVetrine piene di dolcetti, una torta che sembra una bottega, il tavolino da tè con macarons e fiori freschi: ogni dettaglio pensato per stupire.\n\nVuoi una festa dolce come questa? Scrivici su WhatsApp al 334 349 9808 e la progettiamo insieme ✨\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #festaatema #pasticceria #sweettable #allestimentifeste #compleanno #partyplanner #angri #agronocerinosarnese #salerno",
+  "testo_facebook": "Domenica solo TikTok da calendario: il testo Instagram/Facebook resta pronto per un eventuale uso futuro (firma Spettacolando Eventi).",
+  "testo_tiktok": "Una pasticceria in menta e rosa 🧁🌸 Vetrine di dolcetti, torta-bottega e tè tra i fiori. Scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #festaatema #sweettable #allestimentifeste #angri",
+  "titolo_tiktok": "La pasticceria in menta e rosa",
+  "storie": [
+    {"file": "social/media/2026-11-01/storia-1.jpg", "origine": "foto/031-festa-viola.jpg", "scritta": "Atmosfere in viola"},
+    {"file": "social/media/2026-11-01/storia-2.jpg", "origine": "foto/027-arco-floreale.jpg", "scritta": "Fiori che fanno festa"}
+  ],
+  "conteggio_mese": {
+    "instagram": "0/20 (novembre, invariato)",
+    "tiktok": "1/20 con questo post (nessun post programmato su Metricool a novembre)"
+  },
+  "programmabile": true,
+  "stato": "in attesa",
+  "nota": "Foto del tema pasticceria mai usate sui social (il tema era uscito il 09/10 con altre foto). Email di conferma NON inviata il 31/10: connettore email non disponibile in questa esecuzione (da ricollegare). Proposta inviata via notifica."
+}
