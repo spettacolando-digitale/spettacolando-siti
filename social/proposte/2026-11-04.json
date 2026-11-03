@@ -1,0 +1,49 @@
+{
+  "data": "2026-11-04",
+  "giorno": "mercoledì",
+  "marchio": "spettacolando",
+  "reti": [
+    "instagram",
+    "tiktok",
+    "facebook (condivisione automatica)"
+  ],
+  "orario": "18:30",
+  "fuso": "Europe/Rome",
+  "tipo": "carosello",
+  "nota_tipo": "nessun video adatto in archivio → carosello",
+  "tema": "villaggio-natale",
+  "media": [
+    "social/media/2026-11-04/01.jpg",
+    "social/media/2026-11-04/02.jpg",
+    "social/media/2026-11-04/03.jpg"
+  ],
+  "media_origine": [
+    "foto/023-villaggio-natale.jpg",
+    "foto/022-villaggio-natale.jpg",
+    "foto/021-villaggio-natale.jpg"
+  ],
+  "anteprima": "social/proposte/2026-11-04-anteprima.jpg",
+  "testo": "Il Natale sta arrivando 🎄✨\nArchi in pietra illuminati, biscotti giganti, slitte e casette rosse, personaggi in costume che accolgono grandi e piccini: il nostro villaggio di Natale è un viaggio nella magia delle feste.\n\nVuoi portare questa atmosfera al tuo evento di Natale? Scrivici su WhatsApp al 334 349 9808 e lo prepariamo insieme 🎁\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #villaggiodinatale #natale2026 #eventidinatale #natalemagico #animazionenatalizia #allestimentinatalizi #angri #agronocerinosarnese #salerno",
+  "testo_facebook": "Si condivide automaticamente dal post Instagram (stesso testo, firma Spettacolando Eventi).",
+  "testo_tiktok": "Il Natale sta arrivando 🎄 Archi di pietra, luci e personaggi in costume: benvenuti nel nostro villaggio di Natale! Scrivici su WhatsApp 334 349 9808 ✨ #spettacolandoeventi #villaggiodinatale #natale #eventidinatale #angri",
+  "titolo_tiktok": "Benvenuti nel villaggio di Natale",
+  "storie": [
+    {
+      "file": "social/media/2026-11-04/storia-1.jpg",
+      "origine": "foto/061-diciottesimo-bianco-rosa.jpg",
+      "scritta": "Un parfum bar per i 18 anni"
+    },
+    {
+      "file": "social/media/2026-11-04/storia-2.jpg",
+      "origine": "foto/025-mise-en-place.jpg",
+      "scritta": "Dettagli che restano"
+    }
+  ],
+  "conteggio_mese": {
+    "instagram": "1/20 con questo post (nessun post programmato su Metricool a novembre)",
+    "tiktok": "1/20 con questo post"
+  },
+  "programmabile": true,
+  "stato": "in attesa",
+  "nota": "Foto mai usate sui social (023 era nella proposta del 30/10 non pubblicata). Email di proposta NON inviata il 03/11: connettore Gmail da ricollegare. Proposta inviata via notifica."
+}
