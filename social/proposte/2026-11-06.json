@@ -1,0 +1,44 @@
+{
+  "data": "2026-11-06",
+  "giorno": "venerdì",
+  "marchio": "spettacolando",
+  "reti": [
+    "instagram",
+    "facebook (condivisione automatica)"
+  ],
+  "orario": "12:30",
+  "fuso": "Europe/Rome",
+  "tipo": "post",
+  "tema": "diciottesimo-bianco-rosa",
+  "media": [
+    "social/media/2026-11-06/01.jpg"
+  ],
+  "media_origine": [
+    "foto/064-diciottesimo-bianco-rosa.jpg"
+  ],
+  "anteprima": "social/proposte/2026-11-06-anteprima.jpg",
+  "testo": "18 anni tra colonne di rose 🌸\nRose bianche e cipria, un grande fiocco in raso, una torta a tre piani e candele a terra: un angolo da favola per festeggiare la maggiore età con eleganza.\n\nStai organizzando i tuoi 18 anni o una festa speciale? Scrivici su WhatsApp al 334 349 9808 e lo creiamo insieme ✨\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #diciottesimo #18anni #festa18anni #allestimentifloreali #torta18anni #eventieleganti #angri #agronocerinosarnese #salerno",
+  "testo_facebook": "Si condivide automaticamente dal post Instagram (stesso testo, firma Spettacolando Eventi).",
+  "testo_tiktok": "Un 18° tra colonne di rose e un grande fiocco 🌸 Festeggia con noi: scrivici su WhatsApp 334 349 9808 ✨ #spettacolandoeventi #18anni #festa18anni #allestimenti #angri",
+  "titolo_tiktok": "18 anni tra le rose",
+  "nota_tiktok": "testo TikTok pronto ma venerdì solo Instagram da calendario",
+  "storie": [
+    {
+      "file": "social/media/2026-11-06/storia-1.jpg",
+      "origine": "foto/065-diciottesimo-bianco-rosa.jpg",
+      "scritta": "I tuoi 18 anni, in luce"
+    },
+    {
+      "file": "social/media/2026-11-06/storia-2.jpg",
+      "origine": "foto/066-diciottesimo-bianco-rosa.jpg",
+      "scritta": "Ogni tavolo racconta"
+    }
+  ],
+  "conteggio_mese": {
+    "instagram": "1/20 con questo post (nessun post programmato o pubblicato su Metricool a novembre)",
+    "tiktok": "0/20"
+  },
+  "programmabile": true,
+  "stato": "in attesa",
+  "nota": "Foto mai usate sui social. Tema nuovo rispetto alle proposte 1-4/11 (pasticceria, floreali, villaggio di Natale)."
+}
