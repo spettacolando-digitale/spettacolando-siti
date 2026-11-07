@@ -1,0 +1,48 @@
+{
+  "data": "2026-11-08",
+  "giorno": "domenica",
+  "marchio": "spettacolando",
+  "reti": [
+    "tiktok"
+  ],
+  "orario": "18:30",
+  "fuso": "Europe/Rome",
+  "tipo": "carosello",
+  "tema": "alice (paese delle meraviglie)",
+  "media": [
+    "social/media/2026-11-08/01.jpg",
+    "social/media/2026-11-08/02.jpg",
+    "social/media/2026-11-08/03.jpg",
+    "social/media/2026-11-08/04.jpg"
+  ],
+  "media_origine": [
+    "foto/036-alice.jpg",
+    "foto/043-alice.jpg",
+    "foto/041-alice.jpg",
+    "foto/039-alice.jpg"
+  ],
+  "anteprima": "social/proposte/2026-11-08-anteprima.jpg",
+  "testo": "Benvenuti nel paese delle meraviglie 🎩🌷\nUna casetta incantata, la torta a quadri, il tè tra cuori e fiori e una tavola dove anche l'orologio ha fretta di festeggiare: ogni angolo è una sorpresa.\n\nSogni una festa da fiaba così? Scrivici su WhatsApp al 334 349 9808 e la creiamo insieme ✨\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #paesedellemeraviglie #festaatema #compleannobambini #festabambini #allestimentifeste #partyplanner #angri #agronocerinosarnese #salerno",
+  "testo_facebook": "Domenica solo TikTok da calendario: il testo Instagram/Facebook resta pronto per un eventuale uso futuro (firma Spettacolando Eventi).",
+  "testo_tiktok": "Una festa nel paese delle meraviglie 🎩🌷 Tè tra i cuori, torta a quadri e orologi magici. Scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #paesedellemeraviglie #festaatema #festabambini #angri",
+  "titolo_tiktok": "Una festa nel paese delle meraviglie",
+  "storie": [
+    {
+      "file": "social/media/2026-11-08/storia-1.jpg",
+      "origine": "foto/045-diciottesimo-arancio.jpg",
+      "scritta": "Calde sfumature d’arancio"
+    },
+    {
+      "file": "social/media/2026-11-08/storia-2.jpg",
+      "origine": "foto/026-mise-en-place.jpg",
+      "scritta": "La tavola, prima della festa"
+    }
+  ],
+  "conteggio_mese": {
+    "instagram": "0/20 (novembre)",
+    "tiktok": "1/20 con questo post (nessun post programmato su Metricool a novembre)"
+  },
+  "programmabile": true,
+  "stato": "in attesa",
+  "nota": "Foto Alice mai pubblicate sui social; esclusa 038/042 (nome della bambina leggibile sulle tovagliette). Nessun nome di personaggio nel testo. Tema diverso dal post del 06/11."
+}
