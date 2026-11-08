@@ -1,0 +1,50 @@
+{
+  "data": "2026-11-09",
+  "giorno": "lunedì",
+  "marchio": "spettacolando",
+  "reti": [
+    "instagram",
+    "facebook (condivisione automatica)"
+  ],
+  "orario": "12:30",
+  "fuso": "Europe/Rome",
+  "tipo": "carosello",
+  "tema": "feste in rosa (pigiama party, festa rosa e giallo)",
+  "media": [
+    "social/media/2026-11-09/01.jpg",
+    "social/media/2026-11-09/02.jpg",
+    "social/media/2026-11-09/03.jpg",
+    "social/media/2026-11-09/04.jpg"
+  ],
+  "media_origine": [
+    "foto/035-pigiama-party.jpg",
+    "foto/049-minnie.jpg",
+    "foto/050-minnie.jpg",
+    "foto/048-minnie.jpg"
+  ],
+  "anteprima": "social/proposte/2026-11-09-anteprima.jpg",
+  "testo": "Feste in rosa, dolci come un pigiama party 💗🌼\nAccappatoi coordinati, specchi e mascherine per una serata da coccole, poi donuts, scatoline regalo, fiori gialli e caramelle per una festa piena di luce: ogni dettaglio è pensato per far sorridere.\n\nVuoi una festa così per la tua bambina? Scrivici su WhatsApp al 334 349 9808 e la creiamo insieme ✨\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #pigiamaparty #festainrosa #compleannobambini #festabambini #allestimentifeste #sweettable #partyplanner #angri #salerno",
+  "testo_facebook": "Si condivide automaticamente dal post Instagram (stesso testo, firma Spettacolando Eventi).",
+  "testo_tiktok": "Pigiama party e dolcezze in rosa 💗 Accappatoi, donuts e fiori gialli: scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #pigiamaparty #festainrosa #festabambini #angri",
+  "titolo_tiktok": "Feste in rosa",
+  "nota_tiktok": "testo TikTok pronto ma lunedì solo Instagram da calendario",
+  "storie": [
+    {
+      "file": "social/media/2026-11-09/storia-1.jpg",
+      "origine": "foto/024-diciottesimo-arancio.jpg",
+      "scritta": "Dettagli che fanno festa"
+    },
+    {
+      "file": "social/media/2026-11-09/storia-2.jpg",
+      "origine": "foto/032-trucca-bimbi.jpg",
+      "scritta": "Un tocco di colore e glitter"
+    }
+  ],
+  "conteggio_mese": {
+    "instagram": "1/20 con questo post (nessun post programmato o pubblicato su Metricool a novembre)",
+    "tiktok": "0/20"
+  },
+  "programmabile": true,
+  "stato": "in attesa",
+  "nota": "Foto mai usate sui social; esclusa 051 (personaggi in costume e nome della bambina). Nessun nome di personaggio nel testo. Tema mai proposto come post principale; diverso da 06/11 (18 anni) e 08/11 (paese delle meraviglie)."
+}
