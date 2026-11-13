@@ -65,5 +65,22 @@
       "instagram": 397437140
     },
     "nota": "approvato via email (OK); IG autoPublish false → notifica app Metricool alle 12:30, condivisione FB automatica; storie facoltative a mano; pubblicato da notifica app (stato Metricool PUBLISHED, verificato 17/10); link non restituito da Metricool"
+  },
+  {
+    "data": "2026-11-13",
+    "ora": "12:30",
+    "marchio": "spettacolando",
+    "reti": [
+      "instagram"
+    ],
+    "tipo": "post",
+    "media": [
+      "foto/027-arco-floreale.jpg"
+    ],
+    "stato": "programmato",
+    "id_metricool": {
+      "instagram": 426599997
+    },
+    "nota": "approvato via email (Ok, 12/11 21:56); IG autoPublish false → notifica app Metricool alle 12:30, condivisione FB automatica; storie facoltative a mano"
   }
 ]

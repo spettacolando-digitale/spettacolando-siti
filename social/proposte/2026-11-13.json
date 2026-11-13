@@ -39,7 +39,11 @@
     "tiktok": "0/20"
   },
   "programmabile": true,
-  "stato": "in attesa",
+  "stato": "programmato",
   "nota": "Foto mai pubblicata sui social; ritaglio 4:5 che esclude la sagoma del personaggio a sinistra; nessun nome di personaggio nel testo. Tema diverso dalle ultime proposte (09/11 feste in rosa, 08/11 paese delle meraviglie, 06/11 18 anni).",
-  "email_thread_id": "1a1d1482f3a24777"
+  "email_thread_id": "1a1d1482f3a24777",
+  "id_metricool": {
+    "instagram": 426599997
+  },
+  "nota_programmazione": "approvato via email (Ok, 12/11 21:56); IG autoPublish false → notifica app Metricool alle 12:30, condivisione FB automatica; storie facoltative a mano"
 }
