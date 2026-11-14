@@ -1,0 +1,40 @@
+{
+  "data": "2026-11-15",
+  "giorno": "domenica",
+  "marchio": "spettacolando",
+  "reti": ["tiktok"],
+  "orario": "18:30",
+  "fuso": "Europe/Rome",
+  "tipo": "carosello",
+  "tema": "diciottesimo-arancio",
+  "media": [
+    "social/media/2026-11-15/01.jpg",
+    "social/media/2026-11-15/02.jpg",
+    "social/media/2026-11-15/03.jpg",
+    "social/media/2026-11-15/04.jpg",
+    "social/media/2026-11-15/05.jpg"
+  ],
+  "media_origine": [
+    "foto/058-diciottesimo-arancio.jpg",
+    "foto/054-diciottesimo-arancio.jpg",
+    "foto/056-diciottesimo-arancio.jpg",
+    "foto/055-diciottesimo-arancio.jpg",
+    "foto/045-diciottesimo-arancio.jpg"
+  ],
+  "anteprima": "social/proposte/2026-11-15-anteprima.jpg",
+  "testo": "Diciott'anni in arancio 🧡🎁\nUna torta di pacchi regalo, orsetti in ogni angolo, centrotavola di rose e strelitzie e un salottino tutto da vivere: una festa calda, elegante e su misura.\n\nStai pensando al tuo diciottesimo? Scrivici su WhatsApp al 334 349 9808 e lo creiamo insieme ✨\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #diciottesimo #18anni #festa18anni #allestimentifeste #centrotavola #eventiacasa #partyplanner #angri #salerno",
+  "testo_facebook": "Domenica solo TikTok da calendario: il testo Instagram/Facebook resta pronto per un eventuale uso futuro (firma Spettacolando Eventi).",
+  "testo_tiktok": "Diciott'anni in arancio 🧡 Pacchi regalo, orsetti e fiori ovunque. Scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #diciottesimo #18anni #festa18anni #angri",
+  "titolo_tiktok": "Un diciottesimo tutto in arancio",
+  "storie": [
+    {"file": "social/media/2026-11-15/storia-1.jpg", "origine": "foto/029-festa-viola.jpg", "scritta": "Luci, fiori e un palco tutto per te"},
+    {"file": "social/media/2026-11-15/storia-2.jpg", "origine": "foto/062-diciottesimo-bianco-rosa.jpg", "scritta": "Il profumo della festa"}
+  ],
+  "conteggio_mese": {
+    "instagram": "1/20 (novembre)",
+    "tiktok": "1/20 con questo post (nessun TikTok pubblicato o programmato a novembre)"
+  },
+  "programmabile": true,
+  "stato": "in attesa",
+  "nota": "Tema mai pubblicato sui social (solo proposte non programmate del 18/10 e 26/10). Marchio di moda visibile in alcune foto: non citato nel testo. Tema diverso dal post del 13/11 (arco floreale)."
+}
