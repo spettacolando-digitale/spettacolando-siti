@@ -2,7 +2,9 @@
   "data": "2026-11-15",
   "giorno": "domenica",
   "marchio": "spettacolando",
-  "reti": ["tiktok"],
+  "reti": [
+    "tiktok"
+  ],
   "orario": "18:30",
   "fuso": "Europe/Rome",
   "tipo": "carosello",
@@ -27,8 +29,16 @@
   "testo_tiktok": "Diciott'anni in arancio 🧡 Pacchi regalo, orsetti e fiori ovunque. Scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #diciottesimo #18anni #festa18anni #angri",
   "titolo_tiktok": "Un diciottesimo tutto in arancio",
   "storie": [
-    {"file": "social/media/2026-11-15/storia-1.jpg", "origine": "foto/029-festa-viola.jpg", "scritta": "Luci, fiori e un palco tutto per te"},
-    {"file": "social/media/2026-11-15/storia-2.jpg", "origine": "foto/062-diciottesimo-bianco-rosa.jpg", "scritta": "Il profumo della festa"}
+    {
+      "file": "social/media/2026-11-15/storia-1.jpg",
+      "origine": "foto/029-festa-viola.jpg",
+      "scritta": "Luci, fiori e un palco tutto per te"
+    },
+    {
+      "file": "social/media/2026-11-15/storia-2.jpg",
+      "origine": "foto/062-diciottesimo-bianco-rosa.jpg",
+      "scritta": "Il profumo della festa"
+    }
   ],
   "conteggio_mese": {
     "instagram": "1/20 (novembre)",
@@ -36,5 +46,6 @@
   },
   "programmabile": true,
   "stato": "in attesa",
-  "nota": "Tema mai pubblicato sui social (solo proposte non programmate del 18/10 e 26/10). Marchio di moda visibile in alcune foto: non citato nel testo. Tema diverso dal post del 13/11 (arco floreale)."
+  "nota": "Tema mai pubblicato sui social (solo proposte non programmate del 18/10 e 26/10). Marchio di moda visibile in alcune foto: non citato nel testo. Tema diverso dal post del 13/11 (arco floreale).",
+  "email_thread_id": "1a1db94749b505bb"
 }
