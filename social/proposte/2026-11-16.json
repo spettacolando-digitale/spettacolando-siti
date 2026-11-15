@@ -1,0 +1,52 @@
+{
+  "data": "2026-11-16",
+  "giorno": "lunedì",
+  "marchio": "spettacolando",
+  "reti": [
+    "instagram",
+    "facebook (condivisione automatica)"
+  ],
+  "orario": "12:30",
+  "fuso": "Europe/Rome",
+  "tipo": "carosello",
+  "tema": "diciottesimo in bianco e rosa cipria (torta tra colonne di rose, 18 luminoso, angolo profumi, tavola)",
+  "media": [
+    "social/media/2026-11-16/01.jpg",
+    "social/media/2026-11-16/02.jpg",
+    "social/media/2026-11-16/03.jpg",
+    "social/media/2026-11-16/04.jpg",
+    "social/media/2026-11-16/05.jpg"
+  ],
+  "media_origine": [
+    "foto/077-diciottesimo-bianco-rosa.jpg",
+    "foto/065-diciottesimo-bianco-rosa.jpg",
+    "foto/068-diciottesimo-bianco-rosa.jpg",
+    "foto/063-diciottesimo-bianco-rosa.jpg",
+    "foto/066-diciottesimo-bianco-rosa.jpg"
+  ],
+  "anteprima": "social/proposte/2026-11-16-anteprima.jpg",
+  "testo": "Diciotto anni in bianco e rosa cipria 🤍\nUna torta a tre piani tra colonne di rose, il grande 18 luminoso con gli orsetti, l'iniziale illuminata, un angolo profumi tutto da scoprire e tavole curate fino all'ultimo segnaposto.\n\nStai pensando ai tuoi 18 anni? Scrivici su WhatsApp al 334 349 9808 e progettiamo insieme la tua festa ✨\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #diciottesimo #18anni #festadi18anni #allestimentifloreali #biancoerosa #partyplanner #eventiangri #angri #salerno",
+  "testo_facebook": "Si condivide automaticamente dal post Instagram (stesso testo, firma Spettacolando Eventi).",
+  "testo_tiktok": "18 anni in bianco e rosa: rose, orsetti e un 18 tutto luminoso 🤍 Scrivici su WhatsApp 334 349 9808 ✨ #spettacolandoeventi #18anni #diciottesimo #allestimenti #angri",
+  "titolo_tiktok": "18 anni in bianco e rosa",
+  "nota_tiktok": "testo TikTok pronto ma lunedì solo Instagram da calendario",
+  "storie": [
+    {
+      "file": "social/media/2026-11-16/storia-1.jpg",
+      "origine": "foto/046-cerimonia-verde-bianco.jpg",
+      "scritta": "Ogni dettaglio, curato"
+    },
+    {
+      "file": "social/media/2026-11-16/storia-2.jpg",
+      "origine": "foto/014-pasticceria-pastello.jpg",
+      "scritta": "Dolce come una festa"
+    }
+  ],
+  "conteggio_mese": {
+    "instagram": "2/20 con questo post (1 pubblicato a novembre su Metricool)",
+    "tiktok": "0/20"
+  },
+  "programmabile": true,
+  "stato": "in attesa",
+  "nota": "Foto mai pubblicate sui social; nomi della festeggiata non leggibili in primo piano; nessun volto; tema diverso dalle ultime proposte (15/11 18 arancio, 13/11 arco floreale, 09/11 feste in rosa)."
+}
