@@ -82,5 +82,22 @@
       "instagram": 426599997
     },
     "nota": "approvato via email (Ok, 12/11 21:56); IG autoPublish false → notifica app Metricool alle 12:30, condivisione FB automatica; storie facoltative a mano; pubblicato da notifica app (stato Metricool PUBLISHED, verificato 14/11); link non restituito da Metricool"
+  },
+  {
+    "data": "2026-11-20",
+    "ora": "12:30",
+    "marchio": "spettacolando",
+    "reti": [
+      "instagram"
+    ],
+    "tipo": "post",
+    "media": [
+      "foto/023-villaggio-natale.jpg"
+    ],
+    "stato": "programmato",
+    "id_metricool": {
+      "instagram": 435185682
+    },
+    "nota": "approvato via email (Ok, 19/11 20:43); IG autoPublish false → notifica app Metricool alle 12:30, condivisione FB automatica; storie facoltative a mano"
   }
 ]
