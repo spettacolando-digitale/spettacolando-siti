@@ -60,11 +60,11 @@
     "media": [
       "foto/028-festa-viola.jpg"
     ],
-    "stato": "pubblicato",
+    "stato": "non uscito",
     "id_metricool": {
       "instagram": 397437140
     },
-    "nota": "approvato via email (OK); IG autoPublish false → notifica app Metricool alle 12:30, condivisione FB automatica; storie facoltative a mano; pubblicato da notifica app (stato Metricool PUBLISHED, verificato 17/10); link non restituito da Metricool"
+    "nota": "approvato via email (OK); IG autoPublish false → notifica app Metricool alle 12:30, condivisione FB automatica; storie facoltative a mano; pubblicato da notifica app (stato Metricool PUBLISHED, verificato 17/10); link non restituito da Metricool | 21/11: VERIFICATO che il post NON è mai apparso su Instagram (ultimo post IG reale 15/10). Con autoPublish false Metricool segna PUBLISHED appena invia la notifica, anche se nessuno la completa."
   },
   {
     "data": "2026-11-13",
@@ -77,11 +77,11 @@
     "media": [
       "foto/027-arco-floreale.jpg"
     ],
-    "stato": "pubblicato",
+    "stato": "non uscito",
     "id_metricool": {
       "instagram": 426599997
     },
-    "nota": "approvato via email (Ok, 12/11 21:56); IG autoPublish false → notifica app Metricool alle 12:30, condivisione FB automatica; storie facoltative a mano; pubblicato da notifica app (stato Metricool PUBLISHED, verificato 14/11); link non restituito da Metricool"
+    "nota": "approvato via email (Ok, 12/11 21:56); IG autoPublish false → notifica app Metricool alle 12:30, condivisione FB automatica; storie facoltative a mano; pubblicato da notifica app (stato Metricool PUBLISHED, verificato 14/11); link non restituito da Metricool | 21/11: VERIFICATO che il post NON è mai apparso su Instagram (ultimo post IG reale 15/10). Con autoPublish false Metricool segna PUBLISHED appena invia la notifica, anche se nessuno la completa."
   },
   {
     "data": "2026-11-20",
@@ -94,10 +94,63 @@
     "media": [
       "foto/023-villaggio-natale.jpg"
     ],
-    "stato": "pubblicato",
+    "stato": "non uscito",
     "id_metricool": {
       "instagram": 435185682
     },
-    "nota": "approvato via email (Ok, 19/11 20:43); IG autoPublish false → notifica app Metricool alle 12:30, condivisione FB automatica; storie facoltative a mano; pubblicato da notifica app (stato Metricool PUBLISHED, verificato 21/11); link non restituito da Metricool"
+    "nota": "approvato via email (Ok, 19/11 20:43); IG autoPublish false → notifica app Metricool alle 12:30, condivisione FB automatica; storie facoltative a mano; pubblicato da notifica app (stato Metricool PUBLISHED, verificato 21/11); link non restituito da Metricool | 21/11: VERIFICATO che il post NON è mai apparso su Instagram (ultimo post IG reale 15/10). Con autoPublish false Metricool segna PUBLISHED appena invia la notifica, anche se nessuno la completa."
+  },
+  {
+    "data": "2026-11-21",
+    "ora": "20:55",
+    "marchio": "spettacolando",
+    "reti": [
+      "instagram"
+    ],
+    "tipo": "post",
+    "media": [
+      "social/media/2026-11-20/01.jpg"
+    ],
+    "stato": "programmato",
+    "id_metricool": {
+      "instagram": 436969684
+    },
+    "nota": "recupero del 20/11 villaggio di Natale; autoPublish TRUE (decisione utente 21/11)"
+  },
+  {
+    "data": "2026-11-22",
+    "ora": "12:30",
+    "marchio": "spettacolando",
+    "reti": [
+      "instagram"
+    ],
+    "tipo": "post",
+    "media": [
+      "social/media/2026-11-13/01.jpg"
+    ],
+    "stato": "programmato",
+    "id_metricool": {
+      "instagram": 436969699
+    },
+    "nota": "recupero del 13/11 arco floreale; autoPublish TRUE"
+  },
+  {
+    "data": "2026-11-22",
+    "ora": "18:30",
+    "marchio": "spettacolando",
+    "reti": [
+      "tiktok"
+    ],
+    "tipo": "carosello",
+    "media": [
+      "social/media/2026-11-22/01.jpg",
+      "social/media/2026-11-22/02.jpg",
+      "social/media/2026-11-22/03.jpg"
+    ],
+    "stato": "programmato",
+    "id_metricool": {
+      "tiktok": 436969788
+    },
+    "nota": "approvato in chat dall'utente ('si', 21/11 20:45); autoPublish true"
   }
 ]
