@@ -125,7 +125,8 @@
     "ora": "12:30",
     "marchio": "spettacolando",
     "reti": [
-      "instagram"
+      "instagram",
+      "facebook"
     ],
     "tipo": "post",
     "media": [
@@ -133,9 +134,10 @@
     ],
     "stato": "programmato",
     "id_metricool": {
-      "instagram": 436969699
+      "instagram": 437011752,
+      "facebook": 437011752
     },
-    "nota": "recupero del 13/11 arco floreale; autoPublish TRUE"
+    "nota": "recupero del 13/11 arco floreale; autoPublish TRUE | 21/11: Pagina Facebook 'Spettacolando Eventi' (808855572540100) collegata a Metricool, aggiunto Facebook automatico"
   },
   {
     "data": "2026-11-22",
