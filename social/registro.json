@@ -111,11 +111,14 @@
     "media": [
       "social/media/2026-11-20/01.jpg"
     ],
-    "stato": "programmato",
+    "stato": "pubblicato",
     "id_metricool": {
       "instagram": 436969684
     },
-    "nota": "recupero del 20/11 villaggio di Natale; autoPublish TRUE (decisione utente 21/11)"
+    "nota": "recupero del 20/11 villaggio di Natale; autoPublish TRUE (decisione utente 21/11)",
+    "link": {
+      "instagram": "https://www.instagram.com/p/DgBB67ICMyh/"
+    }
   },
   {
     "data": "2026-11-22",
