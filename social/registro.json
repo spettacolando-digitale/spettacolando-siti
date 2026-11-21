@@ -155,5 +155,39 @@
       "tiktok": 436969788
     },
     "nota": "approvato in chat dall'utente ('si', 21/11 20:45); autoPublish true"
+  },
+  {
+    "data": "2026-11-22",
+    "ora": "10:30",
+    "marchio": "spettacolando",
+    "reti": [
+      "instagram"
+    ],
+    "tipo": "storia",
+    "media": [
+      "social/media/2026-11-22/storia-1.jpg"
+    ],
+    "stato": "programmato",
+    "id_metricool": {
+      "instagram": 436986109
+    },
+    "nota": "storia automatica (utente: 'si storie', 21/11)"
+  },
+  {
+    "data": "2026-11-22",
+    "ora": "19:30",
+    "marchio": "spettacolando",
+    "reti": [
+      "instagram"
+    ],
+    "tipo": "storia",
+    "media": [
+      "social/media/2026-11-22/storia-2.jpg"
+    ],
+    "stato": "programmato",
+    "id_metricool": {
+      "instagram": 436986123
+    },
+    "nota": "storia automatica (utente: 'si storie', 21/11)"
   }
 ]
