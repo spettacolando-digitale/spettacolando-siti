@@ -1,0 +1,46 @@
+{
+  "data": "2026-11-22",
+  "giorno": "domenica",
+  "marchio": "spettacolando",
+  "reti": [
+    "tiktok"
+  ],
+  "orario": "18:30",
+  "fuso": "Europe/Rome",
+  "tipo": "carosello",
+  "tema": "festa-viola",
+  "media": [
+    "social/media/2026-11-22/01.jpg",
+    "social/media/2026-11-22/02.jpg",
+    "social/media/2026-11-22/03.jpg"
+  ],
+  "media_origine": [
+    "foto/030-festa-viola.jpg",
+    "foto/031-festa-viola.jpg",
+    "foto/029-festa-viola.jpg"
+  ],
+  "anteprima": "social/proposte/2026-11-22-anteprima.jpg",
+  "testo": "Una festa che si accende di viola 💜✨\nColonne di ortensie e rose, luci verticali, un'insegna al neon e una torta bianca al centro della scena: un allestimento da vivere sotto i riflettori.\n\nVuoi una festa così, tutta su misura? Scrivici su WhatsApp al 334 349 9808 e la creiamo insieme 🌸\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #festaviola #allestimentifloreali #insegnaneon #compleanno #allestimentifeste #partyplanner #eventiangri #angri #salerno",
+  "testo_facebook": "Domenica solo TikTok da calendario: il testo Instagram/Facebook resta pronto per un eventuale uso futuro (firma Spettacolando Eventi).",
+  "testo_tiktok": "Una festa che si accende di viola 💜 Fiori, luci e neon sotto i riflettori. Scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #festaviola #allestimentifloreali #compleanno #angri",
+  "titolo_tiktok": "Una festa tutta in viola",
+  "storie": [
+    {
+      "file": "social/media/2026-11-22/storia-1.jpg",
+      "origine": "foto/032-trucca-bimbi.jpg",
+      "scritta": "Colori e glitter per ogni festa"
+    },
+    {
+      "file": "social/media/2026-11-22/storia-2.jpg",
+      "origine": "foto/025-mise-en-place.jpg",
+      "scritta": "Ogni dettaglio racconta una storia"
+    }
+  ],
+  "conteggio_mese": {
+    "instagram": "2/20 (novembre)",
+    "tiktok": "1/20 con questo post (nessun TikTok pubblicato o programmato a novembre)"
+  },
+  "programmabile": true,
+  "stato": "in attesa",
+  "nota": "Tema diverso dagli ultimi post (villaggio di Natale 20/11, diciottesimo bianco e rosa 16/11). 028 (simile a 030) usata il 16/10 su IG, mai su TikTok. Nome sull'insegna neon visibile ma non citato nel testo."
+}
