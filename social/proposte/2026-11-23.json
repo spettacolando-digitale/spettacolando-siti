@@ -1,0 +1,51 @@
+{
+  "data": "2026-11-23",
+  "giorno": "lunedì",
+  "marchio": "spettacolando",
+  "reti": [
+    "instagram",
+    "facebook"
+  ],
+  "orario": "12:30",
+  "fuso": "Europe/Rome",
+  "tipo": "carosello",
+  "tema": "compleanno elegante in bianco e verde (composizioni floreali, strutture dorate, tavola con runner verde acqua)",
+  "media": [
+    "social/media/2026-11-23/01.jpg",
+    "social/media/2026-11-23/02.jpg",
+    "social/media/2026-11-23/03.jpg"
+  ],
+  "media_origine": [
+    "foto/044-cerimonia-verde-bianco.jpg",
+    "foto/047-cerimonia-verde-bianco.jpg",
+    "foto/020-mise-en-place.jpg"
+  ],
+  "anteprima": "social/proposte/2026-11-23-anteprima.jpg",
+  "testo": "Bianco e verde, tutto qui. Ed è già magia 🌿🤍\nRose bianche, pampas ed eucalipto su strutture dorate, lanterne geometriche e una tavola con runner verde acqua e fiori freschi: un compleanno elegante, curato in ogni dettaglio.\n\nVuoi un allestimento così per la tua festa o la tua cerimonia? Scrivici su WhatsApp al 334 349 9808 e lo creiamo insieme ✨\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #allestimentifloreali #biancoeverde #compleannoelegante #festadicompleanno #miseenplace #allestimentieventi #partyplanner #angri #salerno",
+  "testo_facebook": "Stesso testo di Instagram, esce in automatico dalla Pagina Facebook collegata a Metricool.",
+  "testo_tiktok": "Bianco e verde, fiori freschi e dettagli dorati 🌿🤍 Un compleanno elegante. Scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #allestimentifloreali #biancoeverde #compleanno #angri",
+  "titolo_tiktok": "Eleganza in bianco e verde",
+  "nota_tiktok": "testo TikTok pronto ma lunedì solo Instagram (+ Facebook) da calendario",
+  "storie": [
+    {
+      "file": "social/media/2026-11-23/storia-1.jpg",
+      "origine": "foto/003-pasticceria-pastello.jpg",
+      "scritta": "Una festa da favola",
+      "ora": "10:30"
+    },
+    {
+      "file": "social/media/2026-11-23/storia-2.jpg",
+      "origine": "foto/062-diciottesimo-bianco-rosa.jpg",
+      "scritta": "Ogni evento, su misura",
+      "ora": "19:30"
+    }
+  ],
+  "conteggio_mese": {
+    "instagram": "5/20 con questo carosello, 7/20 con le 2 storie (novembre; esclusi i 2 post 'non uscito')",
+    "facebook": "2/20 con questo post",
+    "tiktok": "1/20"
+  },
+  "programmabile": true,
+  "stato": "in attesa",
+  "nota": "Foto mai pubblicate sui social; tema diverso dagli ultimi (festa viola 22/11, villaggio di Natale 20-21/11). Scartata 026 perché quasi identica a 020, e 046 quasi identica a 044. Nome sul cartello di benvenuto (foto 2) visibile ma non citato nel testo. Nessun volto di bambini, nessun personaggio protetto."
+}
