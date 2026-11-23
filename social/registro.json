@@ -132,12 +132,16 @@
     "media": [
       "social/media/2026-11-13/01.jpg"
     ],
-    "stato": "programmato",
+    "stato": "pubblicato",
     "id_metricool": {
       "instagram": 437011752,
       "facebook": 437011752
     },
-    "nota": "recupero del 13/11 arco floreale; autoPublish TRUE | 21/11: Pagina Facebook 'Spettacolando Eventi' (808855572540100) collegata a Metricool, aggiunto Facebook automatico"
+    "nota": "recupero del 13/11 arco floreale; autoPublish TRUE | 21/11: Pagina Facebook 'Spettacolando Eventi' (808855572540100) collegata a Metricool, aggiunto Facebook automatico | verificato 23/11: publicUrl presente",
+    "link": {
+      "instagram": "https://www.instagram.com/p/DgCtCaViIl-/",
+      "facebook": "https://facebook.com/1448437699949028/posts/1680849533374509"
+    }
   },
   {
     "data": "2026-11-22",
@@ -152,11 +156,14 @@
       "social/media/2026-11-22/02.jpg",
       "social/media/2026-11-22/03.jpg"
     ],
-    "stato": "programmato",
+    "stato": "pubblicato",
     "id_metricool": {
       "tiktok": 436969788
     },
-    "nota": "approvato in chat dall'utente ('si', 21/11 20:45); autoPublish true"
+    "nota": "approvato in chat dall'utente ('si', 21/11 20:45); autoPublish true | verificato 23/11: publicUrl presente",
+    "link": {
+      "tiktok": "https://www.tiktok.com/@spettacolandoeventi/video/7711049668985097494"
+    }
   },
   {
     "data": "2026-11-22",
@@ -169,11 +176,14 @@
     "media": [
       "social/media/2026-11-22/storia-1.jpg"
     ],
-    "stato": "programmato",
+    "stato": "pubblicato",
     "id_metricool": {
       "instagram": 436986109
     },
-    "nota": "storia automatica (utente: 'si storie', 21/11)"
+    "nota": "storia automatica (utente: 'si storie', 21/11) | verificato 23/11: publicUrl presente",
+    "link": {
+      "instagram": "https://www.instagram.com/stories/spettacolandoeventi/4035925585448034545"
+    }
   },
   {
     "data": "2026-11-22",
@@ -186,10 +196,13 @@
     "media": [
       "social/media/2026-11-22/storia-2.jpg"
     ],
-    "stato": "programmato",
+    "stato": "pubblicato",
     "id_metricool": {
       "instagram": 436986123
     },
-    "nota": "storia automatica (utente: 'si storie', 21/11)"
+    "nota": "storia automatica (utente: 'si storie', 21/11) | verificato 23/11: publicUrl presente",
+    "link": {
+      "instagram": "https://www.instagram.com/stories/spettacolandoeventi/4036197721648246901"
+    }
   }
 ]

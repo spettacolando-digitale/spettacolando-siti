@@ -41,8 +41,11 @@
     "tiktok": "1/20 con questo post (nessun TikTok pubblicato o programmato a novembre)"
   },
   "programmabile": true,
-  "stato": "programmato",
+  "stato": "pubblicato",
   "nota": "Tema diverso dagli ultimi post (villaggio di Natale 20/11, diciottesimo bianco e rosa 16/11). 028 (simile a 030) usata il 16/10 su IG, mai su TikTok. Nome sull'insegna neon visibile ma non citato nel testo.",
   "email_thread_id": "1a1ffa0bfc0dff31",
-  "nota_approvazione": "approvato in chat 21/11 sera; Metricool id 436969788"
+  "nota_approvazione": "approvato in chat 21/11 sera; Metricool id 436969788",
+  "link": {
+    "tiktok": "https://www.tiktok.com/@spettacolandoeventi/video/7711049668985097494"
+  }
 }
