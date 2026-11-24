@@ -1,0 +1,54 @@
+{
+  "data": "2026-11-25",
+  "giorno": "mercoledì",
+  "marchio": "spettacolando",
+  "reti": [
+    "instagram",
+    "tiktok",
+    "facebook"
+  ],
+  "orario": "18:30",
+  "fuso": "Europe/Rome",
+  "tipo": "carosello",
+  "tema": "festa a tema pasticceria in pastello (vetrine rosa e menta, torta scenografica, angolo tè con rose e macarons)",
+  "media": [
+    "social/media/2026-11-25/01.jpg",
+    "social/media/2026-11-25/02.jpg",
+    "social/media/2026-11-25/03.jpg",
+    "social/media/2026-11-25/04.jpg"
+  ],
+  "media_origine": [
+    "foto/014-pasticceria-pastello.jpg",
+    "foto/000-pasticceria-pastello.jpg",
+    "foto/008-pasticceria-pastello.jpg",
+    "foto/010-pasticceria-pastello.jpg"
+  ],
+  "anteprima": "social/proposte/2026-11-25-anteprima.jpg",
+  "testo": "Una pasticceria in pastello, tutta da vivere 🍰🌸\nVetrine rosa e menta, una torta che sembra un negozio di dolci, tè servito tra rose e macarons: una festa dove ogni angolo racconta una storia.\n\nVuoi una festa così per il tuo compleanno o per la tua bambina? Scrivici su WhatsApp al 334 349 9808 e la creiamo insieme ✨\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #festaatema #pasticceria #compleannobambini #sweettable #allestimentifloreali #feste #partyplanner #angri #salerno",
+  "testo_facebook": "Stesso testo di Instagram, esce in automatico dalla Pagina Facebook collegata a Metricool.",
+  "testo_tiktok": "Una pasticceria in pastello per una festa da sogno 🍰🌸 Scrivici su WhatsApp 334 349 9808! #spettacolandoeventi #festaatema #compleanno #sweettable #angri",
+  "titolo_tiktok": "La pasticceria dei sogni",
+  "nota_reel": "nessun video nell'archivio: carosello",
+  "storie": [
+    {
+      "file": "social/media/2026-11-25/storia-1.jpg",
+      "origine": "foto/069-diciottesimo-bianco-rosa.jpg",
+      "scritta": "Dettagli che fanno la differenza",
+      "ora": "10:30"
+    },
+    {
+      "file": "social/media/2026-11-25/storia-2.jpg",
+      "origine": "foto/009-pasticceria-pastello.jpg",
+      "scritta": "La pasticceria dei sogni",
+      "ora": "19:30"
+    }
+  ],
+  "conteggio_mese": {
+    "instagram": "5/20 con questo carosello, 7/20 con le 2 storie (novembre; esclusi i post 'non uscito')",
+    "facebook": "2/20 con questo post",
+    "tiktok": "2/20 con questo carosello"
+  },
+  "programmabile": true,
+  "stato": "in attesa",
+  "nota": "Foto mai pubblicate sui social (usata_social vuoto); tema diverso dagli ultimi (bianco-verde 23/11, viola 22/11, Natale 20-21/11). Esclusa 001/002 perché il nome della bambina sulla torta è in primo piano; nome sull'insegna in 01 piccolo e non citato. Nessun volto, nessun personaggio protetto. Scartate foto 18 anni arancio per loghi di marchi di moda visibili."
+}
