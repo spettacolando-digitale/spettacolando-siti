@@ -1,0 +1,47 @@
+{
+  "data": "2026-11-27",
+  "giorno": "venerdì",
+  "marchio": "spettacolando",
+  "reti": [
+    "instagram",
+    "facebook"
+  ],
+  "orario": "12:30",
+  "fuso": "Europe/Rome",
+  "tipo": "post",
+  "tema": "pigiama party spa in rosa (accappatoi di raso, maschere alla fragola, arco di palloncini, postazione trucco)",
+  "media": [
+    "social/media/2026-11-27/01.jpg"
+  ],
+  "media_origine": [
+    "foto/035-pigiama-party.jpg"
+  ],
+  "anteprima": "social/proposte/2026-11-27-anteprima.jpg",
+  "testo": "Un pigiama party in rosa, tra coccole e risate 💗✨\nAccappatoi di raso pronti sull'appendiabiti, fasce, specchietti e maschere alla fragola per ogni invitata, un arco di palloncini con la mascherina da notte e la postazione trucco con le luci: una serata spa tutta da vivere insieme.\n\nVuoi un pigiama party così per il compleanno della tua bambina? Scrivici su WhatsApp al 334 349 9808 e lo organizziamo insieme 🎀\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #pigiamaparty #festaspa #compleannobambini #festaatema #partyinrosa #allestimentipalloncini #partyplanner #angri #salerno",
+  "testo_facebook": "Stesso testo di Instagram, esce in automatico dalla Pagina Facebook collegata a Metricool.",
+  "testo_tiktok": "Un pigiama party spa tutto in rosa 💗 Accappatoi, maschere e palloncini! Scrivici su WhatsApp 334 349 9808 #spettacolandoeventi #pigiamaparty #compleanno #festaatema #angri",
+  "titolo_tiktok": "Pigiama party in rosa",
+  "nota_tiktok": "testo TikTok pronto ma venerdì solo Instagram (+Facebook) da calendario",
+  "storie": [
+    {
+      "file": "social/media/2026-11-27/storia-1.jpg",
+      "origine": "foto/059-pigiama-party.jpg",
+      "scritta": "Un pigiama party da sogno",
+      "ora": "10:30"
+    },
+    {
+      "file": "social/media/2026-11-27/storia-2.jpg",
+      "origine": "foto/021-villaggio-natale.jpg",
+      "scritta": "Il Natale è alle porte",
+      "ora": "19:30"
+    }
+  ],
+  "conteggio_mese": {
+    "instagram": "5/20 con questo post, 7/20 con le 2 storie (novembre; esclusi i post 'non uscito')",
+    "facebook": "2/20 con questo post",
+    "tiktok": "1/20 (nessun TikTok venerdì)"
+  },
+  "programmabile": true,
+  "stato": "in attesa",
+  "nota": "Foto mai pubblicate sui social (usata_social vuoto); tema nuovo rispetto agli ultimi (pasticceria 25/11, bianco-verde 23/11, viola 22/11, Natale 21/11). Nessun volto, nessun personaggio protetto. Le confezioni delle maschere sono piccole e non leggibili come marchio."
+}
