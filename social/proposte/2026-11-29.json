@@ -1,0 +1,53 @@
+{
+  "data": "2026-11-29",
+  "giorno": "domenica",
+  "marchio": "spettacolando",
+  "reti": [
+    "tiktok"
+  ],
+  "orario": "18:30",
+  "fuso": "Europe/Rome",
+  "tipo": "carosello",
+  "tema": "diciottesimo in arancio e nero (torre di scatole regalo con il 18, orsetti, divanetto lounge, centrotavola con rose e sterlizie)",
+  "media": [
+    "social/media/2026-11-29/01.jpg",
+    "social/media/2026-11-29/02.jpg",
+    "social/media/2026-11-29/03.jpg",
+    "social/media/2026-11-29/04.jpg",
+    "social/media/2026-11-29/05.jpg"
+  ],
+  "media_origine": [
+    "foto/058-diciottesimo-arancio.jpg",
+    "foto/045-diciottesimo-arancio.jpg",
+    "foto/053-diciottesimo-arancio.jpg",
+    "foto/056-diciottesimo-arancio.jpg",
+    "foto/054-diciottesimo-arancio.jpg"
+  ],
+  "anteprima": "social/proposte/2026-11-29-anteprima.jpg",
+  "testo": "Diciotto anni in arancio e nero 🧡🖤\nUna torre di scatole regalo con il 18, orsetti su ogni scaffale, un divanetto lounge di velluto e centrotavola di rose e sterlizie su ogni tavolo: un compleanno elegante, curato fino all'ultimo segnaposto.\n\nVuoi una festa dei 18 anni così? Scrivici su WhatsApp al 334 349 9808 e la progettiamo insieme ✨\n\nSpettacolando Eventi · Angri\n\n#spettacolandoeventi #diciottesimo #18anni #festa18anni #allestimenti #compleanno #partyplanner #eventiangri #angri #salerno",
+  "nota_testo": "testo Instagram pronto per riuso; domenica da calendario esce solo TikTok",
+  "testo_tiktok": "18 anni in arancio e nero 🧡🖤 Scatole regalo, orsetti e fiori ovunque! Scrivici su WhatsApp 334 349 9808 #spettacolandoeventi #diciottesimo #18anni #festa #angri",
+  "titolo_tiktok": "Un diciottesimo in arancio",
+  "storie": [
+    {
+      "file": "social/media/2026-11-29/storia-1.jpg",
+      "origine": "foto/046-cerimonia-verde-bianco.jpg",
+      "scritta": "Eleganza in bianco e verde",
+      "ora": "10:30"
+    },
+    {
+      "file": "social/media/2026-11-29/storia-2.jpg",
+      "origine": "foto/026-mise-en-place.jpg",
+      "scritta": "Una tavola che accoglie",
+      "ora": "19:30"
+    }
+  ],
+  "conteggio_mese": {
+    "tiktok": "2/20 con questo carosello (novembre)",
+    "instagram": "6/20 con le 2 storie (4 già uscite; esclusi i 'non uscito')",
+    "facebook": "1/20 (domenica niente Facebook)"
+  },
+  "programmabile": true,
+  "stato": "in attesa",
+  "nota": "Foto mai usate sui social (usata_social vuoto), tema nuovo. Nessun volto, nessun personaggio protetto nel testo; il marchio della maison di moda visibile su cuscini/arredi non è citato nel testo."
+}
